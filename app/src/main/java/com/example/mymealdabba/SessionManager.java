@@ -9,52 +9,51 @@ import java.util.HashMap;
 
 
 public class SessionManager {
-
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
-    Context context;
-
-    private static final String IS_LOGIN = "IsLoggedIn";
-
     public static final String KEY_ID = "id";
+
+    private static final String PREF_NAME = "userData";
+    private static final String IS_LOGIN = "isLogin";
+    private static SharedPreferences pref;
+    SharedPreferences.Editor editor;
+    Context _context;
+    int PRIVATE_MODE = 0;
 
 
     @SuppressLint("CommitPrefEdits")
 
-    public SessionManager(Context _context) {
-        context = _context;
-        sharedPreferences = context.getSharedPreferences("userLoginSession", Context.MODE_PRIVATE);
-        editor = sharedPreferences.edit();
+    public SessionManager(Context context) {
+        this._context = context;
+        pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
+        editor = pref.edit();
     }
 
     public void createSessionLogin(String id) {
         editor.putBoolean(IS_LOGIN, true);
+
         editor.putString(KEY_ID, id);
         editor.commit();
     }
 
-    public HashMap<String, String> getDetailsFromSession() {
-        HashMap<String, String> userData = new HashMap<String, String>();
-        userData.put(KEY_ID, sharedPreferences.getString(KEY_ID, null));
-        return userData;
-    }
+
 
     public boolean isLoggedIn() {
-        return  sharedPreferences.getBoolean(IS_LOGIN, false);
+        return pref.getBoolean(IS_LOGIN, false);
     }
 
-    public String get(String key) {
-        return  sharedPreferences.getString(key, "");
+    public String getId() {
+        return pref.getString(KEY_ID, null);
     }
 
-    private void logoutUserFromSession() {
+    public void clearSession() {
         editor.clear();
         editor.commit();
     }
+    public void logoutUser() {
+        clearSession();
+        Intent i = new Intent(_context, LoginActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        _context.startActivity(i);
 
-    public void logout() {
-        logoutUserFromSession();
-        context.startActivity(new Intent(context, LoginActivity.class));
     }
 
 }

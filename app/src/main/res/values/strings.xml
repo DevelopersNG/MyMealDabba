@@ -7,7 +7,7 @@
     <string name="hint_otp">Enter OTP</string>
     <string name="btn_signup">SIGN UP</string>
     <string name="btn_submit">SUBMIT</string>
-    <string name="otp_message">Enter the OTP number sent on your Mobile and Email ID </string>
+    <string name="otp_message">Enter the OTP number sent on your Mobile </string>
     <string name="terms_and_conditions_text">By proceeding you agree to our </string>
 
     <string name="err_name_required">Name is required.</string>

@@ -64,7 +64,7 @@
                     android:layout_gravity="right|center_vertical"
                     android:layout_marginRight="12dp"
                     android:background="@drawable/close"
-                    android:visibility="gone" />
+                     />
 
             </FrameLayout>
 
@@ -105,7 +105,7 @@
                     android:layout_gravity="right|center_vertical"
                     android:layout_marginRight="12dp"
                     android:background="@drawable/close"
-                    android:visibility="gone" />
+                />
 
             </FrameLayout>
 
@@ -146,7 +146,7 @@
                     android:layout_gravity="right|center_vertical"
                     android:layout_marginRight="12dp"
                     android:background="@drawable/close"
-                    android:visibility="gone" />
+               />
 
             </FrameLayout>
 
@@ -204,10 +204,12 @@
                 android:layout_marginBottom="10dp"
                 android:paddingLeft="30dp"
                 android:paddingRight="30dp"
-                android:text="OTP Message"
+                android:text="@string/otp_message"
                 android:textColor="@color/white"
                 android:textSize="15dp"
-                android:visibility="gone" />
+                android:visibility="gone"
+                />
+
 
             <FrameLayout
                 android:id="@+id/frameLayoutTxtOPT"
@@ -216,19 +218,27 @@
                 android:layout_below="@+id/lblOTPMessage"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp">
+                android:layout_marginRight="30dp"
+               >
+
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/ic_otp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"/>
 
                 <EditText
                     android:id="@+id/txtOTP"
                     style="@style/EditTextStyle"
                     android:layout_height="match_parent"
                     android:background="@drawable/edittext_dark_gray_background"
-                    android:drawableStart="@drawable/ic_otp"
-                    android:drawableLeft="@drawable/ic_otp"
                     android:drawablePadding="7dp"
                     android:hint="Enter OTP"
                     android:inputType="phone"
                     android:maxLength="5"
+                    android:gravity="center"
                     android:paddingLeft="25dp"
                     android:paddingTop="10dp"
                     android:paddingRight="25dp"
@@ -236,8 +246,7 @@
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"
                     android:textCursorDrawable="@null"
-                    android:textSize="16dp"
-                    android:visibility="gone" />
+                    android:textSize="16dp" />
 
                 <Button
                     android:id="@+id/btnOTPClear"
@@ -246,7 +255,7 @@
                     android:layout_gravity="right|center_vertical"
                     android:layout_marginRight="12dp"
                     android:background="@drawable/close"
-                    android:visibility="gone" />
+                    />
 
             </FrameLayout>
 
@@ -280,7 +289,8 @@
                 android:layout_marginStart="11dp"
                 android:layout_marginLeft="11dp"
                 android:background="@color/transperent"
-                android:text="ResendOTP"
+                android:text="Resend OTP"
+                android:visibility="gone"
                 android:textColor="@color/blue"
                 android:textSize="16dp" />
 

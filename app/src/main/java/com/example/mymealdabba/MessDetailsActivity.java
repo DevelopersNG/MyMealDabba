@@ -1,36 +1,36 @@
 package com.example.mymealdabba;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 public class MessDetailsActivity extends AppCompatActivity {
     RelativeLayout relativeLayoutContactDetails;
-SessionManager sessionManager;
-    TextView btnTapToRate,btnViewContactDetails;
+    TextView btnTapToRate, btnViewContactDetails, btnlogout;
     ImageView call;
+    SessionManager sessionManager;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mess_details);
+        context = this;
+        relativeLayoutContactDetails = findViewById(R.id.relativeLayoutContactDetails);
+        btnViewContactDetails = findViewById(R.id.btnViewContactDetails);
+        call = findViewById(R.id.call);
+        btnTapToRate = findViewById(R.id.btnTapToRate);
+        btnlogout = findViewById(R.id.btnlogout);
 
-        relativeLayoutContactDetails=findViewById(R.id.relativeLayoutContactDetails);
-        btnViewContactDetails=findViewById(R.id.btnViewContactDetails);
-        call=findViewById(R.id.call);
-        btnTapToRate=findViewById(R.id.btnTapToRate);
-
-            getdata();
+        sessionManager = new SessionManager(context);
 
         ///ViewContact Details Visiblecode///
         btnViewContactDetails.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +48,12 @@ SessionManager sessionManager;
                 btnViewContactDetails.setVisibility(View.VISIBLE);
             }
         });
-
+        btnlogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sessionManager.logoutUser();
+            }
+        });
 
         //calling code-----------------------------
 
@@ -58,13 +63,11 @@ SessionManager sessionManager;
             public void onClick(View view) {
                 String number = "0123456789";
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:" +number));
+                intent.setData(Uri.parse("tel:" + number));
                 startActivity(intent);
 
             }
         });
-
-        /////Open the RatingDailogPage//////////
 
         btnTapToRate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,13 +83,4 @@ SessionManager sessionManager;
         });
 
     }
-
-    private void getdata() {
-        //your text do u want pass
-//        tvUserName.setText(sessionManager.get(SessionManager.KEY_NAME));
-//        Log.e("name", sessionManager.get(SessionManager.KEY_NAME));
-        Log.e("details", sessionManager.getDetailsFromSession().toString());
-    }
-
-
 }
