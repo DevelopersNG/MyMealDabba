@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.aboutus.AboutUsFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="565dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:paddingBottom="20dp">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutMMDLogo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/about_us_bg">
+
+                <ImageView
+                    android:id="@+id/imgMMDLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/about_us_logo" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutTop"
+                android:layout_width="match_parent"
+                android:layout_height="700dp"
+                android:layout_below="@+id/relativeLayoutMMDLogo"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp">
+
+                <TextView
+                    android:id="@+id/lblWelcomeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="4dp"
+                    android:text="Welcome to My Meal Dabba"
+                    android:textColor="@color/dark_title_color"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblGreenLine"
+                    android:layout_width="80dp"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/lblWelcomeText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="6dp"
+                    android:background="@color/green_color"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblSearchEndHereText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblGreenLine"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="40dp"
+                    android:text="Your SEARCH for \'Meal Dabba\' ends here!"
+                    android:textAlignment="center"
+                    android:textColor="@color/dark_title_color"
+                    android:textSize="17sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/lblMMDPerfectSolutionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblSearchEndHereText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="30dp"
+                    android:text="My Meal Dabba is a perfect solution for everyone who\'s looking for Tiffin Service...   So, why hassle anywhere go through our dedicated listing of \'Tiffin Mess Service Providers\' in your nearby locality..."
+                    android:textAlignment="center"
+                    android:textColor="@color/light_text_color"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/lblOurAimText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblMMDPerfectSolutionText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="30dp"
+                    android:text="Our Aim is to bring all Tiffin Mess Service Providers &amp; Empowering the individual, especially Women Gruh Udhyog by listing them online &amp; creating an ultimate Tiffin Meal Experience to end users!\"
+                    android:textAlignment="center"
+                    android:textColor="@color/light_text_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblBusinessEnquiriesText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblOurAimText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="30dp"
+                    android:text="If you have Business enquiries, please mail us on "
+                    android:textAlignment="center"
+                    android:textColor="@color/light_text_color"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lblBusinessEnquiriesText"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_marginRight="10dp"
+                    android:clickable="true"
+                    android:text="info@mymealdabba.com"
+                    android:textAlignment="center"
+                    android:textColor="@color/blue"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

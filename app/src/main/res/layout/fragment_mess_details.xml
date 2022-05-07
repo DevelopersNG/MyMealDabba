@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:paddingBottom="20dp">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutMessImages"
+                android:layout_width="fill_parent"
+                android:layout_height="250dp">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/product_hor_recy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="5dp"
+
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/txtAvgRating"
+                    android:layout_width="40dp"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/green_color"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text="3.4"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+                <!--<app.com.messproject.utils.CustomViewPager
+                    android:id="@+id/viewPagerMessImages"
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginBottom="14dp"
+                    android:paddingTop="0dp"
+                    android:visibility="gone" />-->
+
+                <ViewFlipper
+                    android:id="@+id/messImagesViewFlipper"
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginBottom="0dp"
+                    android:flipInterval="@string/home_slider_interval"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="0dp"
+                    android:paddingRight="0dp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageViewBack"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_baseline_arrow_back_24" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/bg_transperant"
+                    android:paddingBottom="0dp">
+
+                    <TextView
+                        android:id="@+id/count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="New Text"
+                        android:textColor="@color/white"
+                        android:textSize="16dp"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageViewShare"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:src="@drawable/ic_baseline_share_24" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lblMessName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayoutMessImages"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="12dp"
+                android:text="Sai Mess"
+                android:textColor="@color/details_name"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/lblMessAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblMessName"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="Sai Mess"
+                android:textColor="@color/details_addr"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btnTapToRate"
+                android:layout_width="120dp"
+                android:layout_height="33dp"
+                android:layout_below="@+id/lblMessAddress"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/submit_rating_button"
+                android:text="TAP TO RATE"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+
+                />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutType"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnTapToRate"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/heading_bg_thin"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/lblTypeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/title_type"
+                    android:textColor="@color/details_view_title"
+                    android:textSize="18dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lblType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayoutType"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/title_type"
+                android:textColor="@color/details_addr"
+                android:textSize="17dp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutExperience"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblType"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/heading_bg_thin"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/lblExperienceTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/title_experience"
+                    android:textColor="@color/details_view_title"
+                    android:textSize="18dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lblExperience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayoutExperience"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/title_experience"
+                android:textColor="@color/details_addr"
+                android:textSize="17dp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutCategory"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblExperience"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/heading_bg_thin"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/lblCategoryTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/title_category"
+                    android:textAllCaps="true"
+                    android:textColor="@color/details_view_title"
+                    android:textSize="18dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lblCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayoutCategory"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/title_category"
+                android:textColor="@color/details_addr"
+                android:textSize="17dp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutCuisineType"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblCategory"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/heading_bg_thin"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/lblCuisineTypeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/title_cuisine_type"
+                    android:textAllCaps="true"
+                    android:textColor="@color/details_view_title"
+                    android:textSize="18dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lblCuisineType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayoutCuisineType"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/title_cuisine_type"
+                android:textColor="@color/details_addr"
+                android:textSize="17dp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutService"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblCuisineType"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/heading_bg_thin"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/lblServiceTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/title_service"
+                    android:textAllCaps="true"
+                    android:textColor="@color/details_view_title"
+                    android:textSize="18dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lblService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayoutService"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/title_service"
+                android:textColor="@color/details_addr"
+                android:textSize="17dp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutSpecialOrders"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblService"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/heading_bg_thin"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/lblSpecialOrdersTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/title_special_orders"
+                    android:textColor="@color/details_view_title"
+                    android:textSize="18dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lblSpecialOrders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayoutSpecialOrders"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/title_special_orders"
+                android:textColor="@color/details_addr"
+                android:textSize="17dp" />
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutSpecialOrdersPatient"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblSpecialOrders"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/heading_bg_thin"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/lblSpecialOrdersPatientTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_special_orders_patient"
+                    android:textColor="@color/details_view_title"
+                    android:textSize="18dp" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/lblSpecialOrdersPatient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayoutSpecialOrdersPatient"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/title_special_orders_patient"
+                android:textColor="@color/details_addr"
+                android:textSize="17dp" />
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutMonthlyRate"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblSpecialOrdersPatient"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/heading_bg_thin"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/lblMonthlyRateTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/monthly_rate_details"
+                    android:textColor="@color/details_view_title"
+                    android:textSize="18dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lblMonthlyRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayoutMonthlyRate"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/monthly_rate_details"
+                android:textColor="@color/details_addr"
+                android:textSize="17dp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutDailyRate"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblMonthlyRate"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/heading_bg_thin"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/lblDailyRateTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/title_daily_rate"
+                    android:textColor="@color/details_view_title"
+                    android:textSize="18dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lblDailyRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayoutDailyRate"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/title_daily_rate"
+                android:textColor="@color/details_addr"
+                android:textSize="17dp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutTime"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblDailyRate"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/heading_bg_thin"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/lblTimeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/time"
+                    android:textColor="@color/details_view_title"
+                    android:textSize="18dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lblTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayoutTime"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/time"
+                android:textColor="@color/details_addr"
+                android:textSize="17dp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutNotes"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblTime"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/heading_bg_thin"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/lblNotesTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/notes"
+                    android:textColor="@color/details_view_title"
+                    android:textSize="18dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lblNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayoutNotes"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/notes"
+                android:textColor="@color/details_addr"
+                android:textSize="17dp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutAlert"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblNotes"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rectangle_box_alert"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/lblAlert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="@string/note"
+                    android:textColor="@color/alert_title"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblAlertMessage"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblAlert"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/alert_message1"
+                    android:textColor="@color/alert_message"
+                    android:textSize="16dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutContactDetails"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayoutAlert"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rectangle_box_contact_details"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/lblTitleContactNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/contact_no"
+                    android:textColor="@color/contact_no_title"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/lblContactNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/lblTitleContactNo"
+                    android:text="@string/contact_no"
+                    android:textColor="@color/contact_no"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/lblTitleAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblTitleContactNo"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/address"
+                    android:textColor="@color/contact_no_title"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/lblContactAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblTitleContactNo"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@+id/lblTitleAddress"
+                    android:text="@string/address"
+                    android:textColor="@color/contact_no"
+                    android:textSize="16dp" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btnViewContactDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayoutContactDetails"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/view_contact_details_rounded_button"
+                android:padding="12dp"
+                android:text="@string/view_contact_details"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

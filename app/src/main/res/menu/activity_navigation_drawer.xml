@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_home" />
+
+        <item
+            android:id="@+id/nav_works"
+            android:icon="@drawable/ic_work"
+            android:title="@string/menu_how_it_works" />
+
+        <item
+            android:id="@+id/nav_specialOffer"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_special_offer" />
+
+        <item
+            android:id="@+id/nav_bookmark"
+            android:icon="@drawable/ic_baseline_favorite_24"
+            android:title="@string/menu_bookmarks" />
+
+        <item
+            android:id="@+id/nav_Registration"
+            android:icon="@drawable/ic_food_mess"
+            android:title="@string/menu_tiffin_mess_registration" />
+
+
+
+        <item
+            android:id="@+id/nav_connect"
+            android:icon="@drawable/ic_handshake"
+            android:title="@string/menu_connect_with_us" />
+
+        <item
+            android:id="@+id/nav_aboutUs"
+            android:icon="@drawable/ic_about"
+            android:title="@string/menu_about_us" />
+
+        <item
+            android:id="@+id/nav_rateUs"
+            android:icon="@drawable/ic_baseline_star_rate_24"
+            android:title="@string/menu_rate_us" />
+
+        <item
+            android:id="@+id/nav_shareApp"
+            android:icon="@drawable/ic_share"
+            android:title="@string/menu_share_app" />
+
+    </group>
+</menu>

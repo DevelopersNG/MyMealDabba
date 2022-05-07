@@ -1,0 +1,126 @@
+<resources>
+    <string name="app_name">MyMealDabba</string>
+    <!--SignUp Activity-->
+    <string name="hint_name">Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_mobile">Mobile Number</string>
+    <string name="hint_otp">Enter OTP</string>
+    <string name="btn_signup">SIGN UP</string>
+    <string name="btn_submit">SUBMIT</string>
+    <string name="otp_message">Enter the OTP number sent on your Mobile and Email ID </string>
+    <string name="terms_and_conditions_text">By proceeding you agree to our </string>
+
+    <string name="err_name_required">Name is required.</string>
+    <string name="err_mobile_required">Mobile is required.</string>
+    <string name="invalid_email">Invalid email address.</string>
+    <string name="err_mobile_10_digit"> Mobile number should be min. 10 digits.</string>
+    <string name="err_otp_required">OTP is required.</string>
+    <string name="err_invalid_otp">Invalid verification code. Please try again.</string>
+
+    <string name="inbox_permission_explanation_title">Read access to SMS necessary</string>
+    <string name="inbox_permission_explanation_msg">MyMealDabba needs permission to read the verification code from the SMS received. Please allow this permission in the next step.</string>
+
+    <string name="welcome">Welcome!</string>
+    <string name="progress_dialog_please_wait_on_verify_otp">Please wait while we send you a verification code using which you will be able to unlock this app.</string>
+    <string name="err_invalid_mobile">Invalid Mobile No.</string>
+    <string name="err_send_otp">Unable to send you the OTP. Please re-check the Mobile no and Email provided by you.</string>
+    <string name="resend_otp_button_text"><u>Resend OTP</u></string>
+    <string name="max_retry_err">Maximum retry limit reached.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_navigation">Navigation</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Filter-->
+    <string name="filter_title">FILTER</string>
+    <string name="rating_title">RATING</string>
+    <string name="sort_by">Sort By</string>
+    <string name="recently_added">Recently Added</string>
+    <string name="cost_high_to_low">Cost High to Low</string>
+    <string name="cost_low_to_high">Cost Low to High</string>
+    <string name="mess_type">Mess Type</string>
+    <string name="cuisine_type">Cuisine Type</string>
+    <string name="title_service">Service</string>
+    <string name="title_category">Category</string>
+    <string name="title_cuisine_type">Cuisine Type</string>
+    <string name="veg">VEG</string>
+    <string name="non_veg">NON-VEG</string>
+    <string name="reset_all">RESET ALL</string>
+    <string name="apply_filter">APPLY FILTERS</string>
+    <string name="tifin_list_updated">Tiffin listing updated!</string>
+
+
+    //Headings
+    <string name="heading_one">Quick &amp; Easy Payments</string>
+    <string name="heading_two">Instant Notifications</string>
+    <string name="heading_three">Cashless Payment</string>
+    <string name="heading_fourth">Pay Anywhere</string>
+    //Description
+    <string name="desc_one">Grow your Business By Accepting Card Payments with The New Card Reader</string>
+    <string name="desc_two">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
+    <string name="desc_three">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
+    <string name="desc_fourth">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
+    <string name="btn_go">GO</string>
+    <string name="location_hint">Type Your Location(Landmark Area) </string>
+    <string name="err_location">Select Your Location(Landmark Area) </string>
+    <string name="filter">FILTER</string>
+    <string name="cousine_filter">Select CUISINE</string>
+    <string name="monthly_rate">Monthly Rate(Rs):</string>
+    <string name="daily_rate">Single Tiffin Rate(Rs):</string>
+    <string name="type">Type:</string>
+    <string name="views">Views:</string>
+    <string name="category">Category:</string>
+    <string name="service">Service:</string>
+    <string name="experience">Serving Since:</string>
+    <string name="promoted">PROMOTED</string>
+    <!--<string name="empty_mess_list_text">Sorry we could not find any mess for selected location</string>-->
+    <string name="empty_mess_list_text">Sorry no results found for this location, please select other nearby location</string>
+    <string name="empty_fav_list_text">Sorry no results found for favourite</string>
+    <!-- Select city screen-->
+    <string name="hint_select_city">Type Your City</string>
+    <string name="title_top_locations">TOP LOCATIONS</string>
+    <string name="empty_location_text">Sorry we could not find any Tiffin service listing for selected location :(</string>
+    <string name="err_empty_city_name">Please enter city name.</string>
+
+    <!--Mess Details-->
+    <string name="title_type">TYPE</string>
+    <string name="title_experience">SERVING SINCE</string>
+    <string name="title_special_orders">SPECIAL ORDERS</string>
+    <string name="title_special_orders_patient">MEAL FOR PATIENTS</string>
+    <string name="title_daily_rate">SINGLE TIFFIN RATE (RS)</string>
+    <string name="monthly_rate_details">MONTHLY RATE (RS)</string>
+    <string name="time">TIME</string>
+    <string name="notes">NOTES</string>
+    <string name="alert">Alert</string>
+    <string name="note">Note</string>
+    <string name="contact_no">Contact No:</string>
+    <string name="address">Address:</string>
+    <string name="view_contact_details">View Contact Details</string>
+    <string name="alert_message">By clicking view contact details button your information will be sent to this service provider.</string>
+    <string name="alert_message1">By clicking view contact details button your info will be sent to this food service provider.</string>
+    <string name="special_order_text">Bulk/Customize Orders will be accepted</string>
+    <string name="patient_order_text">Meal For Patient Orders will be accepted</string>
+    <string name="home_slider_interval">5000</string>
+
+
+    <string name="menu_home">HOME</string>
+    <string name="menu_tiffin_mess_registration">TIFFIN MESS REGISTRATION</string>
+    <string name="menu_how_it_works">HOW IT WORKS</string>
+    <string name="menu_special_offer">SPECIAL OFFER</string>
+    <string name="menu_bookmarks">BOOKMARK</string>
+    <string name="menu_share_app">SHARE APP</string>
+    <string name="menu_rate_us">RATE US</string>
+    <string name="menu_about_us">ABOUT US</string>
+    <string name="menu_connect_with_us">CONNECT WITH US</string>
+    <string name="info_mymealdabba_com">info@mymealdabba.com</string>
+    <string name="menu_about">ABOUT</string>
+    <string name="menu_term">TERM</string>
+    <string name="menu_offer">OFFER</string>
+    <string name="menu_contact">CONTACT</string>
+
+</resources>

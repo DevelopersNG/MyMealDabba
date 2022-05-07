@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutMessType"
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:layout_marginTop="0dp">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutMessType1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+
+
+            <ImageView
+                android:id="@+id/imageMessType"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_mess_type" />
+
+            <TextView
+                android:id="@+id/lblMessType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/imageMessType"
+                android:background="@color/btn_reset_all_bg"
+                android:text="Cuisine Type"
+
+                android:textColor="@color/btn_reset_all_text"
+                android:textSize="15dp" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSortByRecentlyAdded"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/lblRecentlyAdded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="North Indian"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/rbRecentlyAdded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSortByRecentlyAdded1"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/relativeLayoutSortByRecentlyAdded"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/southindia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="South Indian"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/southcheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSortByRecentlyAdded2"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/relativeLayoutSortByRecentlyAdded1"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/maharashtrian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="Maharashtrian"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/magacheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSortByRecentlyAdded3"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/relativeLayoutSortByRecentlyAdded2"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/goan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="Goan"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/goancheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSortByRecentlyAdded4"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/relativeLayoutSortByRecentlyAdded3"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/malwani"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="Malwani"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/malwanicheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSortByRecentlyAdded5"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/relativeLayoutSortByRecentlyAdded4"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/gujarati"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="Gujarati"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/gujaraticheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSortByRecentlyAdded6"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/relativeLayoutSortByRecentlyAdded5"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/punjabi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="Punjabi"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/punjaicheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSortByRecentlyAdded7"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/relativeLayoutSortByRecentlyAdded6"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/rajasthani"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="Rajasthani"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/rajasthanicheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSortByRecentlyAdded8"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/relativeLayoutSortByRecentlyAdded7"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/bengali"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="Bengali"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/begalicheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSortByRecentlyAdded9"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/relativeLayoutSortByRecentlyAdded8"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/mughlai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="Mughlai"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/mughlaicheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSortByRecentlyAdded10"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/relativeLayoutSortByRecentlyAdded9"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/mangal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="Mangal"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/mangalcheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSortByRecentlyAdded11"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/relativeLayoutSortByRecentlyAdded10"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/korean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="Korean"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/Koreancheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSortByRecentlyAdded12"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/relativeLayoutSortByRecentlyAdded11"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/awadhi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="Awadhi"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/awadhicheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSortByRecentlyAdded13"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/relativeLayoutSortByRecentlyAdded12"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/continental"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="Continental"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/continentalcheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSortByRecentlyAdded14"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/relativeLayoutSortByRecentlyAdded13"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/chinese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="chinese"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/chinesecheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSortByRecentlyAdded15"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/relativeLayoutSortByRecentlyAdded14"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/jainFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="JainFood"
+            android:textColor="@color/text_color"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/jainFoodcheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

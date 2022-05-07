@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/whitebox_bg"
+        android:paddingTop="5dp"
+        android:paddingBottom="10dp">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutMessPrimaryDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/lblMessName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="80dp"
+                android:ellipsize="end"
+                android:paddingRight="20dp"
+                android:singleLine="true"
+                android:text="Shree Mess"
+                android:textColor="@color/mess_name"
+                android:textSize="22dp" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imageListViewMess"
+                android:layout_width="100dp"
+                android:layout_height="75dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp"
+                android:adjustViewBounds="false"
+                android:scaleType="fitXY"
+                android:src="@drawable/listing_default_grey" />
+
+            <TextView
+                android:id="@+id/lblPromoted"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageListViewMess"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded_button_promoted"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:text="@string/promoted"
+                android:textColor="@color/white"
+                android:textSize="13dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/lblPromoted"
+                android:gravity="right"
+                android:layout_weight="1"
+                >
+                <ImageView
+                    android:id="@+id/imgStar1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    />
+                <ImageView
+                    android:id="@+id/imgStar2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="1dp"
+                    />
+                <ImageView
+                    android:id="@+id/imgStar3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="1dp"
+                    />
+                <ImageView
+                    android:id="@+id/imgStar4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="1dp"
+                    />
+                <ImageView
+                    android:id="@+id/imgStar5"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="1dp"
+                    />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/lblMessAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblMessName"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="95dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Nashik"
+                android:textColor="@color/mess_add"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/lblMessMonthlyRateTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblMessAddress"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="3dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@string/daily_rate"
+                android:textColor="@color/mess_add"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/lblMessMonthlyRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblMessAddress"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_toRightOf="@+id/lblMessMonthlyRateTitle"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="3000"
+                android:textColor="@color/mess_add"
+                android:textSize="16dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblMessMonthlyRate"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblTotalViewsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/views"
+                    android:textColor="@color/details_view_title"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/lblTotalViews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/views"
+                    android:textColor="@color/contact_no"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="25dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/ic_eye" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="fill_parent"
+            android:layout_height="0.8dp"
+            android:layout_below="@+id/relativeLayoutMessPrimaryDetails"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/mess_add" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutMessDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:paddingBottom="5dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblMessTypeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/type"
+                    android:textColor="@color/details_view_title"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/lblMessType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/type"
+                    android:textColor="@color/contact_no"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblMessCategoryTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/category"
+                    android:textColor="@color/details_view_title"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/lblMessCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/category"
+                    android:textColor="@color/contact_no"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblMessServiceTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/service"
+                    android:textColor="@color/details_view_title"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/lblMessService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/service"
+                    android:textColor="@color/contact_no"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblMessExperienceTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/experience"
+                    android:textColor="@color/details_view_title"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/lblMessExperience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/experience"
+                    android:textColor="@color/contact_no"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="15dp"
+        android:layout_below="@+id/relativeLayout"
+        android:background="@android:color/transparent" />
+</RelativeLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.mymealdabba.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_Registration"
+        android:name="com.example.mymealdabba.ui.registration.RegistrationFragment"
+        android:label="@string/menu_tiffin_mess_registration"
+        tools:layout="@layout/fragment_registration" />
+
+    <fragment
+        android:id="@+id/nav_works"
+        android:name="com.example.mymealdabba.ui.works.WorksFragment"
+        android:label="@string/menu_how_it_works"
+        tools:layout="@layout/fragment_works" />
+    <fragment
+        android:id="@+id/nav_specialOffer"
+        android:name="com.example.mymealdabba.ui.specaloffer.SpecalOfferFragment"
+        android:label="@string/menu_special_offer"
+        tools:layout="@layout/fragment_specaloffer" />
+
+    <fragment
+        android:id="@+id/nav_bookmark"
+        android:name="com.example.mymealdabba.ui.bookmark.BookmarkFragment"
+        android:label="@string/menu_bookmarks"
+        tools:layout="@layout/fragment_bookmark" />
+
+    <fragment
+        android:id="@+id/nav_shareApp"
+        android:name="com.example.mymealdabba.ui.shareapp.ShareAppFragment"
+        android:label="@string/menu_share_app"
+        tools:layout="@layout/fragment_shareapp" />
+
+    <fragment
+        android:id="@+id/nav_rateUs"
+        android:name="com.example.mymealdabba.ui.rateus.RateUsFragment"
+        android:label="@string/menu_rate_us"
+        tools:layout="@layout/fragment_rateus" />
+
+    <fragment
+        android:id="@+id/nav_aboutUs"
+        android:name="com.example.mymealdabba.ui.aboutus.AboutUsFragment"
+        android:label="@string/menu_about_us"
+        tools:layout="@layout/fragment_aboutus" />
+
+    <fragment
+        android:id="@+id/nav_connect"
+        android:name="com.example.mymealdabba.ui.connectwith.ConnectWithFragment"
+        android:label="@string/menu_connect_with_us"
+        tools:layout="@layout/fragment_connectwith" />
+</navigation>
