@@ -6,19 +6,34 @@
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/bg_rounded.xml" value="0.1385" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/edit_text_border.xml" value="0.1385" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/edittext_curve_bg.xml" value="0.1385" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_landing_page.xml" value="0.23802083333333332" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_login.xml" value="0.23802083333333332" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_login_otp_verification.xml" value="0.264" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_main.xml" value="0.23802083333333332" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_mess_details.xml" value="0.21388888888888888" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_navigation.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_otp_verification.xml" value="0.23802083333333332" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_otp_verification_dialog.xml" value="0.23802083333333332" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_sign_up.xml" value="0.23435897435897435" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_splach.xml" value="0.23802083333333332" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_splash.xml" value="0.23435897435897435" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/dialogconfirmotp.xml" value="0.23802083333333332" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_aboutus.xml" value="0.195382642154767" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_bookmark.xml" value="0.195382642154767" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_connectwith.xml" value="0.195382642154767" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_home.xml" value="0.195382642154767" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_mess_details.xml" value="0.195382642154767" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_rateus.xml" value="0.195382642154767" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_registration.xml" value="0.195382642154767" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_shareapp.xml" value="0.195382642154767" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_specaloffer.xml" value="0.195382642154767" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_works.xml" value="0.195382642154767" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/mess_listview_item.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/otp_page.xml" value="0.23802083333333332" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/view_pager_page_layout.xml" value="0.23802083333333332" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/menu/activity_navigation_drawer.xml" value="0.23802083333333332" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/menu/navigation.xml" value="0.23802083333333332" />
       </map>
     </option>
   </component>

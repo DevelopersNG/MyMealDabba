@@ -26,7 +26,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if (sessionManager.isLoggedIn()) {
-                    startActivity(new Intent(context, MessDetailsActivity.class));
+                    startActivity(new Intent(context, HomeActivity.class));
                 } else {
                     startActivity(new Intent(context, LoginActivity.class));
                 }
