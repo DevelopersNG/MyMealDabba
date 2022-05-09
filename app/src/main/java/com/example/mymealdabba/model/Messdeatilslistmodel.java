@@ -1,102 +1,37 @@
 package com.example.mymealdabba.model;
 
-import android.widget.ImageView;
+import java.util.List;
 
 public class Messdeatilslistmodel {
-    int img;
-    public boolean getType;
-    String MessName,MessAddress,MessMonthlyRate,TotalViews,MessType,MessCategory,MessService,MessExperience;
 
-    public Messdeatilslistmodel(int img, String messName, String messAddress, String messMonthlyRate, String totalViews, String messType, String messCategory, String messService, String messExperience) {
-        this.img = img;
+    public  List<ImageModel> Images;
 
-        MessName = messName;
-        MessAddress = messAddress;
-        MessMonthlyRate = messMonthlyRate;
-        TotalViews = totalViews;
-        MessType = messType;
-        MessCategory = messCategory;
-        MessService = messService;
-        MessExperience = messExperience;
-    }
+    public String MemberID;
+    public String MemberName;
+    public String ContactNo1;
+    public String BussinessAddress;
+    public String City;
+    public String Location;
+    public String MonthlyRate;
+    public String DailyRate;
+    public String TiffinRate;
+    public String StartTimeMorning;
+    public String CloseTimeMorning;
+    public String StartTimeEvening;
+    public String CloseTimeEvening;
+    public String Category;
+    public String Service;
+    public String ExpYears;
+    public String IsSpecialOrdersAccepted;
+    public String IsSpecialOrdersForPatientAccepted;
+    public String Type;
+    public String MessLink;
+    public String AddedOn;
+    public String Package;
+    public String Views;
+    public String Note;
+    public String CuisineType;
+    public List<ReviewsModel> Reviews;
 
-    public int getImg() {
-        return img;
-    }
 
-    public void setImg(int img) {
-        this.img = img;
-    }
-
-    public boolean isGetType() {
-        return getType;
-    }
-
-    public void setGetType(boolean getType) {
-        this.getType = getType;
-    }
-
-    public String getMessName() {
-        return MessName;
-    }
-
-    public void setMessName(String messName) {
-        MessName = messName;
-    }
-
-    public String getMessAddress() {
-        return MessAddress;
-    }
-
-    public void setMessAddress(String messAddress) {
-        MessAddress = messAddress;
-    }
-
-    public String getMessMonthlyRate() {
-        return MessMonthlyRate;
-    }
-
-    public void setMessMonthlyRate(String messMonthlyRate) {
-        MessMonthlyRate = messMonthlyRate;
-    }
-
-    public String getTotalViews() {
-        return TotalViews;
-    }
-
-    public void setTotalViews(String totalViews) {
-        TotalViews = totalViews;
-    }
-
-    public String getMessType() {
-        return MessType;
-    }
-
-    public void setMessType(String messType) {
-        MessType = messType;
-    }
-
-    public String getMessCategory() {
-        return MessCategory;
-    }
-
-    public void setMessCategory(String messCategory) {
-        MessCategory = messCategory;
-    }
-
-    public String getMessService() {
-        return MessService;
-    }
-
-    public void setMessService(String messService) {
-        MessService = messService;
-    }
-
-    public String getMessExperience() {
-        return MessExperience;
-    }
-
-    public void setMessExperience(String messExperience) {
-        MessExperience = messExperience;
-    }
 }

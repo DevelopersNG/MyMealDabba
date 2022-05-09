@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment {
 
 
         messdeatilslistmodels = new ArrayList<>();
-        messdeatilslistmodels.add(new Messdeatilslistmodel(R.drawable.listing_default_grey, "Shree Mess", "Nashik", "", "Views:", "Food mess", "Vegetarian", "Home Delivery", "6 years"));
+       // messdeatilslistmodels.add(new Messdeatilslistmodel(R.drawable.listing_default_grey, "Shree Mess", "Nashik", "", "Views:", "Food mess", "Vegetarian", "Home Delivery", "6 years"));
 
         messdeatlislist = new Messdeatlislist(getActivity(), messdeatilslistmodels);
         home_ver_recy.setAdapter(messdeatlislist);

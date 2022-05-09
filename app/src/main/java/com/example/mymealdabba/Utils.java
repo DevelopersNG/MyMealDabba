@@ -4,7 +4,7 @@ package com.example.mymealdabba;
 import java.nio.charset.StandardCharsets;
 
 public class Utils {
-    public static String URL = "http://192.168.1.36/mymealdabba_for_arati/mmdwebservice/search/";
+    public static String URL = "https://mymealdabba.com/stage/search/";
 
     public static int SERVER_TIMEOUT = 30000;
     public static String API_KEY = "mmdnashik";

@@ -150,7 +150,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-        b.btnSubmit.setOnClickListener(new View.OnClickListener() {
+        b.btnOTPClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 b.txtOTP.getText().clear();
@@ -170,7 +170,7 @@ public class SignUpActivity extends AppCompatActivity {
 
 
 
-        b.btnOTPClear.setOnClickListener(new View.OnClickListener() {
+        b.btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (checkForm1()) {
@@ -294,8 +294,6 @@ public class SignUpActivity extends AppCompatActivity {
         MySingleton.myGetMySingleton(context).myAddToRequest(stringRequest);
     }
 
-
-
     private void verifyOtp() {
         final ProgressDialog progressDialog = ProgressDialog.show(context, null, "processing...", false, false);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, otpVerifyUrl, new Response.Listener<String>() {
@@ -312,7 +310,6 @@ public class SignUpActivity extends AppCompatActivity {
                         Intent intent = new Intent(context, LoginActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
-
                     } else {
                         Toast.makeText(context, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
                     }

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.mymealdabba.MessDetailsActivity;
 import com.example.mymealdabba.R;
 import com.example.mymealdabba.model.Messdeatilslistmodel;
@@ -28,38 +29,39 @@ public class Messdeatlislist extends RecyclerView.Adapter<Messdeatlislist.ViewHo
         this.context = context;
         this.list=list;
 
-
-
     }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.mess_listview_item,parent,false));
-
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.mess_listview_item, parent, false);
+        return new Messdeatlislist.ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder,@SuppressLint("RecyclerView") int position) {
-        Messdeatilslistmodel currentItem= list.get(position);
+        Messdeatilslistmodel model= list.get(position);
 
-        holder.imageListViewMess.setImageResource(list.get(position).getImg());
-        holder.lblMessName.setText(list.get(position).getMessName());
-        holder.lblMessAddress.setText(list.get(position).getMessAddress());
-        holder.lblMessMonthlyRate.setText(list.get(position).getMessMonthlyRate());
-        holder.lblTotalViews.setText(list.get(position).getTotalViews());
-        holder.lblMessCategory.setText(list.get(position).getMessCategory());
-        holder.lblMessService.setText(list.get(position).getMessService());
-        holder.lblMessExperience.setText(list.get(position).getMessExperience());
+//        Glide.with(holder.imageListViewMess)
+//                .load(model.Images)
+//                .into(holder.imageListViewMess);
+
+        holder.lblMessName.setText(model.MemberName);
+        holder.lblMessAddress.setText(model.BussinessAddress);
+        holder.lblMessMonthlyRate.setText(model.MonthlyRate);
+        holder.lblTotalViews.setText(model.Views);
+        holder.lblMessCategory.setText(model.Category);
+        holder.lblMessService.setText(model.Service);
+        holder.lblMessExperience.setText(model.ExpYears);
 
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, MessDetailsActivity.class);
-                intent.putExtra("type",list.get(position).getType);
-                context.startActivity(intent);
-            }
-        });
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(context, MessDetailsActivity.class);
+//                intent.putExtra("type",list.get(position).getType);
+//                context.startActivity(intent);
+//            }
+//        });
     }
 
     @Override

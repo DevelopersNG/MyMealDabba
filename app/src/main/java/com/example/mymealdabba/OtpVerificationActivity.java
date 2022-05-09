@@ -96,7 +96,7 @@ public class OtpVerificationActivity extends AppCompatActivity {
                     if (code.equalsIgnoreCase("1")) {
 
                         sessionManager.createSessionLogin(userId);
-                        Intent intent = new Intent(context, MessDetailsActivity.class);
+                        Intent intent = new Intent(context, HomeActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
 
