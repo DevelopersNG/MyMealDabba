@@ -1,12 +1,18 @@
 package com.example.mymealdabba;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -24,6 +30,7 @@ import com.example.mymealdabba.adapter.Messdeatlislist;
 import com.example.mymealdabba.databinding.ActivityNavigationBinding;
 import com.example.mymealdabba.model.DataModelCity;
 import com.example.mymealdabba.model.DataModelMessDetailsList;
+import com.example.mymealdabba.ui.bookmark.BookmarkFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 
@@ -38,7 +45,7 @@ public class NavigationActivity extends AppCompatActivity {
     String url = Utils.URL + "getMessList";
     DataModelMessDetailsList data;
     String cityId;
-
+    ActionBarDrawerToggle actionBarDrawerToggle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,13 +61,100 @@ public class NavigationActivity extends AppCompatActivity {
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_Registration, R.id.nav_works, R.id.nav_specialOffer, R.id.nav_bookmark, R.id.nav_shareApp, R.id.nav_rateUs, R.id.nav_aboutUs, R.id.nav_connect)
-                .setOpenableLayout(drawer)
-                .build();
-//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigation);
+//        mAppBarConfiguration = new AppBarConfiguration.Builder(
+//                R.id.nav_home, R.id.nav_Registration, R.id.nav_works, R.id.nav_specialOffer, R.id.nav_bookmark, R.id.nav_shareApp, R.id.nav_rateUs, R.id.nav_aboutUs, R.id.nav_connect)
+//                .setOpenableLayout(drawer)
+//                .build();
+////        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigation);
 //        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
       //  NavigationUI.setupWithNavController(navigationView, navController);
+        setSupportActionBar(binding.mtbNavigation);
+
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, binding.drawerLayout, binding.mtbNavigation, R.string.navigation_open, R.string.navigation_close);
+        binding.drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+
+
+        binding.nvHeader.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = (item.getItemId());
+
+                if (id == R.id.nav_home) {
+                    Intent intent = new Intent(context, HomeActivity.class);
+                    startActivity(intent);
+                    binding.drawerLayout.closeDrawer(GravityCompat.START);
+                    return true;
+
+                } else if (id == R.id.nav_works) {
+                    Intent intent = new Intent(context, MainActivity.class);
+                    startActivity(intent);
+                    binding.drawerLayout.closeDrawer(GravityCompat.START);
+                    return true;
+
+                } else if (id == R.id.nav_specialOffer) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("https://mymealdabba.com/site/offers"));
+                    try{
+                        startActivity(intent);
+                    }
+                    catch(Exception e){
+                        intent.setData(Uri.parse("https://mymealdabba.com/site/offers"));
+                    }
+                }else if(id==R.id.nav_bookmark) {
+                    Intent intent = new Intent(context, BookmarkFragment.class);
+                    startActivity(intent);
+                    binding.drawerLayout.closeDrawer(GravityCompat.START);
+                    return true;
+
+                }else if(id==R.id.nav_aboutUs) {
+                    Intent intent = new Intent(context, AboutUs.class);
+                    startActivity(intent);
+                    binding.drawerLayout.closeDrawer(GravityCompat.START);
+                    return true;
+
+                }else if(id==R.id.nav_Registration) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("https://mymealdabba.com/register"));
+                    try{
+                        startActivity(intent);
+                    }
+                    catch(Exception e){
+                       // intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=app.com.mymealdabba"));
+                    }
+
+                }else if(id==R.id.nav_connect) {
+                    Intent intent = new Intent(context, ConnectWithActivity.class);
+                    startActivity(intent);
+                    binding.drawerLayout.closeDrawer(GravityCompat.START);
+                    return true;
+
+                }else if(id==R.id.nav_rateUs) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=app.com.mymealdabba"));
+                    try{
+                        startActivity(intent);
+                    }
+                    catch(Exception e){
+                        intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=app.com.mymealdabba"));
+                    }
+                } else if (id == R.id.nav_shareApp) {
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plain");
+                    String shareSubText = "\t\n" +
+                            "MyMealDabba (Tiffin Service Listings)";
+                    String shareBodyText = "https://play.google.com/store/apps/details?id=app.com.mymealdabba";
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, shareSubText);
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, shareBodyText);
+                    startActivity(Intent.createChooser(shareIntent, "Share With"));
+                    return true;
+                }
+                return false;
+            }
+        });
+
+
+
 
         getData();
 
@@ -73,13 +167,6 @@ public class NavigationActivity extends AppCompatActivity {
         return true;
     }
 
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigation);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
-    }
 
     public void getData() {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {

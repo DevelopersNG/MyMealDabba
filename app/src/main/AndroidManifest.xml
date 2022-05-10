@@ -26,6 +26,12 @@
         android:usesCleartextTraffic="true"
         tool:replace="android:allowBackup">
         <activity
+            android:name="com.example.mymealdabba.ConnectWithActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.mymealdabba.AboutUs"
+            android:exported="false" />
+        <activity
             android:name="com.example.mymealdabba.HomeActivity"
             android:exported="false" />
         <activity

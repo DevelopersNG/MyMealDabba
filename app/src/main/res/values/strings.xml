@@ -123,4 +123,8 @@
     <string name="menu_offer">OFFER</string>
     <string name="menu_contact">CONTACT</string>
 
+
+    <string name="navigation_open">Open Navigation Drawer</string>
+    <string name="navigation_close">Close Navigation Drawer</string>
+
 </resources>

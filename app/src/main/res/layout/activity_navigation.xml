@@ -5,42 +5,62 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-    <include
-        android:id="@+id/app_bar_navigation"
-        layout="@layout/app_bar_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-<!--    <com.google.android.material.appbar.AppBarLayout-->
-<!--        android:id="@+id/ablMatch"-->
+<!--    <include-->
+<!--        android:id="@+id/app_bar_navigation"-->
+<!--        layout="@layout/app_bar_navigation"-->
 <!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@color/yellow_color">-->
+<!--        android:layout_height="match_parent" />-->
 
-<!--        <com.google.android.material.appbar.MaterialToolbar-->
-<!--            android:id="@+id/mtbMatch"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="?attr/actionBarSize"-->
-<!--            android:layout_marginBottom="5dp"-->
-<!--            android:background="@color/yellow_color"-->
-<!--            android:minHeight="?attr/actionBarSize"-->
-<!--            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-<!--            android:tooltipText="@string/app_name"-->
-<!--            app:title="@string/app_name"-->
-<!--            app:titleMarginStart="5dp"-->
-<!--            app:titleTextColor="@color/white"-->
-<!--            tools:ignore="MissingConstraints"/>-->
 
-<!--    </com.google.android.material.appbar.AppBarLayout>-->
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMessList"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/ablMatch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/mtbNavigation"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginBottom="5dp"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                android:tooltipText="@string/app_name"
+                app:title="@string/app_name"
+                app:titleMarginStart="5dp"
+                app:titleTextColor="@color/white"
+                tools:ignore="MissingConstraints"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMessList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nvHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white"
+        app:headerLayout="@layout/nav_header_navigation"
+        app:itemHorizontalPadding="30dp"
+        app:menu="@menu/activity_navigation_drawer" />
+
+
 
 <!--    <com.google.android.material.navigation.NavigationView-->
 <!--        android:id="@+id/nav_view"-->

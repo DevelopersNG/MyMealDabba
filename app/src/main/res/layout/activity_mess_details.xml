@@ -23,16 +23,16 @@
                 android:layout_height="250dp">
 
 
-<!--                <androidx.recyclerview.widget.RecyclerView-->
-<!--                    android:id="@+id/product_hor_recy"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="5dp"-->
+                <!--                <androidx.recyclerview.widget.RecyclerView-->
+                <!--                    android:id="@+id/product_hor_recy"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginStart="5dp"-->
 
-<!--                    android:layout_marginTop="5dp"-->
-<!--                    android:layout_marginEnd="5dp"-->
-<!--                    android:layout_marginBottom="5dp"-->
-<!--                    tools:ignore="MissingConstraints" />-->
+                <!--                    android:layout_marginTop="5dp"-->
+                <!--                    android:layout_marginEnd="5dp"-->
+                <!--                    android:layout_marginBottom="5dp"-->
+                <!--                    tools:ignore="MissingConstraints" />-->
 
                 <TextView
                     android:id="@+id/txtAvgRating"
@@ -145,19 +145,6 @@
                 android:background="@drawable/ripple_button"
                 android:gravity="center"
                 android:text="TAP TO RATE"
-                android:textColor="@color/white"
-                android:textSize="13dp"
-
-                />
-            <TextView
-                android:id="@+id/btnlogout"
-                android:layout_width="120dp"
-                android:layout_height="33dp"
-                android:layout_below="@+id/lblMessAddress"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/ripple_button"
-                android:gravity="center"
-                android:text="logout"
                 android:textColor="@color/white"
                 android:textSize="13dp"
 
@@ -623,7 +610,7 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/rectangle_box_contact_details"
                 android:padding="10dp"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/lblTitleContactNo"

@@ -1,8 +1,11 @@
 package com.example.mymealdabba.adapter;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +19,7 @@ import com.bumptech.glide.Glide;
 import com.example.mymealdabba.MessDetailsActivity;
 import com.example.mymealdabba.R;
 import com.example.mymealdabba.model.Messdeatilslistmodel;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -54,14 +58,14 @@ public class Messdeatlislist extends RecyclerView.Adapter<Messdeatlislist.ViewHo
         holder.lblMessExperience.setText(model.ExpYears);
 
 
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(context, MessDetailsActivity.class);
-//                intent.putExtra("type",list.get(position).getType);
-//                context.startActivity(intent);
-//            }
-//        });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, MessDetailsActivity.class);
+                intent.putExtra("data", new Gson().toJson(model));
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

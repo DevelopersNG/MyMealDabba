@@ -17,7 +17,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.mymealdabba.databinding.ActivityOtpVerificationBinding;
-import com.example.mymealdabba.ui.home.HomeFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;

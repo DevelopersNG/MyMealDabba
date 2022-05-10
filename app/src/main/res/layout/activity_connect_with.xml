@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.connectwith.ConnectWithFragment">
+    android:layout_height="match_parent">
 
 
     <ScrollView
@@ -34,16 +33,16 @@
                     android:id="@+id/lblWeAreSocial"
                     android:layout_width="280dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:paddingBottom="5dp"
-                    android:paddingTop="5dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="80dp"
                     android:background="@color/green_color"
-                    android:text="We\'re Social"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
 
-                    android:textColor="@color/white"
-                    android:textSize="22dp"
+                    android:text="We\'re Social"
                     android:textAlignment="center"
-                    android:layout_centerHorizontal="true"/>
+                    android:textColor="@color/white"
+                    android:textSize="22dp" />
 
                 <ImageView
                     android:id="@+id/imgWeAreSocial"
@@ -71,23 +70,28 @@
 
                 <ImageView
                     android:id="@+id/imageViewFacebook"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_fb_icn" />
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:background="@drawable/ic_facebook_svgrepo_com" />
 
-                <ImageView
-                    android:id="@+id/imageViewTwitter"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="25dp"
-                    android:src="@drawable/ic_tw_icn"/>
+
 
                 <ImageView
                     android:id="@+id/imageViewInstagram"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="25dp"
-                    android:src="@drawable/ic_inst_icn"/>
+                    android:src="@drawable/ic_instagram_svgrepo_com__1_"/>
+
+
+                <ImageView
+                    android:id="@+id/imageViewTwitter"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="25dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:background="@drawable/ic_twitter_svgrepo_com"/>
 
                 <ImageView
                     android:id="@+id/imageViewLinkedIn"
@@ -99,10 +103,10 @@
 
                 <ImageView
                     android:id="@+id/imageViewWhatsApp"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="25dp"
-                    android:src="@drawable/ic_whatsapp_icn"/>
+                    android:src="@drawable/ic_whatsapp_svgrepo_com"/>
 
 
             </LinearLayout>
@@ -133,9 +137,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
+                    android:justificationMode="inter_word"
                     android:layout_marginRight="10dp"
                     android:text="Any questions or comments you would like to share with us then please email us on "
                     android:textColor="@color/dark_title_color"
@@ -149,8 +153,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_alignRight="@+id/lblVisitUsText"
-
-                    android:layout_marginLeft="40dp"
+                  android:layout_gravity="center"
                     android:text="social@mymealdabba.com"
                     android:textColor="@color/blue"
                     android:textSize="15sp"
