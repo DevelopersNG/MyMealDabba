@@ -9,6 +9,10 @@ import java.util.HashMap;
 
 
 public class SessionManager {
+
+
+    public  static  final String KEY_CITY_ID="city_id";
+
     public static final String KEY_ID = "id";
 
     private static final String PREF_NAME = "userData";
@@ -35,7 +39,6 @@ public class SessionManager {
     }
 
 
-
     public boolean isLoggedIn() {
         return pref.getBoolean(IS_LOGIN, false);
     }
@@ -43,6 +46,17 @@ public class SessionManager {
     public String getId() {
         return pref.getString(KEY_ID, null);
     }
+
+
+    public void setCityId(String city_id) {
+        editor.putString(KEY_CITY_ID, city_id);
+        editor.commit();
+    }
+
+    public String getCityId() {
+        return pref.getString(KEY_CITY_ID, "");
+    }
+
 
     public void clearSession() {
         editor.clear();

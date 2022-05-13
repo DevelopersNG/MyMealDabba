@@ -26,6 +26,15 @@
         android:usesCleartextTraffic="true"
         tool:replace="android:allowBackup">
         <activity
+            android:name="com.example.mymealdabba.UserCurrentLocationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.mymealdabba.BookmarkDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.mymealdabba.BookMarkActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.mymealdabba.ConnectWithActivity"
             android:exported="false" />
         <activity

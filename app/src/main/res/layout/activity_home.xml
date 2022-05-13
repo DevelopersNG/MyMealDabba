@@ -29,12 +29,15 @@
             android:id="@+id/svCityList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+
+            android:background="@drawable/searchview_border"
+            app:iconifiedByDefault="false"
             app:queryHint="Enter Your City" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCityName"
             android:layout_width="match_parent"
+
             android:layout_height="match_parent" />
 
     </LinearLayout>

@@ -1,11 +1,21 @@
 package com.example.mymealdabba;
 
 
+import android.content.Context;
+import android.util.Log;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.toolbox.StringRequest;
+
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Utils {
     public static String URL = "https://mymealdabba.com/stage/search/";
-
+public  static  String IMAGEURL="http://mymealdabba.com/backend/web/uploads/";
     public static int SERVER_TIMEOUT = 30000;
     public static String API_KEY = "mmdnashik";
 
@@ -35,4 +45,20 @@ public class Utils {
         }
     }
 
+    public static void favourite(Context context, String memberId) {
+        String url = Utils.URL + "insertBookmarkDetails";
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, null, null) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("apikey", Utils.API_KEY);
+                params.put("memberId",memberId);
+                params.put("userappId",  new SessionManager(context).getId());
+                Log.e("bookmark", params.toString());
+                return params;
+            }
+        };
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(30000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        MySingleton.myGetMySingleton(context).myAddToRequest(stringRequest);
+    }
 }

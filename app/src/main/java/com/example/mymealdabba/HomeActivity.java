@@ -34,7 +34,6 @@ public class HomeActivity extends AppCompatActivity {
     DataModelCity data;
     String url = "https://mymealdabba.com/stage/search/getAllCities";
     CityAdapter cityAdapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,29 +44,17 @@ public class HomeActivity extends AppCompatActivity {
         getData();
     }
 
-
     private void listener() {
 
-        b.svCityList.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                filter(newText);
-                return false;
-            }
-        });
     }
+
 
 
     private void filter(String text) {
         ArrayList<CityModel> filteredList = new ArrayList<>();
-
         for (CityModel item : data.Cities) {
-            if (item.City.toLowerCase().contains(text.toString().toLowerCase(Locale.ROOT))){
+            if (item.City.toLowerCase().startsWith(text.toString().toLowerCase(Locale.ROOT),0)){
                 filteredList.add(item);
             }
         }
@@ -86,11 +73,23 @@ public class HomeActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 Log.e("response", response);
                 Gson gson = new Gson();
+
                 data = gson.fromJson(response, DataModelCity.class);
                 if (data.result == 1) {
                     Log.e("cities", new Gson().toJson(data.Cities));
-//                    setRecyclerView();
-                    setSearch();
+                  //  setSearch();
+                    b.svCityList.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                        @Override
+                        public boolean onQueryTextSubmit(String query) {
+                            return false;
+                        }
+
+                        @Override
+                        public boolean onQueryTextChange(String newText) {
+                            filter(newText);
+                            return false;
+                        }
+                    });
                 }
             }
         },

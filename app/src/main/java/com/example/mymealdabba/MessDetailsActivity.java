@@ -10,9 +10,6 @@ import android.view.View;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.Glide;
-import com.example.mymealdabba.adapter.Messdeatlislist;
-import com.example.mymealdabba.databinding.ActivityLoginBinding;
 import com.example.mymealdabba.databinding.ActivityMessDetailsBinding;
 import com.example.mymealdabba.model.Messdeatilslistmodel;
 import com.google.gson.Gson;
@@ -87,6 +84,13 @@ public class MessDetailsActivity extends AppCompatActivity {
             }
         });
 
+        b.imageViewBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
     }
 
 
@@ -104,12 +108,30 @@ public class MessDetailsActivity extends AppCompatActivity {
         b.lblCategory.setText(model.Category);
         b.lblCuisineType.setText(model.CuisineType);
         b.lblService.setText(model.Service);
-        b.lblSpecialOrders.setText(model.IsSpecialOrdersAccepted);
-        b.lblSpecialOrdersPatient.setText(model.IsSpecialOrdersForPatientAccepted);
+
+        if(model.IsSpecialOrdersAccepted.equals("1"))
+        {
+            b.lblSpecialOrders.setText("YES");
+        }
+        else {
+            b.lblSpecialOrders.setText("Not Available");
+        }
+
+
+
+        if(model.IsSpecialOrdersForPatientAccepted.equals("1"))
+        {
+            b.lblSpecialOrdersPatient.setText("YES");
+        }
+        else {
+            b.lblSpecialOrdersPatient.setText("Not  Meal Available For Patient");
+        }
+
+        ((MessDetailsActivity) context).b.mtbNavigationMess.setTitle(model.MemberName);
 
         b.lblMonthlyRate.setText(model.MonthlyRate);
         b.lblDailyRate.setText(model.DailyRate);
-        b.lblTime.setText(model.CloseTimeMorning + "&"+ model.CloseTimeEvening);
+        b.lblTime.setText(model.StartTimeMorning+"A.M"+"TO"+model.CloseTimeMorning+"A.M"+ "&"+model.StartTimeEvening+"P.M"+"TO"+model.CloseTimeEvening+"P.M");
         b.lblNotes.setText(model.Note);
         b.lblContactNo.setText(model.ContactNo1);
         b.lblContactAddress.setText(model.Location);

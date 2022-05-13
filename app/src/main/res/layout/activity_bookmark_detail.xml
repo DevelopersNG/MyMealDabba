@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white">
+    tools:context=".MessDetailsActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/ablBookMark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/mtbNavigationBookmark"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginBottom="5dp"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:tooltipText="@string/app_name"
+            app:title="@string/app_name"
+            app:titleMarginStart="5dp"
+            app:titleTextColor="@color/white"
+            tools:ignore="MissingConstraints"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -16,22 +38,28 @@
             android:paddingBottom="20dp">
 
             <RelativeLayout
-                android:id="@+id/relativeLayoutMessImages"
+                android:id="@+id/relativeLayoutFavMessImages"
                 android:layout_width="fill_parent"
-                android:layout_height="250dp">
+                android:layout_height="250dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="0dp">
 
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/product_hor_recy"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_marginTop="5dp"
+                <!--                <androidx.recyclerview.widget.RecyclerView-->
+                <!--                    android:id="@+id/product_hor_recy"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginStart="5dp"-->
 
-                    tools:ignore="MissingConstraints" />
+                <!--                    android:layout_marginTop="5dp"-->
+                <!--                    android:layout_marginEnd="5dp"-->
+                <!--                    android:layout_marginBottom="5dp"-->
+                <!--                    tools:ignore="MissingConstraints" />-->
 
                 <TextView
-                    android:id="@+id/txtAvgRating"
+                    android:id="@+id/txtFavAvgRating"
                     android:layout_width="40dp"
                     android:layout_height="27dp"
                     android:layout_alignParentRight="true"
@@ -62,12 +90,15 @@
                     android:visibility="gone" />
 
                 <ImageView
-                    android:id="@+id/imageViewBack"
+                    android:id="@+id/imageFavViewBack"
                     android:layout_width="23dp"
                     android:layout_height="23dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
-                    android:layout_margin="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
                     android:src="@drawable/ic_baseline_arrow_back_24" />
 
                 <RelativeLayout
@@ -104,10 +135,10 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/lblMessName"
+                android:id="@+id/lblFavMessName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayoutMessImages"
+                android:layout_below="@+id/relativeLayoutFavMessImages"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="10dp"
@@ -117,10 +148,10 @@
                 android:textSize="25dp" />
 
             <TextView
-                android:id="@+id/lblMessAddress"
+                android:id="@+id/lblFavMessAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblMessName"
+                android:layout_below="@+id/lblFavMessName"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="5dp"
@@ -131,14 +162,15 @@
                 android:textColor="@color/details_addr"
                 android:textSize="18dp" />
 
-            <Button
-                android:id="@+id/btnTapToRate"
+            <TextView
+                android:id="@+id/btnFavTapToRate"
                 android:layout_width="120dp"
                 android:layout_height="33dp"
-                android:layout_below="@+id/lblMessAddress"
+                android:layout_below="@+id/lblFavMessAddress"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/submit_rating_button"
+                android:background="@drawable/ripple_button"
+                android:gravity="center"
                 android:text="TAP TO RATE"
                 android:textColor="@color/white"
                 android:textSize="13dp"
@@ -146,10 +178,10 @@
                 />
 
             <RelativeLayout
-                android:id="@+id/relativeLayoutType"
+                android:id="@+id/relativeFavLayoutType"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/btnTapToRate"
+                android:layout_below="@+id/btnFavTapToRate"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="30dp"
@@ -157,7 +189,7 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/lblTypeTitle"
+                    android:id="@+id/lblFavTypeTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -168,10 +200,10 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/lblType"
+                android:id="@+id/lblFavType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayoutType"
+                android:layout_below="@+id/relativeFavLayoutType"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
@@ -183,10 +215,10 @@
                 android:textSize="17dp" />
 
             <RelativeLayout
-                android:id="@+id/relativeLayoutExperience"
+                android:id="@+id/relativeLayoutFavExperience"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblType"
+                android:layout_below="@+id/lblFavType"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="30dp"
@@ -194,7 +226,7 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/lblExperienceTitle"
+                    android:id="@+id/lblFavExperienceTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -205,10 +237,10 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/lblExperience"
+                android:id="@+id/lblFavExperience"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayoutExperience"
+                android:layout_below="@+id/relativeLayoutFavExperience"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -220,10 +252,10 @@
                 android:textSize="17dp" />
 
             <RelativeLayout
-                android:id="@+id/relativeLayoutCategory"
+                android:id="@+id/relativeLayoutFavCategory"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblExperience"
+                android:layout_below="@+id/lblFavExperience"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="30dp"
@@ -231,7 +263,7 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/lblCategoryTitle"
+                    android:id="@+id/lblFavCategoryTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -243,10 +275,10 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/lblCategory"
+                android:id="@+id/lblFavCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayoutCategory"
+                android:layout_below="@+id/relativeLayoutFavCategory"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -258,10 +290,10 @@
                 android:textSize="17dp" />
 
             <RelativeLayout
-                android:id="@+id/relativeLayoutCuisineType"
+                android:id="@+id/relativeLayoutFavCuisineType"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblCategory"
+                android:layout_below="@+id/lblFavCategory"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="30dp"
@@ -269,7 +301,7 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/lblCuisineTypeTitle"
+                    android:id="@+id/lblFavCuisineTypeTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -281,10 +313,10 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/lblCuisineType"
+                android:id="@+id/lblFavCuisineType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayoutCuisineType"
+                android:layout_below="@+id/relativeLayoutFavCuisineType"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -296,10 +328,10 @@
                 android:textSize="17dp" />
 
             <RelativeLayout
-                android:id="@+id/relativeLayoutService"
+                android:id="@+id/relativeLayoutFavService"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblCuisineType"
+                android:layout_below="@+id/lblFavCuisineType"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="30dp"
@@ -307,7 +339,7 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/lblServiceTitle"
+                    android:id="@+id/lblFavServiceTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -319,10 +351,10 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/lblService"
+                android:id="@+id/lblFavService"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayoutService"
+                android:layout_below="@+id/relativeLayoutFavService"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -334,10 +366,10 @@
                 android:textSize="17dp" />
 
             <RelativeLayout
-                android:id="@+id/relativeLayoutSpecialOrders"
+                android:id="@+id/relativeLayoutFavSpecialOrders"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblService"
+                android:layout_below="@+id/lblFavService"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="30dp"
@@ -345,7 +377,7 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/lblSpecialOrdersTitle"
+                    android:id="@+id/lblFavSpecialOrdersTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -356,10 +388,10 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/lblSpecialOrders"
+                android:id="@+id/lblFavSpecialOrders"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayoutSpecialOrders"
+                android:layout_below="@+id/relativeLayoutFavSpecialOrders"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -372,18 +404,19 @@
 
 
             <RelativeLayout
-                android:id="@+id/relativeLayoutSpecialOrdersPatient"
+                android:id="@+id/relativeLayoutFavSpecialOrdersPatient"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblSpecialOrders"
+                android:layout_below="@+id/lblFavSpecialOrders"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="30dp"
                 android:background="@drawable/heading_bg_thin"
+                android:gravity="center"
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/lblSpecialOrdersPatientTitle"
+                    android:id="@+id/lblFavSpecialOrdersPatientTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/title_special_orders_patient"
@@ -394,10 +427,10 @@
 
 
             <TextView
-                android:id="@+id/lblSpecialOrdersPatient"
+                android:id="@+id/lblFavSpecialOrdersPatient"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayoutSpecialOrdersPatient"
+                android:layout_below="@+id/relativeLayoutFavSpecialOrdersPatient"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -410,10 +443,10 @@
 
 
             <RelativeLayout
-                android:id="@+id/relativeLayoutMonthlyRate"
+                android:id="@+id/relativeLayoutFavMonthlyRate"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblSpecialOrdersPatient"
+                android:layout_below="@+id/lblFavSpecialOrdersPatient"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="30dp"
@@ -421,7 +454,7 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/lblMonthlyRateTitle"
+                    android:id="@+id/lblFavMonthlyRateTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -432,10 +465,10 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/lblMonthlyRate"
+                android:id="@+id/lblFavMonthlyRate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayoutMonthlyRate"
+                android:layout_below="@+id/relativeLayoutFavMonthlyRate"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -447,10 +480,10 @@
                 android:textSize="17dp" />
 
             <RelativeLayout
-                android:id="@+id/relativeLayoutDailyRate"
+                android:id="@+id/relativeLayoutFavDailyRate"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblMonthlyRate"
+                android:layout_below="@+id/lblFavMonthlyRate"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="30dp"
@@ -458,7 +491,7 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/lblDailyRateTitle"
+                    android:id="@+id/lblFavDailyRateTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -469,10 +502,10 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/lblDailyRate"
+                android:id="@+id/lblFavDailyRate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayoutDailyRate"
+                android:layout_below="@+id/relativeLayoutFavDailyRate"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -484,10 +517,10 @@
                 android:textSize="17dp" />
 
             <RelativeLayout
-                android:id="@+id/relativeLayoutTime"
+                android:id="@+id/relativeLayoutFavTime"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblDailyRate"
+                android:layout_below="@+id/lblFavDailyRate"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="30dp"
@@ -495,7 +528,7 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/lblTimeTitle"
+                    android:id="@+id/lblFavTimeTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -506,10 +539,10 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/lblTime"
+                android:id="@+id/lblFavTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayoutTime"
+                android:layout_below="@+id/relativeLayoutFavTime"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -521,10 +554,10 @@
                 android:textSize="17dp" />
 
             <RelativeLayout
-                android:id="@+id/relativeLayoutNotes"
+                android:id="@+id/relativeLayoutFavNotes"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblTime"
+                android:layout_below="@+id/lblFavTime"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="30dp"
@@ -532,7 +565,7 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/lblNotesTitle"
+                    android:id="@+id/lblFavNotesTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -543,10 +576,10 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/lblNotes"
+                android:id="@+id/lblFavNotes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayoutNotes"
+                android:layout_below="@+id/relativeLayoutFavNotes"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -558,12 +591,12 @@
                 android:textSize="17dp" />
 
             <RelativeLayout
-                android:id="@+id/relativeLayoutAlert"
+                android:id="@+id/relativeLayoutFavAlert"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblNotes"
+                android:layout_below="@+id/lblFavNotes"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/rectangle_box_alert"
                 android:padding="10dp">
@@ -594,19 +627,20 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/relativeLayoutContactDetails"
+                android:id="@+id/relativeLayoutFavContactDetails"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayoutAlert"
+                android:layout_below="@+id/relativeLayoutFavAlert"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/rectangle_box_contact_details"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:visibility="gone">
 
                 <TextView
-                    android:id="@+id/lblTitleContactNo"
+                    android:id="@+id/lblFavTitleContactNo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -615,31 +649,42 @@
                     android:textSize="16dp" />
 
                 <TextView
-                    android:id="@+id/lblContactNo"
+                    android:id="@+id/lblFavContactNo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_toRightOf="@+id/lblTitleContactNo"
+                    android:layout_toRightOf="@+id/lblFavTitleContactNo"
                     android:text="@string/contact_no"
                     android:textColor="@color/contact_no"
                     android:textSize="16dp" />
+
+
+                <ImageView
+                    android:id="@+id/Favcall"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:src="@drawable/ic_baseline_phone_24" />
 
                 <TextView
                     android:id="@+id/lblTitleAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/lblTitleContactNo"
+                    android:layout_below="@+id/lblFavTitleContactNo"
                     android:layout_marginTop="8dp"
                     android:text="@string/address"
                     android:textColor="@color/contact_no_title"
                     android:textSize="16dp" />
 
                 <TextView
-                    android:id="@+id/lblContactAddress"
+                    android:id="@+id/lblFavContactAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/lblTitleContactNo"
+                    android:layout_below="@+id/lblFavTitleContactNo"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="8dp"
                     android:layout_toRightOf="@+id/lblTitleAddress"
@@ -649,11 +694,11 @@
 
             </RelativeLayout>
 
-            <Button
-                android:id="@+id/btnViewContactDetails"
+            <TextView
+                android:id="@+id/btnFavViewContactDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayoutContactDetails"
+                android:layout_below="@+id/relativeLayoutFavContactDetails"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/view_contact_details_rounded_button"
@@ -664,4 +709,5 @@
 
         </RelativeLayout>
     </ScrollView>
+
 </RelativeLayout>
