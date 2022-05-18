@@ -7,13 +7,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatToggleButton;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -21,7 +19,6 @@ import com.example.mymealdabba.MessDetailsActivity;
 import com.example.mymealdabba.R;
 import com.example.mymealdabba.Utils;
 import com.example.mymealdabba.model.ImageModel;
-import com.example.mymealdabba.model.LocationModel;
 import com.example.mymealdabba.model.Messdeatilslistmodel;
 import com.google.gson.Gson;
 
@@ -36,6 +33,7 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
         this.list = list;
 
     }
+
     public void filterList(List<Messdeatilslistmodel> filterlList) {
         // below line is to add our filtered
         // list in our course array list.
@@ -56,20 +54,17 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Messdeatilslistmodel model = list.get(position);
 
-
         for (ImageModel image : model.Images) {
-            Log.e("image",Utils.IMAGEURL+ image.ImagePath);
+            Log.e("image", Utils.IMAGEURL + image.ImagePath);
             if (image.IsDefault.equalsIgnoreCase("1")) {
                 Glide.with(context)
-                        .load(Utils.IMAGEURL+ image.ImagePath)
+                        .load(Utils.IMAGEURL + image.ImagePath)
                         .into(holder.imageListViewMess);
 
                 break;
-            }
-            else
-            {
+            } else {
                 Glide.with(context)
-                        .load(Utils.IMAGEURL+ image.ImagePath)
+                        .load(Utils.IMAGEURL + image.ImagePath)
                         .into(holder.imageListViewMess);
             }
         }
@@ -81,6 +76,8 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
         holder.lblMessCategory.setText(model.Category);
         holder.lblMessService.setText(model.Service);
         holder.lblMessExperience.setText(model.ExpYears);
+
+        holder.imageViewFav.setChecked(model.BookMarksStatus.equals("1"));
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -94,37 +91,22 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
 
 
 
-        if (model.BookMarksStatus.equals("1")) {
-//Set the string to true
-           holder.imageViewFav.setChecked(true);
-        } else
-        {
-            holder.imageViewFav.setSelected(false);
-        }
-
-
-        if(model.Promoted.equals("1"))
-        {
-           //
+        if (model.Promoted.equals("1")) {
+            //
             holder.lblPromoted.setVisibility(View.VISIBLE);
-        }
-        else
-        {
+        } else {
             holder.lblPromoted.setVisibility(View.GONE);
         }
 
-
-
-
         holder.imageViewFav.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
-                if (holder.imageViewFav.isSelected()) {
+            public void onClick(View view) {
+                if (holder.imageViewFav.isChecked()) {
                     Utils.favourite(context, model.MemberID);
+                    model.BookMarksStatus = "1";
                 } else {
-//                    list.remove(model.MemberID);
-//                    notifyItemRemoved(position);
+                    Utils.favourite(context, model.MemberID);
+                    model.BookMarksStatus = "0";
                 }
             }
         });
@@ -145,7 +127,7 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
         public ViewHolder(@NonNull View itemView) {
 
             super(itemView);
-            imageViewFav = itemView.findViewById(R.id.imageViewFav);
+            imageViewFav = itemView.findViewById(R.id.tbBookmarkFav);
             imageListViewMess = itemView.findViewById(R.id.imageListViewMess);
             lblMessName = itemView.findViewById(R.id.lblMessName);
             lblPromoted = itemView.findViewById(R.id.lblPromoted);

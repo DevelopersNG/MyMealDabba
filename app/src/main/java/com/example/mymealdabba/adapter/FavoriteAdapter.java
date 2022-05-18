@@ -10,11 +10,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatToggleButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mymealdabba.BookmarkDetailActivity;
 import com.example.mymealdabba.MessDetailsActivity;
 import com.example.mymealdabba.R;
+import com.example.mymealdabba.Utils;
 import com.example.mymealdabba.model.Messdeatilslistmodel;
 import com.google.gson.Gson;
 
@@ -54,6 +56,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
         holder.lblFavMessExperience.setText(model.ExpYears);
 
 
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,6 +75,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageFavListViewMess;
+        AppCompatToggleButton tbBookmarkFav;
         TextView lblFavMessName,lblFavPromoted,lblFavMessAddress,lblFavMessMonthlyRate,lblFavTotalViews,lblFavMessCategory,lblFavMessService,lblFavMessExperience;
         public ViewHolder(@NonNull View itemView) {
 
@@ -85,7 +89,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
             lblFavMessCategory=itemView.findViewById(R.id.lblFavMessCategory);
             lblFavMessService=itemView.findViewById(R.id.lblFavMessService);
             lblFavMessExperience=itemView.findViewById(R.id.lblFavMessExperience);
-
+            tbBookmarkFav = itemView.findViewById(R.id.tbBookmarkFav);
         }
     }
 }

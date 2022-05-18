@@ -40,7 +40,7 @@ public class BookMarkActivity extends AppCompatActivity {
         b = ActivityBookMarkBinding.inflate(getLayoutInflater());
         setContentView(b.getRoot());
         context = this;
-        sessionManager=new SessionManager(context);
+        sessionManager = new SessionManager(context);
         getData();
     }
 
@@ -68,8 +68,8 @@ public class BookMarkActivity extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("apikey", Utils.API_KEY);
-                params.put("CityID",sessionManager.getCityId());
-                params.put("UserID",sessionManager.getId());
+                params.put("CityID", sessionManager.getCityId());
+                params.put("UserID", sessionManager.getId());
                 Log.e("params", params.toString());
                 return params;
             }
@@ -88,25 +88,22 @@ public class BookMarkActivity extends AppCompatActivity {
             }
         }
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
-        b.rvFavorite.setLayoutManager(layoutManager);
-        b.rvFavorite.setHasFixedSize(true);
-        b.rvFavorite.setNestedScrollingEnabled(true);
-        FavoriteAdapter adapter = new FavoriteAdapter(context,list);
-        b.rvFavorite.setAdapter(adapter);
 
-        if (adapter.getItemCount() != 0)  {
+        if (list.size() > 0) {
+            LinearLayoutManager layoutManager = new LinearLayoutManager(context);
+            b.rvFavorite.setLayoutManager(layoutManager);
+            b.rvFavorite.setHasFixedSize(true);
+            b.rvFavorite.setNestedScrollingEnabled(true);
+            FavoriteAdapter adapter = new FavoriteAdapter(context, list);
             b.rvFavorite.setAdapter(adapter);
             b.llNoData.setVisibility(View.GONE);
             b.rvFavorite.setVisibility(View.VISIBLE);
 
         } else {
-
             b.llNoData.setVisibility(View.VISIBLE);
         }
 
     }
-
 
 
 }

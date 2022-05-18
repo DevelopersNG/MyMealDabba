@@ -15,6 +15,10 @@ public class SessionManager {
 
     public static final String KEY_ID = "id";
 
+    public static final String KEY_NAME = "name";
+    public static final String KEY_PHONE = "phone";
+    public static final String KEY_EMAIL = "email";
+
     private static final String PREF_NAME = "userData";
     private static final String IS_LOGIN = "isLogin";
     private static SharedPreferences pref;
@@ -70,6 +74,24 @@ public class SessionManager {
 
     }
 
+    public void createSUserDetals(String name,String email,String phone) {
+        editor.putString(KEY_NAME, name);
+        editor.putString(KEY_EMAIL, email);
+        editor.putString(KEY_PHONE, phone);
+        editor.commit();
+    }
+
+    public String getName() {
+        return pref.getString(KEY_NAME, " ");
+    }
+
+    public String getEmail() {
+        return pref.getString(KEY_EMAIL, "");
+    }
+
+    public String getPhone() {
+        return pref.getString(KEY_PHONE, "");
+    }
 }
 
 

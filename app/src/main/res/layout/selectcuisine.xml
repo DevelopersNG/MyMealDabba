@@ -94,6 +94,7 @@
         android:layout_marginRight="10dp">
 
         <TextView
+            android:text="South Indian"
             android:id="@+id/southindia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,7 +105,7 @@
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:text="South Indian"
+
             android:textColor="@color/text_color"
             android:textSize="13dp" />
 
@@ -129,13 +130,13 @@
         android:id="@+id/relativeLayoutSortByRecentlyAdded2"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginLeft="20dp"
         android:layout_below="@+id/relativeLayoutSortByRecentlyAdded1"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="10dp">
 
         <TextView
-            android:id="@+id/maharashtrian"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -145,7 +146,7 @@
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:text="Maharashtrian"
+            android:text="Maharashtrian"  android:id="@+id/maharashtrian"
             android:textColor="@color/text_color"
             android:textSize="13dp" />
 
@@ -176,7 +177,7 @@
         android:layout_marginRight="10dp">
 
         <TextView
-            android:id="@+id/goan"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -186,7 +187,7 @@
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:text="Goan"
+            android:text="Goan" android:id="@+id/goan"
             android:textColor="@color/text_color"
             android:textSize="13dp" />
 
@@ -218,7 +219,7 @@
         android:layout_marginRight="10dp">
 
         <TextView
-            android:id="@+id/malwani"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -228,7 +229,7 @@
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:text="Malwani"
+            android:text="Malwani"  android:id="@+id/malwani"
             android:textColor="@color/text_color"
             android:textSize="13dp" />
 
@@ -259,7 +260,7 @@
         android:layout_marginRight="10dp">
 
         <TextView
-            android:id="@+id/gujarati"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -269,7 +270,7 @@
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:text="Gujarati"
+            android:text="Gujarati"    android:id="@+id/gujarati"
             android:textColor="@color/text_color"
             android:textSize="13dp" />
 
@@ -300,7 +301,7 @@
         android:layout_marginRight="10dp">
 
         <TextView
-            android:id="@+id/punjabi"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -310,7 +311,7 @@
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:text="Punjabi"
+            android:text="Punjabi"     android:id="@+id/punjabi"
             android:textColor="@color/text_color"
             android:textSize="13dp" />
 
@@ -341,7 +342,7 @@
         android:layout_marginRight="10dp">
 
         <TextView
-            android:id="@+id/rajasthani"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -351,7 +352,7 @@
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:text="Rajasthani"
+            android:text="Rajasthani" android:id="@+id/rajasthani"
             android:textColor="@color/text_color"
             android:textSize="13dp" />
 
@@ -381,7 +382,7 @@
         android:layout_marginRight="10dp">
 
         <TextView
-            android:id="@+id/bengali"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -391,7 +392,7 @@
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:text="Bengali"
+            android:text="Bengali"  android:id="@+id/bengali"
             android:textColor="@color/text_color"
             android:textSize="13dp" />
 
@@ -422,7 +423,7 @@
         android:layout_marginRight="10dp">
 
         <TextView
-            android:id="@+id/mughlai"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -432,7 +433,7 @@
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:text="Mughlai"
+            android:text="Mughlai"  android:id="@+id/mughlai"
             android:textColor="@color/text_color"
             android:textSize="13dp" />
 
@@ -463,7 +464,7 @@
         android:layout_marginRight="10dp">
 
         <TextView
-            android:id="@+id/mangal"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -473,7 +474,7 @@
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:text="Mangal"
+            android:text="Mangal"  android:id="@+id/mangal"
             android:textColor="@color/text_color"
             android:textSize="13dp" />
 
@@ -504,7 +505,7 @@
         android:layout_marginRight="10dp">
 
         <TextView
-            android:id="@+id/korean"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -515,6 +516,7 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:text="Korean"
+            android:id="@+id/korean"
             android:textColor="@color/text_color"
             android:textSize="13dp" />
 
@@ -546,7 +548,7 @@
         android:layout_marginRight="10dp">
 
         <TextView
-            android:id="@+id/awadhi"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -556,7 +558,7 @@
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:text="Awadhi"
+            android:text="Awadhi"  android:id="@+id/awadhi"
             android:textColor="@color/text_color"
             android:textSize="13dp" />
 
@@ -586,7 +588,7 @@
         android:layout_marginRight="10dp">
 
         <TextView
-            android:id="@+id/continental"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -596,7 +598,7 @@
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:text="Continental"
+            android:text="Continental" android:id="@+id/continental"
             android:textColor="@color/text_color"
             android:textSize="13dp" />
 
@@ -626,7 +628,7 @@
         android:layout_marginRight="10dp">
 
         <TextView
-            android:id="@+id/chinese"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -636,7 +638,7 @@
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:text="chinese"
+            android:text="chinese"   android:id="@+id/chinese"
             android:textColor="@color/text_color"
             android:textSize="13dp" />
 
@@ -667,7 +669,7 @@
         android:layout_marginRight="10dp">
 
         <TextView
-            android:id="@+id/jainFood"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -677,7 +679,7 @@
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:text="JainFood"
+            android:text="JainFood" android:id="@+id/jainFood"
             android:textColor="@color/text_color"
             android:textSize="13dp" />
 

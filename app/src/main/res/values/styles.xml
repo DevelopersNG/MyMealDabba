@@ -64,5 +64,9 @@
         <item name="iconPadding">0dp</item>
         <item name="iconGravity">textStart</item>
     </style>
-
+    <style name="FullScreenDialogTheme" parent="Theme.MyMealDabba">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
 </resources>

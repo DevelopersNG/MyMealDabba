@@ -23,4 +23,15 @@
     <style name="Theme.MyMealDabba.AppBarOverlay" parent="ThemeOverlay.AppCompat.DayNight" />
 
     <style name="Theme.MyMealDabba.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="dialig_animation">
+        <item name="android:windowEnterAnimation">@anim/anim</item>
+        <item name="android:windowExitAnimation">@anim/anim1</item>
+
+
+
+    </style>
+
+
 </resources>

@@ -11,8 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mymealdabba.MessListFragment;
 import com.example.mymealdabba.NavigationActivity;
 import com.example.mymealdabba.R;
+import com.example.mymealdabba.SessionManager;
 import com.example.mymealdabba.model.CityModel;
 
 import java.util.List;
@@ -25,13 +27,9 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.MyViewHolder> 
         this.list = list;
         this.context = context;
     }
-    // method for filtering our recyclerview items.
+
     public void filterList(List<CityModel> filterlList) {
-        // below line is to add our filtered
-        // list in our course array list.
         list = filterlList;
-        // below line is to notify our adapter
-        // as change in recycler view data.
         notifyDataSetChanged();
     }
 
@@ -51,6 +49,7 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.MyViewHolder> 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+               new  SessionManager(context).setCityId(model.ID);
                 Intent intent = new Intent(context, NavigationActivity.class);
                 intent.putExtra("id", model.ID);
                 Log.e("City id", model.ID);

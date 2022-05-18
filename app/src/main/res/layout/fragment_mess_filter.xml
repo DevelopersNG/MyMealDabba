@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@color/colorOrange">
+
+        <TextView
+            android:id="@+id/lblFilters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="@string/filter_title"
+            android:textColor="@color/white"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutSortBy1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/imageRupees"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:padding="1dp"
+                    android:src="@drawable/ic_ruppees" />
+
+                <TextView
+                    android:id="@+id/lblCategor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="7dp"
+                    android:layout_toRightOf="@+id/imageRupees"
+                    android:background="@color/btn_reset_all_bg"
+                    android:text="Sort By "
+                    android:textColor="@color/btn_reset_all_text"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rbRecentlyAdded"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Recently Added "
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/rbCostHighToLow"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cost High to Low"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/rbCostLowToHigh"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cost Low to High"
+                    android:textSize="18sp" />
+            </RadioGroup>
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutMessType1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+
+
+                <ImageView
+                    android:id="@+id/imageMessType"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/ic_mess_type" />
+
+                <TextView
+                    android:id="@+id/lblMessType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/imageMessType"
+                    android:background="@color/btn_reset_all_bg"
+                    android:text="@string/mess_type"
+                    android:textColor="@color/btn_reset_all_text"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llMessType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/chkChef"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="18sp"
+                    android:text="Chef/cook" />
+
+                <CheckBox
+                    android:id="@+id/chkFoodMess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="18sp"
+                    android:text="Food Mess" />
+
+                <CheckBox
+                    android:id="@+id/chkHotel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="18sp"
+                    android:text="Hotel/Parcel Point" />
+
+                <CheckBox
+                    android:id="@+id/chkMahila"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="18sp"
+                    android:text="Mahila Gruh(Grih) UUdhyog" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutService1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llMessType"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/imageService"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/ic_service" />
+
+                <TextView
+                    android:id="@+id/lblService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/imageService"
+                    android:background="@color/btn_reset_all_bg"
+                    android:text="@string/title_service"
+                    android:textColor="@color/btn_reset_all_text"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llServiceType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:id="@+id/chkHomeDelivery"
+                    android:textSize="18sp"
+                    android:text="Home Delivery" />
+
+                <CheckBox
+                    android:id="@+id/chkPremises"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="18sp"
+                    android:text="At Premises" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutCategory1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageCategory"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/ic_category" />
+
+                <TextView
+                    android:id="@+id/lblCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/imageCategory"
+                    android:background="@color/btn_reset_all_bg"
+                    android:text="@string/title_category"
+                    android:textColor="@color/btn_reset_all_text"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:ignore="ExtraText">
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipVeg"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Veg"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipNonVeg"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Non-Veg"/>
+
+
+                </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/relativeLayoutVegNonVeg"
+                android:layout_marginTop="8dp"
+                android:background="@color/gray_text_divider" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:padding="20dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/btnResetAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@color/btn_reset_all_bg"
+                    android:padding="10dp"
+                    android:text="@string/reset_all"
+                    android:textColor="@color/btn_reset_all_text"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/btnApplyFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/mess_name"
+                    android:padding="10dp"
+                    android:text="@string/apply_filter"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

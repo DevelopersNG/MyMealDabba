@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".MessListFragment">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/svMessList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="@drawable/edit_text_border"
+        app:iconifiedByDefault="false"
+        app:queryHint="Enter Your Mes Name" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMessList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+
+</LinearLayout>

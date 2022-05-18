@@ -16,6 +16,7 @@ import java.util.Map;
 public class Utils {
     public static String URL = "https://mymealdabba.com/stage/search/";
 public  static  String IMAGEURL="http://mymealdabba.com/backend/web/uploads/";
+    public static String MESS = " https://mymealdabba.com/detail/Mzk=";
     public static int SERVER_TIMEOUT = 30000;
     public static String API_KEY = "mmdnashik";
 

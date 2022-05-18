@@ -114,6 +114,7 @@
     <string name="menu_special_offer">SPECIAL OFFER</string>
     <string name="menu_bookmarks">BOOKMARK</string>
     <string name="menu_share_app">SHARE APP</string>
+    <string name="menu_logout">LOGOUT</string>
     <string name="menu_rate_us">RATE US</string>
     <string name="menu_about_us">ABOUT US</string>
     <string name="menu_connect_with_us">CONNECT WITH US</string>

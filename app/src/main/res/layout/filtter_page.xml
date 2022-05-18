@@ -56,22 +56,21 @@
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:layout_alignParentLeft="true"
-                        android:padding="1dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="5dp"
+                        android:padding="1dp"
                         android:src="@drawable/ic_ruppees" />
 
                     <TextView
                         android:id="@+id/lblSortBy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="5dp"
                         android:layout_toRightOf="@+id/imageRupees"
                         android:text="@string/sort_by"
                         android:textColor="@color/black"
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="5dp"
                         android:textSize="15dp" />
                 </RelativeLayout>
 
@@ -230,11 +229,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:background="@color/btn_reset_all_bg"
                         android:layout_marginTop="5dp"
                         android:layout_toRightOf="@+id/imageMessType"
-                        android:textColor="@color/btn_reset_all_text"
+                        android:background="@color/btn_reset_all_bg"
                         android:text="@string/mess_type"
+                        android:textColor="@color/btn_reset_all_text"
 
                         android:textSize="15dp" />
 
@@ -247,12 +246,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:gravity="center"
                     android:layout_marginLeft="24dp"
                     android:layout_marginTop="28dp"
                     android:clickable="false"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
+                    android:gravity="center"
                     android:text="Chef/cook"
                     android:textColor="@color/sort_by_option"
                     android:textSize="13dp" />
@@ -264,12 +263,12 @@
                     android:layout_alignParentRight="true"
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="22dp"
-                    android:gravity="center"
                     android:layout_marginRight="0dp"
                     android:checked="false"
                     android:clickable="false"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
+                    android:gravity="center"
                     android:text=""
                     android:textColor="@color/text_color"
                     android:textSize="15dp" />
@@ -280,12 +279,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:gravity="center"
                     android:layout_marginLeft="24dp"
                     android:layout_marginTop="48dp"
                     android:clickable="false"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
+                    android:gravity="center"
                     android:text="Food Mess"
                     android:textColor="@color/sort_by_option"
                     android:textSize="13dp" />
@@ -296,13 +295,13 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="center_vertical"
-                    android:gravity="center"
                     android:layout_marginTop="42dp"
                     android:layout_marginRight="0dp"
                     android:checked="false"
                     android:clickable="false"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
+                    android:gravity="center"
                     android:text=""
                     android:textColor="@color/text_color"
                     android:textSize="15dp" />
@@ -312,12 +311,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:gravity="center"
                     android:layout_marginLeft="24dp"
                     android:layout_marginTop="68dp"
                     android:clickable="false"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
+                    android:gravity="center"
                     android:text="Hotel/Parcel Point"
                     android:textColor="@color/sort_by_option"
                     android:textSize="13dp" />
@@ -328,13 +327,13 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="center_vertical"
-                    android:gravity="center"
                     android:layout_marginTop="82dp"
                     android:layout_marginRight="0dp"
                     android:checked="false"
                     android:clickable="false"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
+                    android:gravity="center"
                     android:text=""
                     android:textColor="@color/text_color"
                     android:textSize="15dp" />
@@ -345,12 +344,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:gravity="center"
                     android:layout_marginLeft="24dp"
                     android:layout_marginTop="88dp"
                     android:clickable="false"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
+                    android:gravity="center"
                     android:text="Mahila Gruh(Grih) UUdhyog"
                     android:textColor="@color/sort_by_option"
                     android:textSize="13dp" />
@@ -361,13 +360,13 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="center_vertical"
-                    android:gravity="center"
                     android:layout_marginTop="62dp"
                     android:layout_marginRight="0dp"
                     android:checked="false"
                     android:clickable="false"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
+                    android:gravity="center"
                     android:text=""
                     android:textColor="@color/text_color"
                     android:textSize="15dp" />
@@ -402,15 +401,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:background="@color/btn_reset_all_bg"
                         android:layout_marginTop="5dp"
                         android:layout_toRightOf="@+id/imageService"
+                        android:background="@color/btn_reset_all_bg"
                         android:text="@string/title_service"
                         android:textColor="@color/btn_reset_all_text"
                         android:textSize="15dp" />
                 </RelativeLayout>
-
-
 
 
                 <TextView
@@ -520,11 +517,11 @@
                         android:id="@+id/lblCategory"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+
                         android:layout_centerInParent="true"
                         android:layout_marginTop="7dp"
                         android:layout_toRightOf="@+id/imageCategory"
                         android:background="@color/btn_reset_all_bg"
-
                         android:text="@string/title_category"
                         android:textColor="@color/btn_reset_all_text"
                         android:textSize="15dp" />

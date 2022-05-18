@@ -1,6 +1,8 @@
 package com.example.mymealdabba.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,25 +11,23 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mymealdabba.HomeViewModel;
+import com.example.mymealdabba.NavigationActivity;
 import com.example.mymealdabba.R;
-import com.example.mymealdabba.model.LocationModel;
+import com.example.mymealdabba.model.MessNameListModel;
+import com.example.mymealdabba.model.Messdeatilslistmodel;
 
 import java.util.List;
 
-public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.MyViewHolder> {
-    List<LocationModel> list;
+public class MessNameAdapter extends RecyclerView.Adapter<MessNameAdapter.MyViewHolder>{
+    List<MessNameListModel> list;
     Context context;
-    HomeViewModel viewModel;
 
-    public LocationAdapter(Context context, List<LocationModel> list, HomeViewModel viewModel) {
+    public MessNameAdapter(Context context, List<MessNameListModel> list) {
         this.list = list;
         this.context = context;
-        this.viewModel = viewModel;
     }
-
     // method for filtering our recyclerview items.
-    public void filterList(List<LocationModel> filterlList) {
+    public void filterList(List<MessNameListModel> filterlList) {
         // below line is to add our filtered
         // list in our course array list.
         list = filterlList;
@@ -38,27 +38,31 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.MyView
 
     @NonNull
     @Override
-    public LocationAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MessNameAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_location_items, parent, false);
-        return new LocationAdapter.MyViewHolder(view);
+        return new MessNameAdapter.MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull LocationAdapter.MyViewHolder holder, int i) {
-        final LocationModel model = list.get(i);
-        holder.tvLocationName.setText(model.Location);
+    public void onBindViewHolder(@NonNull MessNameAdapter.MyViewHolder holder, int i) {
+        final MessNameListModel model = list.get(i);
+        holder.tvLocationName.setText(model.Title);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewModel._selectedLocation.postValue(model);
+                Intent intent = new Intent(context, NavigationActivity.class);
+                intent.putExtra("messName", model.Title);
+//                Log.e("MessName", model.MemberName);
+                context.startActivity(intent);
             }
         });
     }
 
+
     @Override
     public int getItemCount() {
-        return list.size();
+        return 0;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
