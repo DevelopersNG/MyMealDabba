@@ -36,6 +36,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="30dp">
 
+
                 <EditText
                     android:id="@+id/txtName"
                     style="EditTextextStyle"
@@ -63,8 +64,7 @@
                     android:layout_height="20dp"
                     android:layout_gravity="right|center_vertical"
                     android:layout_marginRight="12dp"
-                    android:background="@drawable/close"
-                     />
+                    android:background="@drawable/close" />
 
             </FrameLayout>
 
@@ -104,8 +104,7 @@
                     android:layout_height="20dp"
                     android:layout_gravity="right|center_vertical"
                     android:layout_marginRight="12dp"
-                    android:background="@drawable/close"
-                />
+                    android:background="@drawable/close" />
 
             </FrameLayout>
 
@@ -145,8 +144,7 @@
                     android:layout_height="20dp"
                     android:layout_gravity="right|center_vertical"
                     android:layout_marginRight="12dp"
-                    android:background="@drawable/close"
-               />
+                    android:background="@drawable/close" />
 
             </FrameLayout>
 
@@ -207,28 +205,26 @@
                 android:text="@string/otp_message"
                 android:textColor="@color/white"
                 android:textSize="15dp"
-                android:visibility="gone"
-                />
+                android:visibility="gone" />
 
 
             <FrameLayout
                 android:id="@+id/frameLayoutTxtOPT"
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
-                android:visibility="gone"
                 android:layout_below="@+id/lblOTPMessage"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
-               >
+                android:visibility="gone">
 
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:background="@drawable/ic_otp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/ic_otp" />
 
                 <EditText
                     android:id="@+id/txtOTP"
@@ -236,10 +232,10 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/edittext_dark_gray_background"
                     android:drawablePadding="7dp"
+                    android:gravity="center"
                     android:hint="Enter OTP"
                     android:inputType="phone"
                     android:maxLength="5"
-                    android:gravity="center"
                     android:paddingLeft="25dp"
                     android:paddingTop="10dp"
                     android:paddingRight="25dp"
@@ -256,8 +252,7 @@
                     android:layout_height="20dp"
                     android:layout_gravity="right|center_vertical"
                     android:layout_marginRight="12dp"
-                    android:background="@drawable/close"
-                    />
+                    android:background="@drawable/close" />
 
             </FrameLayout>
 
@@ -292,9 +287,39 @@
                 android:layout_marginLeft="11dp"
                 android:background="@color/transperent"
                 android:text="Resend OTP"
-                android:visibility="gone"
                 android:textColor="@color/blue"
-                android:textSize="16dp" />
+                android:textSize="16dp"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:id="@+id/tvAlreadyAccRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnSignup"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="115dp"
+                android:gravity="center"
+                android:text="Already have an account?"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvAlreadyAccRegisterLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="53dp"
+                android:layout_marginBottom="-1dp"
+                android:gravity="center"
+                android:text="SignIn"
+                android:textColor="@color/yellow_color"
+                android:textSize="19sp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 

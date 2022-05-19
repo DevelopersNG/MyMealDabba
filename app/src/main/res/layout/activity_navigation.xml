@@ -61,11 +61,12 @@
         android:text="Location"
         app:icon="@drawable/ic_location_svgrepo_com" />
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnMess"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" Mess    "
+        android:visibility="gone"
         app:icon="@drawable/ic_meal_lunch_svgrepo_com" />
 </LinearLayout>
 
@@ -88,7 +89,7 @@
                 app:icon="@drawable/ic_baseline_filter_alt_24" />
 
             <Button
-                android:id="@+id/btmCuisine"
+                android:id="@+id/btnCuisine"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"

@@ -87,9 +87,7 @@ public class LocationFragment extends DialogFragment {
     }
 
     private void listener() {
-        viewModel.selectedLocation.observe(getViewLifecycleOwner(), locationModel -> {
-            dismiss();
-        });
+
         b.svLocation.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -104,6 +102,7 @@ public class LocationFragment extends DialogFragment {
                 return false;
             }
         });
+
     }
 
 
@@ -151,7 +150,7 @@ public class LocationFragment extends DialogFragment {
         b.rvLocation.setLayoutManager(layoutManager);
         b.rvLocation.setHasFixedSize(true);
         b.rvLocation.setNestedScrollingEnabled(true);
-        locationAdapter = new LocationAdapter(context, data1.Locations, viewModel);
+        locationAdapter = new LocationAdapter(context, data1.Locations, viewModel, this);
         b.rvLocation.setAdapter(locationAdapter);
     }
 
@@ -166,7 +165,6 @@ public class LocationFragment extends DialogFragment {
         if (text.isEmpty()) {
             filteredList.clear();
         }
-
         locationAdapter.filterList(filteredList);
     }
 }

@@ -46,7 +46,7 @@ public class OtpVerificationActivity extends AppCompatActivity {
         sessionManager = new SessionManager(context);
         listener();
         b.tvPhoneNumber.setText(mobile);
-        b.user.setText(userId);
+
     }
 
     private void listener() {

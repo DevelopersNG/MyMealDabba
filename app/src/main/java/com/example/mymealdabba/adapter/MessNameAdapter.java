@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mymealdabba.HomeViewModel;
 import com.example.mymealdabba.NavigationActivity;
 import com.example.mymealdabba.R;
 import com.example.mymealdabba.model.MessNameListModel;
@@ -21,10 +22,12 @@ import java.util.List;
 public class MessNameAdapter extends RecyclerView.Adapter<MessNameAdapter.MyViewHolder>{
     List<MessNameListModel> list;
     Context context;
+    HomeViewModel viewModel;
 
-    public MessNameAdapter(Context context, List<MessNameListModel> list) {
+    public MessNameAdapter(Context context, List<MessNameListModel> list, HomeViewModel viewModel) {
         this.list = list;
         this.context = context;
+        this.viewModel = viewModel;
     }
     // method for filtering our recyclerview items.
     public void filterList(List<MessNameListModel> filterlList) {
@@ -48,15 +51,6 @@ public class MessNameAdapter extends RecyclerView.Adapter<MessNameAdapter.MyView
         final MessNameListModel model = list.get(i);
         holder.tvLocationName.setText(model.Title);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, NavigationActivity.class);
-                intent.putExtra("messName", model.Title);
-//                Log.e("MessName", model.MemberName);
-                context.startActivity(intent);
-            }
-        });
     }
 
 

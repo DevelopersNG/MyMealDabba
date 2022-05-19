@@ -263,28 +263,23 @@
                 android:layout_marginTop="15dp"
                 android:orientation="horizontal">
 
-                <com.google.android.material.chip.ChipGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:ignore="ExtraText">
-                    <com.google.android.material.chip.Chip
+
+                    <CheckBox
                         android:id="@+id/chipVeg"
                         style="@style/Widget.MaterialComponents.Chip.Choice"
-                        android:layout_width="wrap_content"
+                        android:layout_width="90dp"
                         android:layout_height="wrap_content"
-                        android:checked="true"
+                        android:background="@color/green_color"
                         android:text="Veg"/>
 
-                    <com.google.android.material.chip.Chip
+                    <CheckBox
                         android:id="@+id/chipNonVeg"
                         style="@style/Widget.MaterialComponents.Chip.Choice"
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:checked="true"
+                        android:layout_marginStart="8dp"
+                        android:background="@color/red_color"
                         android:text="Non-Veg"/>
-
-
-                </com.google.android.material.chip.ChipGroup>
             </LinearLayout>
 
             <View

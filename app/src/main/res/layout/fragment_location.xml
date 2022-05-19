@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_border"
             app:iconifiedByDefault="false"
+            android:visibility="gone"
             app:queryHint="Enter Your City" />
 
         <androidx.recyclerview.widget.RecyclerView

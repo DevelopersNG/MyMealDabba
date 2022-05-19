@@ -244,7 +244,7 @@ public class MessDetailsActivity extends AppCompatActivity {
             b.lblSpecialOrders.setText("YES");
         }
         else {
-            b.lblSpecialOrders.setText("Not Available");
+            b.lblSpecialOrders.setText("NO");
         }
 
 
@@ -254,7 +254,7 @@ public class MessDetailsActivity extends AppCompatActivity {
             b.lblSpecialOrdersPatient.setText("YES");
         }
         else {
-            b.lblSpecialOrdersPatient.setText("Not  Meal Available For Patient");
+            b.lblSpecialOrdersPatient.setText("NO");
         }
 
         ((MessDetailsActivity) context).b.mtbNavigationMess.setTitle(model.MemberName);

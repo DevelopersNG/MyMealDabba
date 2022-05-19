@@ -65,6 +65,20 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
                 context.startActivity(intent);
             }
         });
+        holder.tbBookmarkFav.setChecked(model.BookMarksStatus.equals("1"));
+
+        holder.tbBookmarkFav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (holder.tbBookmarkFav.isChecked()) {
+                    Utils.favourite(context, model.MemberID);
+                    model.BookMarksStatus = "1";
+                } else {
+                    Utils.favourite(context, model.MemberID);
+                    model.BookMarksStatus = "0";
+                }
+            }
+        });
 
     }
 

@@ -1,13 +1,20 @@
 package com.example.mymealdabba;
 
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.core.view.GravityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.volley.AuthFailureError;
@@ -20,6 +27,7 @@ import com.example.mymealdabba.adapter.CityAdapter;
 import com.example.mymealdabba.databinding.ActivityHomeBinding;
 import com.example.mymealdabba.model.CityModel;
 import com.example.mymealdabba.model.DataModelCity;
+import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -32,6 +40,8 @@ public class HomeActivity extends AppCompatActivity {
     ActivityHomeBinding b;
     Context context;
     DataModelCity data;
+    SessionManager sessionManager;
+    ActionBarDrawerToggle actionBarDrawerToggle;
     String url = "https://mymealdabba.com/stage/search/getAllCities";
     CityAdapter cityAdapter;
     @Override
@@ -42,12 +52,105 @@ public class HomeActivity extends AppCompatActivity {
         context = this;
         listener();
         getData();
+
+
+        setSupportActionBar(b.mtbNavigation);
+
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, b.home, b.mtbNavigation, R.string.navigation_open, R.string.navigation_close);
+        b.home.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
     }
 
     private void listener() {
+        b.nvHeader.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = (item.getItemId());
+
+                if (id == R.id.nav_home) {
+                    Intent intent = new Intent(context, HomeActivity.class);
+                    startActivity(intent);
+                    b.home.closeDrawer(GravityCompat.START);
+                    return true;
+
+                } else if (id == R.id.nav_works) {
+                    Intent intent = new Intent(context, MainActivity.class);
+                    startActivity(intent);
+                    b.home.closeDrawer(GravityCompat.START);
+                    return true;
+
+                } else if (id == R.id.nav_specialOffer) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("https://mymealdabba.com/site/offers"));
+                    try {
+                        startActivity(intent);
+                    } catch (Exception e) {
+                        intent.setData(Uri.parse("https://mymealdabba.com/site/offers"));
+                    }
+                } else if (id == R.id.nav_bookmark) {
+                    Intent intent = new Intent(context, BookMarkActivity.class);
+                    startActivity(intent);
+                    b.home.closeDrawer(GravityCompat.START);
+                    return true;
+
+                } else if (id == R.id.nav_aboutUs) {
+                    Intent intent = new Intent(context, AboutUs.class);
+                    startActivity(intent);
+                    b.home.closeDrawer(GravityCompat.START);
+                    return true;
+
+                } else if (id == R.id.nav_Registration) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("https://mymealdabba.com/register"));
+                    try {
+                        startActivity(intent);
+                    } catch (Exception e) {
+                        // intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=app.com.mymealdabba"));
+                    }
+
+                } else if (id == R.id.nav_connect) {
+                    Intent intent = new Intent(context, ConnectWithActivity.class);
+                    startActivity(intent);
+                    b.home.closeDrawer(GravityCompat.START);
+                    return true;
+
+                } else if (id == R.id.nav_rateUs) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=app.com.mymealdabba"));
+                    try {
+                        startActivity(intent);
+                    } catch (Exception e) {
+                        intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=app.com.mymealdabba"));
+                    }
+
+
+                } else if (id == R.id.nav_logout) {
+                    sessionManager.logoutUser();
+
+                } else if (id == R.id.nav_shareApp) {
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plain");
+                    String shareSubText = "\t\n" +
+                            "MyMealDabba (Tiffin Service Listings)";
+                    String shareBodyText = "https://play.google.com/store/apps/details?id=app.com.mymealdabba";
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, shareSubText);
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, shareBodyText);
+                    startActivity(Intent.createChooser(shareIntent, "Share With"));
+                    return true;
+                } else if (id == R.id.nav_location) {
+                    Intent intent = new Intent(context, UserCurrentLocationActivity.class);
+                    startActivity(intent);
+                    b.home.closeDrawer(GravityCompat.START);
+                    return true;
+
+                }
+                return false;
+            }
+        });
 
 
     }
+
 
 
 
@@ -68,10 +171,12 @@ public class HomeActivity extends AppCompatActivity {
 
 
     public void getData() {
+        final ProgressDialog progressDialog = ProgressDialog.show(context, null, "processing...", false, false);
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.e("response", response);
+                progressDialog.dismiss();                Log.e("response", response);
                 Gson gson = new Gson();
 
                 data = gson.fromJson(response, DataModelCity.class);
@@ -96,6 +201,7 @@ public class HomeActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        progressDialog.dismiss();
                         error.printStackTrace();
 
                         Toast.makeText(context, "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();

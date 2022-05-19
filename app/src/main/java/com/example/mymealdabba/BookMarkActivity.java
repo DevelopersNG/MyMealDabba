@@ -1,5 +1,6 @@
 package com.example.mymealdabba;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,6 +31,7 @@ public class BookMarkActivity extends AppCompatActivity {
     ActivityBookMarkBinding b;
     DataModelMessDetailsList data;
     Context context;
+    ProgressDialog progressDialog;
     SessionManager sessionManager;
     String url = Utils.URL + "getMessList";
 
@@ -45,9 +47,11 @@ public class BookMarkActivity extends AppCompatActivity {
     }
 
     public void getData() {
+        final ProgressDialog progressDialog = ProgressDialog.show(context, null, "processing...", false, false);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                progressDialog.dismiss();
                 Log.e("Bookmark response", response);
                 Gson gson = new Gson();
                 data = gson.fromJson(response, DataModelMessDetailsList.class);
@@ -59,6 +63,7 @@ public class BookMarkActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        progressDialog.dismiss();
                         error.printStackTrace();
 
                         Toast.makeText(context, "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();

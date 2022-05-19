@@ -20,15 +20,15 @@ public class MessFilterFragment extends DialogFragment {
     private String mParam1;
     private String mParam2;
     Context context;
+
     SessionManager sessionManager;
     FragmentMessFilterBinding b;
     HomeViewModel viewModel;
     MessFilterModel model;
-
+    
     public MessFilterFragment() {
 
     }
-
 
     public static MessFilterFragment newInstance(String param1, String param2) {
         MessFilterFragment fragment = new MessFilterFragment();
@@ -67,7 +67,6 @@ public class MessFilterFragment extends DialogFragment {
     }
 
     private void listener() {
-
         b.btnApplyFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,7 +74,24 @@ public class MessFilterFragment extends DialogFragment {
             }
         });
 
+        b.btnResetAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                b.chipNonVeg.setChecked(false);
+                b.chipVeg.setChecked(false);
+                b.chkPremises.setChecked(false);
+                b.chkHomeDelivery.setChecked(false);
+                b.chkMahila.setChecked(false);
+                b.chkHotel.setChecked(false);
 
+                b.chkChef.setChecked(false);
+                b.chkFoodMess.setChecked(false);
+                b.rbCostLowToHigh.setChecked(false);
+                b.rbCostHighToLow.setChecked(false);
+                b.rbRecentlyAdded.setChecked(false);
+
+            }
+        });
     }
 
     void submit() {

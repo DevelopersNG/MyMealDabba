@@ -182,6 +182,15 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             }
         });
+
+        b.tvAlreadyAccRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private boolean checkForm1() {

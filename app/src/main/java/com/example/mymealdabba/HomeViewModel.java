@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 import com.example.mymealdabba.model.CuisineModel;
 import com.example.mymealdabba.model.LocationModel;
 import com.example.mymealdabba.model.MessFilterModel;
+import com.example.mymealdabba.model.MessNameListModel;
 
 public class HomeViewModel extends ViewModel {
    public MutableLiveData<LocationModel> _selectedLocation = new MutableLiveData<>();
@@ -15,6 +16,6 @@ public class HomeViewModel extends ViewModel {
    public MutableLiveData<MessFilterModel> _filterMess = new MutableLiveData<>();
    public LiveData<MessFilterModel> filterMess = _filterMess;
 
-   public MutableLiveData<CuisineModel> _filterCuisineMess = new MutableLiveData<>();
-   public LiveData<CuisineModel> filterCuisineMess = _filterCuisineMess;
+   public MutableLiveData<MessNameListModel> _filterMessSearch = new MutableLiveData<>();
+   public LiveData<MessNameListModel> filterMessSearch = _filterMessSearch;
 }

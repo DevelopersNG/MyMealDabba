@@ -24,6 +24,7 @@ import com.example.mymealdabba.databinding.ActivityNavigationBinding;
 import com.example.mymealdabba.model.DataModelLocation;
 import com.example.mymealdabba.model.DataModelMessDetailsList;
 import com.example.mymealdabba.model.DataModelMessNameList;
+import com.example.mymealdabba.model.LocationModel;
 import com.google.android.material.navigation.NavigationView;
 
 public class NavigationActivity extends AppCompatActivity {
@@ -68,7 +69,6 @@ public class NavigationActivity extends AppCompatActivity {
         DrawerLayout drawer = binding.drawerLayout;
         sessionManager = new SessionManager(context);
         id = sessionManager.getId();
-
         listener();
 
 
@@ -93,6 +93,10 @@ public class NavigationActivity extends AppCompatActivity {
     }
 
     private void listener() {
+        viewModel.selectedLocation.observe(this, locationModel -> {
+            binding.btnLocation.setText(locationModel.Location);
+
+        });
         binding.nvHeader.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -188,6 +192,18 @@ public class NavigationActivity extends AppCompatActivity {
         });
 
 
+
+        binding.btnMess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+
+
+
+
         binding.btnFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -196,12 +212,16 @@ public class NavigationActivity extends AppCompatActivity {
             }
         });
 
-        binding.button2.setOnClickListener(new View.OnClickListener() {
+
+        binding.btnCuisine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                new MessCuisineFragment().show(((FragmentActivity) context).getSupportFragmentManager(), "MessCuisineFragment");
 
             }
         });
+
+
 
 
     }

@@ -1,5 +1,6 @@
 package com.example.mymealdabba.adapter;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mymealdabba.HomeViewModel;
@@ -19,11 +21,13 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.MyView
     List<LocationModel> list;
     Context context;
     HomeViewModel viewModel;
+    DialogFragment fragment;
 
-    public LocationAdapter(Context context, List<LocationModel> list, HomeViewModel viewModel) {
+    public LocationAdapter(Context context, List<LocationModel> list, HomeViewModel viewModel, DialogFragment fragment) {
         this.list = list;
         this.context = context;
         this.viewModel = viewModel;
+        this.fragment = fragment;
     }
 
     // method for filtering our recyclerview items.
@@ -52,6 +56,7 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.MyView
             @Override
             public void onClick(View view) {
                 viewModel._selectedLocation.postValue(model);
+                fragment.dismiss();
             }
         });
     }
