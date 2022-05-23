@@ -3,6 +3,7 @@ package com.example.mymealdabba.adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +14,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatToggleButton;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.mymealdabba.BookmarkDetailActivity;
 import com.example.mymealdabba.MessDetailsActivity;
 import com.example.mymealdabba.R;
 import com.example.mymealdabba.Utils;
+import com.example.mymealdabba.model.ImageModel;
 import com.example.mymealdabba.model.Messdeatilslistmodel;
 import com.google.gson.Gson;
 
@@ -57,6 +60,22 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
 
 
 
+        for (ImageModel image : model.Images) {
+            Log.e("image", Utils.IMAGEURL + image.ImagePath);
+            if (image.IsDefault.equalsIgnoreCase("1")) {
+                Glide.with(context)
+                        .load(Utils.IMAGEURL + image.ImagePath)
+                        .into(holder.imageFavListViewMess);
+
+                break;
+            } else {
+                Glide.with(context)
+                        .load(Utils.IMAGEURL + image.ImagePath)
+                        .into(holder.imageFavListViewMess);
+            }
+        }
+
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,6 +98,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
                 }
             }
         });
+
 
     }
 

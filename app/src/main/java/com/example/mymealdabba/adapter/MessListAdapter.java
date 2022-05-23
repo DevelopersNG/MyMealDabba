@@ -77,7 +77,7 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
         holder.lblMessService.setText(model.Service);
         holder.lblMessSingleRate.setText(model.TiffinRate);
         holder.lblMessExperience.setText(model.ExpYears);
-
+holder.lblMessType.setText(model.Type);
 //        holder.imageViewFav.setChecked(model.BookMarksStatus.equals("1"));
 
 
@@ -123,7 +123,7 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
         ImageView imageListViewMess;
         AppCompatToggleButton imageViewFav;
 
-        TextView lblMessName, lblPromoted, lblMessAddress, lblMessMonthlyRate,lblMessSingleRate, lblTotalViews, lblMessCategory, lblMessService, lblMessExperience;
+        TextView lblMessName, lblPromoted, lblMessAddress, lblMessType,lblMessMonthlyRate,lblMessSingleRate, lblTotalViews, lblMessCategory, lblMessService, lblMessExperience;
 
         public ViewHolder(@NonNull View itemView) {
 
@@ -133,6 +133,7 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
             lblMessName = itemView.findViewById(R.id.lblMessName);
             lblPromoted = itemView.findViewById(R.id.lblPromoted);
             lblMessAddress = itemView.findViewById(R.id.lblMessAddress);
+            lblMessType=itemView.findViewById(R.id.lblMessType);
           //  lblMessMonthlyRate = itemView.findViewById(R.id.lblMessMonthlyRate);
             lblTotalViews = itemView.findViewById(R.id.lblTotalViews);
             lblMessCategory = itemView.findViewById(R.id.lblMessCategory);

@@ -86,7 +86,7 @@
                 android:text="Locality"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textStyle="bold" />p
 
             <TextView
                 android:id="@+id/tvLocality"

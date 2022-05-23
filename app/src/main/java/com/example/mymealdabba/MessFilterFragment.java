@@ -74,6 +74,13 @@ public class MessFilterFragment extends DialogFragment {
             }
         });
 
+        b.mtbFilterMess.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                requireActivity().onBackPressed();
+            }
+        });
+
         b.btnResetAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

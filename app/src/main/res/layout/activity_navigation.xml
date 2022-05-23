@@ -58,7 +58,7 @@
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Location"
+        android:text="Locality"
         app:icon="@drawable/ic_location_svgrepo_com" />
     <Button
         android:id="@+id/btnMess"

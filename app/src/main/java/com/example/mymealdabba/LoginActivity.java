@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
+//check form.....
     private boolean checkForm() {
          mobile = b.txtMobile.getText().toString().trim();
         if (mobile.isEmpty()) {
@@ -105,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
-
+//send request to server for login using OTP
     private void submitForm() {
         final ProgressDialog progressDialog = ProgressDialog.show(context, null, "processing...", false, false);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {

@@ -70,12 +70,23 @@ public class MessCuisineFragment extends DialogFragment {
     }
 
     private void listener() {
+
+
+        b.mtbCuisineType.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                requireActivity().onBackPressed();
+            }
+        });
+
         b.btnApplyCuisineFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 submit();
             }
         });
+
+        //unselected check box codding....
         b.btnResetCuisineAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

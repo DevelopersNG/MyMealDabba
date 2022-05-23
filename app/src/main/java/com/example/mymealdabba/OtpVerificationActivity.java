@@ -1,5 +1,5 @@
 package com.example.mymealdabba;
-
+// code by durga....2022
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -68,6 +68,12 @@ public class OtpVerificationActivity extends AppCompatActivity {
                 }
             }
         });
+        b.mtbOTP.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 
 
@@ -83,7 +89,7 @@ public class OtpVerificationActivity extends AppCompatActivity {
         }
         return true;
     }
-
+// OTP  Send And verification code
     private void verifyOtp() {
         final ProgressDialog progressDialog = ProgressDialog.show(context, null, "processing...", false, false);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, otpVerifyUrl, new Response.Listener<String>() {

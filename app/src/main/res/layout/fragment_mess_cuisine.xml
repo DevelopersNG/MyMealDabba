@@ -2,42 +2,61 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/mtbCuisineType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleCentered="true"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+            app:title="Cuisine Type"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
     <LinearLayout
         android:id="@+id/relativeLayoutMessType"
         android:layout_width="match_parent"
         android:layout_height="29dp"
+        android:visibility="gone"
         android:layout_marginTop="0dp">
 
         <LinearLayout
             android:id="@+id/LinerLayoutMessType1"
             android:layout_width="match_parent"
-            android:layout_height="30dp">
+            android:visibility="gone"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
 
 
-            <ImageView
-                android:id="@+id/imageMessType"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="5dp"
-                android:src="@drawable/ic_mess_type" />
+<!--            <ImageView-->
+<!--                android:id="@+id/imageMessType"-->
+<!--                android:layout_width="15dp"-->
+<!--                android:layout_height="15dp"-->
+<!--                android:layout_alignParentLeft="true"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginRight="5dp"-->
+<!--                android:src="@drawable/ic_mess_type" />-->
 
-            <TextView
-                android:id="@+id/lblMessType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="5dp"
-                android:layout_toRightOf="@+id/imageMessType"
-                android:background="@color/btn_reset_all_bg"
+<!--            <TextView-->
+<!--                android:id="@+id/lblMessType"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_toRightOf="@+id/imageMessType"-->
+<!--                android:background="@color/btn_reset_all_bg"-->
 
-                android:text="Cuisine Type"
-                android:textColor="@color/btn_reset_all_text"
-                android:textSize="15dp" />
+<!--                android:text="Cuisine Type"-->
+<!--                android:textColor="@color/btn_reset_all_text"-->
+<!--                android:textSize="15dp" />-->
 
         </LinearLayout>
 
@@ -231,13 +250,13 @@
                     android:id="@+id/btnResetCuisineAll"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:background="#D2E7F1"
+                    android:background="@color/mess_name"
                     android:drawableStart="@drawable/ic_baseline_restore_24"
                     android:drawablePadding="8dp"
                     android:fontFamily="serif"
                     android:padding="10dp"
                     android:text="@string/reset_all"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="15dp" />
 
                 <TextView

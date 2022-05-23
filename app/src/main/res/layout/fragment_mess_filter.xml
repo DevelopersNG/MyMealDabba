@@ -3,28 +3,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-
-    <RelativeLayout
-        android:id="@+id/relativeLayoutHeader"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:background="@color/colorOrange">
+        android:layout_height="wrap_content"
+        >
 
-        <TextView
-            android:id="@+id/lblFilters"
-            android:layout_width="wrap_content"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/mtbFilterMess"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:text="@string/filter_title"
-            android:textColor="@color/white"
-            android:textSize="17dp"
-            android:textStyle="bold" />
+            app:titleCentered="true"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+            app:title="Filter Mess"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/relativeLayoutHeader"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="36dp"-->
+<!--        android:background="@color/colorOrange">-->
 
-    </RelativeLayout>
+<!--        <TextView-->
+<!--            android:id="@+id/lblFilters"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:text="@string/filter_title"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="17dp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--    </RelativeLayout>-->
 
     <ScrollView
         android:layout_width="match_parent"
@@ -267,19 +281,19 @@
                     <CheckBox
                         android:id="@+id/chipVeg"
                         style="@style/Widget.MaterialComponents.Chip.Choice"
-                        android:layout_width="90dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
                         android:background="#18D65C"
-                        android:text="Veg"/>
+                        android:text="Veg    "/>
 
                     <CheckBox
                         android:id="@+id/chipNonVeg"
                         style="@style/Widget.MaterialComponents.Chip.Choice"
-                        android:layout_width="90dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
                         android:layout_marginStart="8dp"
                         android:background="#A30415"
-                        android:text="Non-Veg"/>
+                        android:text="Non-Veg  "/>
             </LinearLayout>
 
             <View
@@ -303,10 +317,12 @@
                     android:id="@+id/btnResetAll"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:background="#B8DAE8"
+                    android:background="@color/mess_name"
                     android:padding="10dp"
+                    android:drawablePadding="8dp"
+                    android:drawableStart="@drawable/ic_baseline_restore_24"
                     android:text="@string/reset_all"
-                    android:textColor="@color/btn_reset_all_text"
+                    android:textColor="@color/white"
                     android:textSize="15dp" />
 
                 <TextView
@@ -314,6 +330,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginLeft="15dp"
+                    android:drawablePadding="8dp"
+                    android:drawableStart="@drawable/ic_baseline_touch_app_24"
                     android:background="@color/mess_name"
                     android:padding="10dp"
                     android:text="@string/apply_filter"

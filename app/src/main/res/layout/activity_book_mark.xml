@@ -13,9 +13,11 @@
         >
 
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/mtbBookmark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:titleCentered="true"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
             app:title=" Your BookMark Items"
             />
     </com.google.android.material.appbar.AppBarLayout>

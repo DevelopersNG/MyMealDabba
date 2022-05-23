@@ -55,6 +55,12 @@ public class BookMarkActivity extends AppCompatActivity {
                 getData();
             }
         });
+        b.mtbBookmark.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     public void getData() {

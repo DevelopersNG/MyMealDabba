@@ -265,7 +265,7 @@ public class SignUpActivity extends AppCompatActivity {
         }
         return true;
     }
-
+// Registration user.....
     private void submitForm() {
         final ProgressDialog progressDialog = ProgressDialog.show(context, null, "processing...", false, false);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
