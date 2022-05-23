@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -44,6 +45,16 @@ public class BookMarkActivity extends AppCompatActivity {
         context = this;
         sessionManager = new SessionManager(context);
         getData();
+        listener();
+    }
+
+    private void listener() {
+        b.srlRecycleBookmark.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getData();
+            }
+        });
     }
 
     public void getData() {
@@ -51,6 +62,7 @@ public class BookMarkActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                b.srlRecycleBookmark.setRefreshing(false);
                 progressDialog.dismiss();
                 Log.e("Bookmark response", response);
                 Gson gson = new Gson();
@@ -65,7 +77,7 @@ public class BookMarkActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         progressDialog.dismiss();
                         error.printStackTrace();
-
+                       b.srlRecycleBookmark.setRefreshing(false);
                         Toast.makeText(context, "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
                     }
                 }) {

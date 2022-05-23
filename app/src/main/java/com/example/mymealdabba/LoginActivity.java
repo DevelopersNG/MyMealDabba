@@ -3,6 +3,7 @@ package com.example.mymealdabba;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +21,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.mymealdabba.databinding.ActivityLoginBinding;
+import com.example.mymealdabba.model.DataModelUsers;
+import com.example.mymealdabba.model.SessionModel;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -33,12 +36,17 @@ public class LoginActivity extends AppCompatActivity {
     ActivityLoginBinding b;
     Context context;
     String mobile;
+    DataModelUsers model;
+    SessionManager sessionManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         b =ActivityLoginBinding.inflate(getLayoutInflater());
+//        Bundle bundle = getIntent().getExtras();
+//        String data = bundle.getString("response");
         setContentView(b.getRoot());
         context = this;
+        sessionManager=new SessionManager(context);
         listener();
     }
 
@@ -61,6 +69,18 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
                 startActivity(intent);
+            }
+        });
+        b.lblTerm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://mymealdabba.com/terms"));
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                    // intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=app.com.mymealdabba"));
+                }
             }
         });
     }

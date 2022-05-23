@@ -7,5 +7,5 @@
         android:icon="@drawable/ic_location_svgrepo_com"
         android:iconTint="@color/black"
         android:title="Location"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always"/>
 </menu>

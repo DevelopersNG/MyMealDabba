@@ -5,11 +5,11 @@
     android:layout_height="250dp">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="fill_parent"
         android:layout_height="250dp"
-        android:id="@+id/imageView"
-        android:paddingTop="0dp"
         android:adjustViewBounds="true"
+        android:paddingTop="0dp"
         android:scaleType="fitXY"
         android:src="@drawable/ic_launcher" />
 

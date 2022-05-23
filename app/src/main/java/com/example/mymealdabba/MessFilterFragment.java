@@ -25,7 +25,7 @@ public class MessFilterFragment extends DialogFragment {
     FragmentMessFilterBinding b;
     HomeViewModel viewModel;
     MessFilterModel model;
-    
+
     public MessFilterFragment() {
 
     }
@@ -62,11 +62,11 @@ public class MessFilterFragment extends DialogFragment {
         viewModel = new ViewModelProvider(requireActivity()).get(HomeViewModel.class);
         model = viewModel._filterMess.getValue();
         listener();
-//        getMessFilterData();
         return b.getRoot();
     }
 
     private void listener() {
+        viewModel._filterMess.postValue(model);
         b.btnApplyFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,7 +83,6 @@ public class MessFilterFragment extends DialogFragment {
                 b.chkHomeDelivery.setChecked(false);
                 b.chkMahila.setChecked(false);
                 b.chkHotel.setChecked(false);
-
                 b.chkChef.setChecked(false);
                 b.chkFoodMess.setChecked(false);
                 b.rbCostLowToHigh.setChecked(false);
@@ -95,6 +94,9 @@ public class MessFilterFragment extends DialogFragment {
     }
 
     void submit() {
+        StringBuilder sbMessType = new StringBuilder("");
+        StringBuilder sbService = new StringBuilder("");
+        StringBuilder sbCategory = new StringBuilder("");
         if (b.rbRecentlyAdded.isChecked()) {
             model.SortBy = b.rbRecentlyAdded.getText().toString().trim();
         }
@@ -106,37 +108,52 @@ public class MessFilterFragment extends DialogFragment {
             model.SortBy = b.rbCostLowToHigh.getText().toString().trim();
         }
 
-
         if (b.chkFoodMess.isChecked()) {
-            model.MessType = b.chkFoodMess.getText().toString().trim();
+            sbMessType.append(b.chkFoodMess.getText().toString().trim()).append(",");
         }
 
         if (b.chkChef.isChecked()) {
-            model.MessType = b.chkChef.getText().toString().trim();
+            sbMessType.append(b.chkChef.getText().toString().trim()).append(",");
         }
 
         if (b.chkHotel.isChecked()) {
-            model.MessType = b.chkHotel.getText().toString().trim();
+            sbMessType.append(b.chkHotel.getText().toString().trim()).append(",");
         }
 
         if (b.chkMahila.isChecked()) {
-            model.MessType = b.chkMahila.getText().toString().trim();
+            sbMessType.append(b.chkMahila.getText().toString().trim()).append(",");
         }
 
         if (b.chkHomeDelivery.isChecked()) {
-            model.Service = b.chkHomeDelivery.getText().toString().trim().trim();
+            sbService.append(b.chkHomeDelivery.getText().toString().trim()).append(",");
         }
 
         if (b.chkPremises.isChecked()) {
-            model.Service = b.chkPremises.getText().toString().trim().trim();
+            sbService.append(b.chkPremises.getText().toString().trim()).append(",");
         }
 
         if (b.chipVeg.isChecked()) {
-            model.Category = b.chipVeg.getText().toString().trim();
+            sbCategory.append(b.chipVeg.getText().toString().trim()).append(",");
         }
 
         if (b.chipNonVeg.isChecked()) {
-            model.Category = b.chipNonVeg.getText().toString().trim();
+            sbCategory.append(b.chipNonVeg.getText().toString().trim()).append(",");
+        }
+
+        if (sbMessType.toString().endsWith(",")) {
+            model.MessType = sbMessType.substring(0, sbMessType.length() - 1);
+        } else {
+            model.MessType = sbMessType.toString();
+        }
+        if (sbCategory.toString().endsWith(",")) {
+            model.Category = sbCategory.substring(0, sbCategory.length() - 1);
+        } else {
+            model.Category = sbCategory.toString();
+        }
+        if (sbService.toString().endsWith(",")) {
+            model.Service = sbService.substring(0, sbService.length() - 1);
+        } else {
+            model.Service = sbService.toString();
         }
         viewModel._filterMess.postValue(model);
         dismiss();

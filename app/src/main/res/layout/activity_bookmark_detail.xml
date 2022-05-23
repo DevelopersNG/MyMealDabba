@@ -39,7 +39,7 @@
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutFavMessImages"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="250dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
@@ -58,18 +58,6 @@
                 <!--                    android:layout_marginBottom="5dp"-->
                 <!--                    tools:ignore="MissingConstraints" />-->
 
-                <TextView
-                    android:id="@+id/txtFavAvgRating"
-                    android:layout_width="40dp"
-                    android:layout_height="27dp"
-                    android:layout_alignParentRight="true"
-                    android:background="@color/green_color"
-                    android:gravity="center"
-                    android:padding="2dp"
-                    android:text="3.4"
-                    android:textColor="@color/white"
-                    android:textSize="16dp" />
-
                 <!--<app.com.messproject.utils.CustomViewPager
                     android:id="@+id/viewPagerMessImages"
                     android:layout_width="fill_parent"
@@ -77,6 +65,24 @@
                     android:layout_marginBottom="14dp"
                     android:paddingTop="0dp"
                     android:visibility="gone" />-->
+
+                <TextView
+                    android:id="@+id/txtFavAvgRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@color/green_color"
+                    android:drawableStart="@drawable/ic_baseline_star_24"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text="3.4"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="14dp" />
 
                 <ViewFlipper
                     android:id="@+id/messImagesViewFlipper"

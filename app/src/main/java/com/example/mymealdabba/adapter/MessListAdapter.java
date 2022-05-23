@@ -71,13 +71,14 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
 
         holder.lblMessName.setText(model.MemberName);
         holder.lblMessAddress.setText(model.BussinessAddress);
-        holder.lblMessMonthlyRate.setText(model.MonthlyRate);
+      //  holder.lblMessMonthlyRate.setText(model.MonthlyRate);
         holder.lblTotalViews.setText(model.Views);
         holder.lblMessCategory.setText(model.Category);
         holder.lblMessService.setText(model.Service);
+        holder.lblMessSingleRate.setText(model.TiffinRate);
         holder.lblMessExperience.setText(model.ExpYears);
 
-        holder.imageViewFav.setChecked(model.BookMarksStatus.equals("1"));
+//        holder.imageViewFav.setChecked(model.BookMarksStatus.equals("1"));
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -98,18 +99,18 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
             holder.lblPromoted.setVisibility(View.GONE);
         }
 
-        holder.imageViewFav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (holder.imageViewFav.isChecked()) {
-                    Utils.favourite(context, model.MemberID);
-                    model.BookMarksStatus = "1";
-                } else {
-                    Utils.favourite(context, model.MemberID);
-                    model.BookMarksStatus = "0";
-                }
-            }
-        });
+//        holder.imageViewFav.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (holder.imageViewFav.isChecked()) {
+//                    Utils.favourite(context, model.MemberID);
+//                    model.BookMarksStatus = "1";
+//                } else {
+//                    Utils.favourite(context, model.MemberID);
+//                    model.BookMarksStatus = "0";
+//                }
+//            }
+//        });
     }
 
 
@@ -122,7 +123,7 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
         ImageView imageListViewMess;
         AppCompatToggleButton imageViewFav;
 
-        TextView lblMessName, lblPromoted, lblMessAddress, lblMessMonthlyRate, lblTotalViews, lblMessCategory, lblMessService, lblMessExperience;
+        TextView lblMessName, lblPromoted, lblMessAddress, lblMessMonthlyRate,lblMessSingleRate, lblTotalViews, lblMessCategory, lblMessService, lblMessExperience;
 
         public ViewHolder(@NonNull View itemView) {
 
@@ -132,11 +133,12 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
             lblMessName = itemView.findViewById(R.id.lblMessName);
             lblPromoted = itemView.findViewById(R.id.lblPromoted);
             lblMessAddress = itemView.findViewById(R.id.lblMessAddress);
-            lblMessMonthlyRate = itemView.findViewById(R.id.lblMessMonthlyRate);
+          //  lblMessMonthlyRate = itemView.findViewById(R.id.lblMessMonthlyRate);
             lblTotalViews = itemView.findViewById(R.id.lblTotalViews);
             lblMessCategory = itemView.findViewById(R.id.lblMessCategory);
             lblMessService = itemView.findViewById(R.id.lblMessService);
             lblMessExperience = itemView.findViewById(R.id.lblMessExperience);
+            lblMessSingleRate=itemView.findViewById(R.id.lblMessSingleRateTitle);
         }
     }
 }

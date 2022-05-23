@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TearmAndConditionActivity">
+
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/ablMessList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/mtbMessList"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:titleCentered="true"
+                app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                android:tooltipText="@string/app_name"
+                app:title="@string/app_name"
+                app:titleMarginStart="5dp"
+                app:titleTextColor="@color/white"
+                tools:ignore="MissingConstraints">
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:fontFamily="serif"
+        android:textColor="@color/action_bar_color"
+        android:textStyle="bold"
+        android:text="These Terms And Conditions, Privacy Policy "/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:padding="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="serif"
+        android:textStyle="bold"
+        android:text="These Terms And Conditions, Privacy Policy explains how we, ESHANA INFOTECH SOLUTIONS LLP
+(hereinafter referred to as “MyMealDabba”, “we”, “us” or “our”)
+
+In these Terms, references to “you”, “User” shall mean the end user accessing the Website or Mobile app, “Service Providers” mean independent third party service providers, and “we”, “us” and “our” shall mean “mymealdabba.com”
+
+By Subscribing to or using any of our services you agree that you have read, understood and are bound by the Terms, regardless of how you subscribe to or use the services.
+
+We may suspend or terminate your Account or Services if any information provided during the registration process or thereafter proves to be inaccurate, not current or incomplete or any misuse of our service.
+
+It is solely your responsibility to regularly review these Terms of Use and the other Policies of the Website and Mobile app, to ensure you are up to date with all the terms, conditions, and charges, associated with us. We may alter or vary the Terms and Conditions at any time without prior notice to you."/>
+</LinearLayout>

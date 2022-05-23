@@ -168,7 +168,7 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:textSize="18sp"
-                    android:text="Mahila Gruh(Grih) UUdhyog" />
+                    android:text="Mahila Gruh(Grih) Udhyog" />
             </LinearLayout>
 
             <RelativeLayout
@@ -269,16 +269,16 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="90dp"
                         android:layout_height="wrap_content"
-                        android:background="@color/green_color"
+                        android:background="#18D65C"
                         android:text="Veg"/>
 
                     <CheckBox
                         android:id="@+id/chipNonVeg"
                         style="@style/Widget.MaterialComponents.Chip.Choice"
-                        android:layout_width="100dp"
+                        android:layout_width="90dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:background="@color/red_color"
+                        android:background="#A30415"
                         android:text="Non-Veg"/>
             </LinearLayout>
 
@@ -303,7 +303,7 @@
                     android:id="@+id/btnResetAll"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:background="@color/btn_reset_all_bg"
+                    android:background="#B8DAE8"
                     android:padding="10dp"
                     android:text="@string/reset_all"
                     android:textColor="@color/btn_reset_all_text"

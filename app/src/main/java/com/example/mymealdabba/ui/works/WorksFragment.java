@@ -94,7 +94,7 @@ public class WorksFragment extends Fragment {
 
     public void setUpindicator(int position) {
 
-        dots = new TextView[4];
+        dots = new TextView[3];
         mDotLayout.removeAllViews();
 
         for (int i = 0; i < dots.length; i++) {

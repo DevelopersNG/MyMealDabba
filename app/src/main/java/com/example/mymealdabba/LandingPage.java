@@ -173,9 +173,9 @@ public class LandingPage extends AppCompatActivity {
         imageViewFacebook = findViewById(R.id.imageViewFacebook);
         imageViewTwitter = findViewById(R.id.imageViewTwitter);
         imageViewInstagram = findViewById(R.id.imageViewInstagram);
-        lblContactNo=findViewById(R.id.lblContactNo);
+        lblContactNo = findViewById(R.id.lblContactNo);
 
-        requestQueue= Volley.newRequestQueue(this);
+        requestQueue = Volley.newRequestQueue(this);
 
 
 //        cityAdapter=new ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line,cityList);
@@ -222,143 +222,8 @@ public class LandingPage extends AppCompatActivity {
 //        }
 
 
-//        loadData();
-
-
-
-
-
-
-
-
-
-//
-            btnGo1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(intent);
-            }
-        });
-
-            lblContactNo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    String number = "07030600025";
-                    Intent intent = new Intent(Intent.ACTION_DIAL);
-                    intent.setData(Uri.parse("tel:" +number));
-                    startActivity(intent);
-                }
-            });
-
-
-imageViewFacebook.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        gotoUrl("https://www.facebook.com/mymealdabba/");
-    }
-});
-
-
-imageViewTwitter.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        gotoUrl("https://twitter.com/mymealdabba");
-    }
-});
-
-imageViewInstagram.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        gotoUrl("https://www.instagram.com/mymealdabba/");
-    }
-});
     }
 
-//    private void loadData() {
-//        JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(Request.Method.POST, url, null, new Response.Listener<JSONObject>() {
-//            @Override
-//            public void onResponse(JSONObject response) {
-//                try {
-//                    JSONArray jsonArray=response.getJSONArray("city");
-//                    for (int i=0;i<jsonArray.length();i++){
-//                        JSONObject jsonObject=jsonArray.getJSONObject(i);
-//                        String city=jsonObject.optString("city");
-//                        cityList.add(city);
-//                        cityAdapter=new ArrayAdapter<>(LandingPage.this, android.R.layout.simple_list_item_1,cityList);
-//                        cityAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-//                        autoCompleteTextViewLocations.setAdapter(cityAdapter);
-//                    }
-//                }catch (JSONException e){
-//                    e.printStackTrace();
-//                }
-//
-//
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//
-//
-//            }
-//        });
-//        requestQueue.add(jsonObjectRequest);
-//
-//
-//    }
 
 
-    private void gotoUrl(String s) {
-        Uri uri=Uri.parse(s);
-        startActivity(new Intent(Intent.ACTION_VIEW,uri));
-    }
-
-//    private class viewAllCities extends AsyncTask<String, Void, String> {
-//
-//        @Override
-//        protected String doInBackground(String... strings) {
-//            String s="";
-//            try
-//            {
-//                HttpClient httpClient=new DefaultHttpClient();
-//                HttpPost httpPost=new HttpPost("https://localhost/mymealdabba/mmdwebservice/search/getAllCities");
-//
-//                List<NameValuePair> list=new ArrayList<NameValuePair>();
-//                list.add(new BasicNameValuePair("apikey","mmdnashik"));
-//                httpPost.setEntity(new UrlEncodedFormEntity(list));
-//                Log.e("Httppost - ",httpPost+"");
-//                HttpResponse httpResponse=  httpClient.execute(httpPost);
-//
-//                HttpEntity httpEntity=httpResponse.getEntity();
-//                s= readResponse(httpResponse);
-//                Log.e("*********************",s+"");
-//            }
-//            catch(Exception exception)  {
-//                exception.getMessage();
-//            }
-//            return s;
-//        }
-//
-//
-//        public String readResponse(HttpResponse res) {
-//            InputStream is=null;
-//            String return_text="";
-//            try {
-//                is=res.getEntity().getContent();
-//                BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(is));
-//                String line="";
-//                StringBuffer sb=new StringBuffer();
-//                while ((line=bufferedReader.readLine())!=null)
-//                {
-//                    sb.append(line);
-//                }
-//                return_text=sb.toString();
-//            } catch (Exception e)
-//            {
-//                    e.getMessage();
-//            }
-//            return return_text;
-//        }
-//
-//    }
 }

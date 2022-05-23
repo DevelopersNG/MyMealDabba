@@ -33,7 +33,7 @@ public class Messdeatilslistmodel {
     public String Views;
     public String Note;
     public String CuisineType;
-
+    public  List<ReviewsModel> Reviews;
     public String TotalReviews;
     public String AvgReviews;
     public String OneRating;
@@ -41,6 +41,4 @@ public class Messdeatilslistmodel {
     public String ThreeRating;
     public String FourRating;
     public String FiveRating;
-
-
 }

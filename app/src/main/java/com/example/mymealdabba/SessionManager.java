@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import com.example.mymealdabba.model.SessionModel;
+
 import java.util.HashMap;
 
 
@@ -14,7 +16,7 @@ public class SessionManager {
     public  static  final String KEY_CITY_ID="city_id";
 
     public static final String KEY_ID = "id";
-
+    public static final String KEY_RESULT = "result";
     public static final String KEY_NAME = "name";
     public static final String KEY_PHONE = "phone";
     public static final String KEY_EMAIL = "email";
@@ -37,11 +39,9 @@ public class SessionManager {
 
     public void createSessionLogin(String id) {
         editor.putBoolean(IS_LOGIN, true);
-
         editor.putString(KEY_ID, id);
         editor.commit();
     }
-
 
     public boolean isLoggedIn() {
         return pref.getBoolean(IS_LOGIN, false);
@@ -74,10 +74,12 @@ public class SessionManager {
 
     }
 
-    public void createSUserDetals(String name,String email,String phone) {
-        editor.putString(KEY_NAME, name);
-        editor.putString(KEY_EMAIL, email);
-        editor.putString(KEY_PHONE, phone);
+    public void createSUserDetals(SessionModel response) {
+//        editor.putString(KEY_NAME, name);
+//        editor.putString(KEY_EMAIL, email);
+        editor.putString(KEY_NAME, response.Name);
+        editor.putString(KEY_EMAIL, response.Email);
+        editor.putString(KEY_PHONE, response.contact_no);
         editor.commit();
     }
 

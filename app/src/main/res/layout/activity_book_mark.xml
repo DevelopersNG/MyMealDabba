@@ -33,7 +33,7 @@
             android:gravity="center"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:text="Not Any items Bookmark Yet !" />
+            android:text="No Bookmarks Available !" />
 
         <ImageView
             android:layout_width="50dp"
@@ -42,9 +42,16 @@
             android:background="@drawable/ic_bookmark" />
     </LinearLayout>
 
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srlRecycleBookmark"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFavorite"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </LinearLayout>

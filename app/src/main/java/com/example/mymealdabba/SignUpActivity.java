@@ -3,6 +3,7 @@ package com.example.mymealdabba;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -60,6 +61,20 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void listener() {
+
+
+        b.lblTerms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://mymealdabba.com/terms"));
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                    // intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=app.com.mymealdabba"));
+                }
+            }
+        });
 
         b.txtName.addTextChangedListener(new TextWatcher() {
             @Override
@@ -183,7 +198,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-        b.tvAlreadyAccRegister.setOnClickListener(new View.OnClickListener() {
+        b.tvAlreadyAccRegisterLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,LoginActivity.class);
@@ -268,11 +283,14 @@ public class SignUpActivity extends AppCompatActivity {
 //                        Intent intent = new Intent(context, LoginActivity.class);
                         //   intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
-                        sessionManager.createSUserDetals(email,name,phone);
+                       // sessionManager.createSUserDetals(email,name,phone);
 
                         b.lblTermsAndConditions.setVisibility(View.GONE);
                         b.btnSignup.setVisibility(View.GONE);
                         b.lblTerms.setVisibility(View.GONE);
+                        b.tvAlreadyAccRegister.setVisibility(View.GONE);
+                        b.tvAlreadyAccRegisterLogin.setVisibility(View.GONE);
+
 
                         b.lblOTPMessage.setVisibility(View.VISIBLE);
                         b.frameLayoutTxtOPT.setVisibility(View.VISIBLE);
@@ -324,6 +342,7 @@ public class SignUpActivity extends AppCompatActivity {
                         Toast.makeText(context, "User Successfully Registerd", Toast.LENGTH_SHORT).show();
                         // sessionManager.createSessionLogin(userId);
                         Intent intent = new Intent(context, LoginActivity.class);
+                        intent.putExtra("userData",response);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                     } else {

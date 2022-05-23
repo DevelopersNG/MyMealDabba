@@ -19,16 +19,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/mtbNavigation"
+
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:tooltipText="@string/app_name"
-                app:menu="@menu/menu_location"
-                app:title="@string/app_name"
-                app:titleCentered="true"
-                app:titleMarginStart="5dp"
-                app:titleTextColor="@color/white"/>
+                >
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/mtbNavigation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:tooltipText="@string/app_name"
+                    app:title="@string/app_name"
+                    app:titleCentered="true"
+                    app:titleMarginStart="5dp"
+                    app:titleTextColor="@color/white"/>
+
+                <ImageButton
+                    android:id="@+id/ibLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="150dp"
+                    android:background="@color/action_bar_color"
+                    android:src="@drawable/ic_location_svgrepo_com"/>
+            </FrameLayout>
 
         </com.google.android.material.appbar.AppBarLayout>  <ImageView
         android:layout_width="200dp"

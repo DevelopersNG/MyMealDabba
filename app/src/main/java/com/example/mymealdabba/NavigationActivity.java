@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -71,24 +73,17 @@ public class NavigationActivity extends AppCompatActivity {
         id = sessionManager.getId();
         listener();
 
-
-//        NavigationView navigationView = binding.navView;
-
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-//        mAppBarConfiguration = new AppBarConfiguration.Builder(
-//                R.id.nav_home, R.id.nav_Registration, R.id.nav_works, R.id.nav_specialOffer, R.id.nav_bookmark, R.id.nav_shareApp, R.id.nav_rateUs, R.id.nav_aboutUs, R.id.nav_connect)
-//                .setOpenableLayout(drawer)
-//                .build();
-////        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigation);
-//        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        //  NavigationUI.setupWithNavController(navigationView, navController);
         setSupportActionBar(binding.mtbNavigation);
 
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, binding.drawerLayout, binding.mtbNavigation, R.string.navigation_open, R.string.navigation_close);
         binding.drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
+        TextView tvEmailHeader= binding.nvHeader.getHeaderView(0).findViewById(R.id.tvEmailHeader);
+        tvEmailHeader.setText(sessionManager.getEmail());
+        TextView tvUserPhoneHeader= binding.nvHeader.getHeaderView(0).findViewById(R.id.tvUserPhoneHeader);
+        tvUserPhoneHeader.setText(sessionManager.getPhone());
+        Log.e("name",sessionManager.getName());
 
     }
 
@@ -101,15 +96,15 @@ public class NavigationActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = (item.getItemId());
-
+//               binding.nvHeader.setCheckedItem(id);
                 if (id == R.id.nav_home) {
                     Intent intent = new Intent(context, HomeActivity.class);
                     startActivity(intent);
                     binding.drawerLayout.closeDrawer(GravityCompat.START);
                     return true;
 
-                } else if (id == R.id.nav_works) {
-                    Intent intent = new Intent(context, MainActivity.class);
+                } else if (id == R.id.nav_work) {
+                    Intent intent = new Intent(context, SlideActivity.class);
                     startActivity(intent);
                     binding.drawerLayout.closeDrawer(GravityCompat.START);
                     return true;
@@ -172,13 +167,14 @@ public class NavigationActivity extends AppCompatActivity {
                     shareIntent.putExtra(Intent.EXTRA_TEXT, shareBodyText);
                     startActivity(Intent.createChooser(shareIntent, "Share With"));
                     return true;
-                } else if (id == R.id.nav_location) {
-                    Intent intent = new Intent(context, UserCurrentLocationActivity.class);
-                    startActivity(intent);
-                    binding.drawerLayout.closeDrawer(GravityCompat.START);
-                    return true;
-
                 }
+//                } else if (id == R.id.nav_location) {
+//                    Intent intent = new Intent(context, UserCurrentLocationActivity.class);
+//                    startActivity(intent);
+//                    binding.drawerLayout.closeDrawer(GravityCompat.START);
+//                    return true;
+//
+//                }
                 return false;
             }
         });

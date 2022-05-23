@@ -4,16 +4,29 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable-v24/edittext_dark_gray_background.xml" value="0.1365" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable-v24/ic_back.xml" value="0.1375" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable-v24/ic_next.xml" value="0.1375" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable-v24/progress_bar.xml" value="0.1375" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable-v24/rounded_go_orange_button.xml" value="0.1775" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable-v24/seleted.xml" value="0.1375" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable-v24/unselected.xml" value="0.1375" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable-v24/veg_rounded_deselect_button.xml" value="0.1775" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable-v24/veg_rounded_select_button.xml" value="0.1375" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable-v24/view_contact_details_rounded_button.xml" value="0.1375" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable-v24/whitebox_bg.xml" value="0.1775" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable-v24/yellowactivityindiacator.xml" value="0.1375" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/bg_gradient.xml" value="0.18" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/bg_rounded.xml" value="0.1385" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/dialog_bg.xml" value="0.1365" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/edit_text_border.xml" value="0.1385" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/edittext_curve_bg.xml" value="0.1385" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1375" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.1375" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.1375" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.18" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.18" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/ic_baseline_navigate_next_24.xml" value="0.1375" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.1375" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/ic_location_svgrepo_com.xml" value="0.1775" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/ic_meal_lunch_svgrepo_com.xml" value="0.1775" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/rb_favourite.xml" value="0.18" />
@@ -21,7 +34,7 @@
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/drawable/selected.xml" value="0.1775" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_about_us.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_book_mark.xml" value="0.195382642154767" />
-        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_bookmark_detail.xml" value="0.195382642154767" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_bookmark_detail.xml" value="0.264" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_connect_with.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_landing_page.xml" value="0.23802083333333332" />
@@ -34,20 +47,24 @@
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_otp_verification.xml" value="0.23802083333333332" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_otp_verification_dialog.xml" value="0.23802083333333332" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_sign_up.xml" value="0.23435897435897435" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_slide.xml" value="0.1838392475416845" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_slide_viewer.xml" value="0.25" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_splach.xml" value="0.23802083333333332" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_splash.xml" value="0.23435897435897435" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_tearm_and_condition.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/activity_user_current_location.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/app_bar_navigation.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/bottomsheet_layout_rating.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/content_navigation.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/dialogconfirmotp.xml" value="0.23802083333333332" />
-        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/filtter_page.xml" value="0.195382642154767" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/filtter_page.xml" value="0.264" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_aboutus.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_bookmark.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_connectwith.xml" value="0.195382642154767" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_current_location.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_home.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_location.xml" value="0.195382642154767" />
-        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_mess_cuisine.xml" value="0.2" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_mess_cuisine.xml" value="0.264" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_mess_details.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_mess_filter.xml" value="0.2" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/fragment_mess_list.xml" value="0.195382642154767" />
@@ -62,7 +79,8 @@
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/layout_city_items.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/layout_location_dialog.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/layout_location_items.xml" value="0.195382642154767" />
-        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/mess_listview_item.xml" value="0.195382642154767" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/layout_mess_swimmer.xml" value="0.13125267208208635" />
+        <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/mess_listview_item.xml" value="0.2" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/nav_header_navigation.xml" value="0.195382642154767" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/otp_page.xml" value="0.23802083333333332" />
         <entry key="..\:/MMDProject-main (1)/MyMealDabba/app/src/main/res/layout/rating.xml" value="0.14407866609662248" />

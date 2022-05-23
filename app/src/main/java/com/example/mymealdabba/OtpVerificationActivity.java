@@ -17,6 +17,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.mymealdabba.databinding.ActivityOtpVerificationBinding;
+import com.example.mymealdabba.model.SessionModel;
+import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,6 +33,7 @@ public class OtpVerificationActivity extends AppCompatActivity {
     String url = Utils.URL + "login-otp";
     String otpVerifyUrl = Utils.URL + "verifyOTP";
     String otp;
+
     String mobile;
     String userId;
 
@@ -79,7 +82,6 @@ public class OtpVerificationActivity extends AppCompatActivity {
             b.etOtpCode.setError(null);
         }
         return true;
-
     }
 
     private void verifyOtp() {
@@ -95,6 +97,11 @@ public class OtpVerificationActivity extends AppCompatActivity {
                     if (code.equalsIgnoreCase("1")) {
 
                         sessionManager.createSessionLogin(userId);
+
+                        Gson gson = new Gson();
+                        SessionModel sessionModel = gson.fromJson(String.valueOf((response)), SessionModel.class);
+                        sessionManager.createSUserDetals(sessionModel);
+
                         Intent intent = new Intent(context, HomeActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);

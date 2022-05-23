@@ -10,7 +10,7 @@
             android:title="@string/menu_home" />
 
         <item
-            android:id="@+id/nav_works"
+            android:id="@+id/nav_work"
             android:icon="@drawable/ic_work"
             android:title="@string/menu_how_it_works" />
 
@@ -46,10 +46,10 @@
             android:icon="@drawable/ic_baseline_star_rate_24"
             android:title="@string/menu_rate_us" />
 
-        <item
-            android:id="@+id/nav_location"
-            android:icon="@drawable/ic_location_svgrepo_com"
-            android:title="LOCATION" />
+<!--        <item-->
+<!--            android:id="@+id/nav_location"-->
+<!--            android:icon="@drawable/ic_location_svgrepo_com"-->
+<!--            android:title="LOCATION" />-->
 
         <item
             android:id="@+id/nav_shareApp"

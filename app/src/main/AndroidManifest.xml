@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tool="http://schemas.android.com/tools"
-    package="com.example.mymealdabba" >
+    package="com.example.mymealdabba">
 
     <uses-sdk
         android:minSdkVersion="24"
@@ -27,18 +27,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMealDabba"
         android:usesCleartextTraffic="true"
-        tool:replace="android:allowBackup" >
+        tool:replace="android:allowBackup">
         <activity
-            android:name="com.example.mymealdabba.MessListActivity"
+            android:name="com.example.mymealdabba.TearmAndConditionActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.mymealdabba.SlideViewerActivity"
+            android:exported="false"
+            tool:ignore="Instantiatable" />
+        <activity
+            android:name="com.example.mymealdabba.SlideActivity"
             android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBgBLHbxz8vEOTSJpLQyp5XM4S6pNAL6Ts" />
 
-        <activity
-            android:name="com.example.mymealdabba.UserCurrentLocationActivity"
-            android:exported="false" />
         <activity
             android:name="com.example.mymealdabba.BookmarkDetailActivity"
             android:exported="false" />
@@ -81,7 +85,7 @@
             android:exported="true" />
         <activity
             android:name="com.example.mymealdabba.SplashActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

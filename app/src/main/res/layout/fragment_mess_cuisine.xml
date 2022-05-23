@@ -50,7 +50,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:layout_margin="10dp"
             android:orientation="vertical">
 
@@ -78,7 +79,7 @@
             <CheckBox
 
                 android:id="@+id/maharashtrian"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
@@ -93,7 +94,6 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
                 android:text="Goan"
-
                 android:textColor="@color/text_color"
                 android:textSize="15dp" />
 
@@ -194,10 +194,6 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
-                android:checked="false"
-                android:clickable="false"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
                 android:text="Continental"
                 android:textColor="@color/text_color"
                 android:textSize="15dp" />
@@ -218,10 +214,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
-                android:text="JainFood"
+                android:text="Jain Food"
                 android:textColor="@color/text_color"
                 android:textSize="15dp" />
-
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -236,10 +231,13 @@
                     android:id="@+id/btnResetCuisineAll"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:background="@color/btn_reset_all_bg"
+                    android:background="#D2E7F1"
+                    android:drawableStart="@drawable/ic_baseline_restore_24"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="serif"
                     android:padding="10dp"
                     android:text="@string/reset_all"
-                    android:textColor="@color/btn_reset_all_text"
+                    android:textColor="@color/black"
                     android:textSize="15dp" />
 
                 <TextView
@@ -248,6 +246,9 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="15dp"
                     android:background="@color/mess_name"
+                    android:drawableStart="@drawable/ic_baseline_touch_app_24"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="serif"
                     android:padding="10dp"
                     android:text="@string/apply_filter"
                     android:textColor="@color/white"
@@ -255,8 +256,6 @@
 
             </LinearLayout>
         </LinearLayout>
-
-
 
     </ScrollView>
 

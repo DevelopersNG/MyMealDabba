@@ -82,7 +82,7 @@
                 android:background="@drawable/submit_button"
                 android:paddingLeft="30dp"
                 android:paddingRight="30dp"
-                android:text="SIGN IN"
+                android:text="Login"
                 android:textColor="@color/white"
                 android:textSize="21dp"
                 android:textStyle="normal" />
@@ -102,7 +102,7 @@
         android:textSize="15dp" />
 
     <TextView
-        android:id="@+id/lblTerms"
+        android:id="@+id/lblTerm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
@@ -131,7 +131,7 @@
                     android:id="@+id/signup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SignUp Now?..."
+                    android:text="Register Now?..."
                     android:layout_marginStart="5dp"
                     android:textColor="@color/colorOrange"
                     android:textSize="16dp"
