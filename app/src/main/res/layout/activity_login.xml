@@ -69,19 +69,24 @@
             </FrameLayout>
 
 
-            <Button
+            <TextView
                 android:id="@+id/btnSignin"
-                android:layout_width="230dp"
-                android:layout_height="53dp"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/frameLayoutTxtMobile"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="74dp"
+                android:fontFamily="@font/sourcesans"
+                android:translationZ="20dp"
+                android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
                 android:layout_marginRight="10dp"
+                android:padding="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/submit_button"
+                android:background="@drawable/button_gredient"
                 android:paddingLeft="30dp"
                 android:paddingRight="30dp"
+                android:textAlignment="center"
                 android:text="Login"
                 android:textColor="@color/white"
                 android:textSize="21dp"

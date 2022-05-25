@@ -80,6 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="OTP Verification"
+        android:fontFamily="@font/italic"
         android:textColor="@color/black"
         android:textSize="18dp"
         android:textStyle="bold" />
@@ -87,6 +88,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/sourcesans"
         android:layout_marginTop="10dp"
         android:text="Enter the OTP sent to"
         android:textColor="@color/black"
@@ -130,8 +132,8 @@
 
         <EditText
             android:id="@+id/etOtpCode"
-            android:layout_width="200dp"
-            android:layout_height="45dp"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
             android:gravity="center"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
@@ -174,12 +176,16 @@
 
     </LinearLayout>
 
-    <Button
+    <TextView
         android:id="@+id/btnVerifyOtp"
-        android:layout_width="300dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:padding="10dp"
         android:text="Verify"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:background="@drawable/button_gredient"
         android:textSize="16dp"
         android:textStyle="bold" />
 </LinearLayout>

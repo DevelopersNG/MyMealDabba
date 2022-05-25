@@ -7,6 +7,7 @@ public class Messdeatilslistmodel {
     public  List<ImageModel> Images;
 
     public String MemberID;
+    public String Member_ID;
     public  String BookMarksStatus;
     public String MemberName;
     public String Promoted;

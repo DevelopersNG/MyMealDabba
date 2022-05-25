@@ -16,7 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:titleCentered="true"
-            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
             app:title="Cuisine Type"
             />
     </com.google.android.material.appbar.AppBarLayout>
@@ -223,7 +222,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
-                android:text="chinese"
+                android:text="Chinese"
                 android:textColor="@color/text_color"
                 android:textSize="15dp" />
 
@@ -241,37 +240,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="30dp"
                 android:orientation="horizontal"
                 android:weightSum="1">
 
                 <TextView
                     android:id="@+id/btnResetCuisineAll"
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:background="@color/mess_name"
-                    android:drawableStart="@drawable/ic_baseline_restore_24"
-                    android:drawablePadding="8dp"
-                    android:fontFamily="serif"
-                    android:padding="10dp"
-                    android:text="@string/reset_all"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:textSize="10dp"
                     android:textColor="@color/white"
-                    android:textSize="15dp" />
+                    android:padding="8dp"
+                    android:drawableStart="@drawable/ic_baseline_restore_24"
+                    android:background="@drawable/button_gredient"
+                    android:text=" Reset All" />
 
                 <TextView
                     android:id="@+id/btnApplyCuisineFilter"
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="15dp"
-                    android:background="@color/mess_name"
-                    android:drawableStart="@drawable/ic_baseline_touch_app_24"
-                    android:drawablePadding="8dp"
-                    android:fontFamily="serif"
-                    android:padding="10dp"
-                    android:text="@string/apply_filter"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:textSize="10dp"
                     android:textColor="@color/white"
-                    android:textSize="15dp" />
+                    android:padding="8dp"
+                    android:layout_marginStart="8dp"
+                    android:drawableStart="@drawable/ic_baseline_touch_app_24"
+                    android:background="@drawable/button_gredient"
+                    android:text=" Apply Filter"  />
 
             </LinearLayout>
         </LinearLayout>

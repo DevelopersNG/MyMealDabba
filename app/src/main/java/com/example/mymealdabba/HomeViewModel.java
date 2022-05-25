@@ -1,8 +1,6 @@
 package com.example.mymealdabba;
 
 import android.app.Application;
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -22,7 +20,6 @@ import com.example.mymealdabba.model.LocationModel;
 import com.example.mymealdabba.model.MessFilterModel;
 import com.example.mymealdabba.model.MessNameListModel;
 import com.example.mymealdabba.model.Messdeatilslistmodel;
-import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -51,8 +48,8 @@ public class HomeViewModel extends AndroidViewModel {
     }
 
     public void getMessData() {
-         ShimmerFrameLayout shimmerFrameLayout;
-       String url = Utils.URL + "getMessList";
+
+        String url = Utils.URL + "getMessList";
 //        MessFilterModel messFilterModel = new MessFilterModel("", "", "", "", "", "", "", "", "");
         /*if (_filterMess.getValue() != null) {
             messFilterModel = _filterMess.getValue();
@@ -71,24 +68,26 @@ public class HomeViewModel extends AndroidViewModel {
                 Log.e("Filter response", response);
                 Gson gson = new Gson();
                 DataModelMessDetailsList data = gson.fromJson(response, DataModelMessDetailsList.class);
-                if (data.result == 1 || data.result == 0) {
+                if (data != null && (data.result == 1 || data.result == 0)) {
                     _messList.postValue(data);
                 }
             }
         }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        error.printStackTrace();
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
 
-                        Toast.makeText(getApplication(), "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
-                    }
-                }) {
+                Toast.makeText(getApplication(), "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
+            }
+        }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("apikey", Utils.API_KEY);
                 params.put("CityID", sessionManager.getCityId());
                 params.put("UserID", sessionManager.getId());
+
+
                 if (filter != null && filter.MessType != null && !filter.MessType.isEmpty()) {
                     params.put("MessType", filter.MessType);
                 }
@@ -115,6 +114,7 @@ public class HomeViewModel extends AndroidViewModel {
         stringRequest.setRetryPolicy(new DefaultRetryPolicy(30000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         MySingleton.myGetMySingleton(getApplication()).myAddToRequest(stringRequest);
     }
+
     public List<Messdeatilslistmodel> filter(String text) {
         ArrayList<Messdeatilslistmodel> filteredList = new ArrayList<>();
         if (_messList.getValue() != null) {

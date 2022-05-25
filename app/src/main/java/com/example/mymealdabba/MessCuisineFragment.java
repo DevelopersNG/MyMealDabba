@@ -1,6 +1,7 @@
 package com.example.mymealdabba;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,12 +73,14 @@ public class MessCuisineFragment extends DialogFragment {
     private void listener() {
 
 
-        b.mtbCuisineType.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                requireActivity().onBackPressed();
-            }
-        });
+//        b.mtbCuisineType.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent =new Intent(getContext(),NavigationActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+//                startActivity(intent);
+//            }
+//        });
 
         b.btnApplyCuisineFilter.setOnClickListener(new View.OnClickListener() {
             @Override

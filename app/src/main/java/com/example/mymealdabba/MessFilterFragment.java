@@ -1,6 +1,7 @@
 package com.example.mymealdabba;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -74,12 +75,14 @@ public class MessFilterFragment extends DialogFragment {
             }
         });
 
-        b.mtbFilterMess.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                requireActivity().onBackPressed();
-            }
-        });
+//        b.mtbFilterMess.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent =new Intent(getContext(),NavigationActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+//                startActivity(intent);
+//            }
+//        });
 
         b.btnResetAll.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,11 +127,11 @@ public class MessFilterFragment extends DialogFragment {
         }
 
         if (b.chkHotel.isChecked()) {
-            sbMessType.append(b.chkHotel.getText().toString().trim()).append(",");
+            sbMessType.append("Hotel/Parcel".trim()).append(",");
         }
 
         if (b.chkMahila.isChecked()) {
-            sbMessType.append(b.chkMahila.getText().toString().trim()).append(",");
+            sbMessType.append("mahila".toString().trim()).append(",");
         }
 
         if (b.chkHomeDelivery.isChecked()) {

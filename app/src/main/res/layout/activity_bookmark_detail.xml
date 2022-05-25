@@ -21,6 +21,7 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:tooltipText="@string/app_name"
             app:title="@string/app_name"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
             app:titleMarginStart="5dp"
             app:titleTextColor="@color/white"
             tools:ignore="MissingConstraints"/>
@@ -40,13 +41,42 @@
             <RelativeLayout
                 android:id="@+id/relativeLayoutFavMessImages"
                 android:layout_width="wrap_content"
-                android:layout_height="250dp"
+                android:layout_height="200dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="64dp"
                 android:layout_marginEnd="0dp">
 
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="6dp">
 
+                    <com.smarteist.autoimageslider.SliderView
+                        android:id="@+id/Bookmarkslider"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:layout_centerInParent="true"
+                        app:sliderAnimationDuration="600"
+                        app:sliderAutoCycleDirection="back_and_forth"
+                        app:sliderIndicatorAnimationDuration="600"
+                        app:sliderIndicatorEnabled="true"
+                        app:sliderIndicatorGravity="center_horizontal|bottom"
+                        app:sliderIndicatorMargin="15dp"
+                        app:sliderIndicatorOrientation="horizontal"
+                        app:sliderIndicatorPadding="3dp"
+                        app:sliderIndicatorRadius="2dp"
+                        app:sliderIndicatorSelectedColor="#5A5A5A"
+                        app:sliderIndicatorUnselectedColor="#FFF"
+                        app:sliderScrollTimeInSec="1"
+                        tools:ignore="MissingClass" />
+
+                </androidx.cardview.widget.CardView>
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/ivBookmark"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content" />-->
                 <!--                <androidx.recyclerview.widget.RecyclerView-->
                 <!--                    android:id="@+id/product_hor_recy"-->
                 <!--                    android:layout_width="match_parent"-->
@@ -66,46 +96,29 @@
                     android:paddingTop="0dp"
                     android:visibility="gone" />-->
 
-                <TextView
-                    android:id="@+id/txtFavAvgRating"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
 
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@color/green_color"
-                    android:drawableStart="@drawable/ic_baseline_star_24"
-                    android:gravity="center"
-                    android:padding="2dp"
-                    android:text="3.4"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="14dp" />
+<!--                <ViewFlipper-->
+<!--                    android:id="@+id/messImagesViewFlipper"-->
+<!--                    android:layout_width="fill_parent"-->
+<!--                    android:layout_height="250dp"-->
+<!--                    android:layout_marginBottom="0dp"-->
+<!--                    android:flipInterval="@string/home_slider_interval"-->
+<!--                    android:paddingLeft="0dp"-->
+<!--                    android:paddingTop="0dp"-->
+<!--                    android:paddingRight="0dp"-->
+<!--                    android:visibility="gone" />-->
 
-                <ViewFlipper
-                    android:id="@+id/messImagesViewFlipper"
-                    android:layout_width="fill_parent"
-                    android:layout_height="250dp"
-                    android:layout_marginBottom="0dp"
-                    android:flipInterval="@string/home_slider_interval"
-                    android:paddingLeft="0dp"
-                    android:paddingTop="0dp"
-                    android:paddingRight="0dp"
-                    android:visibility="gone" />
-
-                <ImageView
-                    android:id="@+id/imageFavViewBack"
-                    android:layout_width="23dp"
-                    android:layout_height="23dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:src="@drawable/ic_baseline_arrow_back_24" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageFavViewBack"-->
+<!--                    android:layout_width="23dp"-->
+<!--                    android:layout_height="23dp"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:src="@drawable/ic_baseline_arrow_back_24" />-->
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
@@ -127,8 +140,26 @@
                         android:textSize="16dp"
                         android:visibility="gone" />
 
+
+                    <TextView
+                        android:id="@+id/txtFavAvgRating"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginRight="308dp"
+                        android:background="@drawable/button_gredient"
+                        android:drawableStart="@drawable/ic_baseline_star_24"
+                        android:gravity="center"
+                        android:padding="2dp"
+                        android:text=" 3.4 "
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
                     <ImageView
-                        android:id="@+id/imageViewShare"
+                        android:id="@+id/imageFavViewShare"
                         android:layout_width="38dp"
                         android:layout_height="38dp"
                         android:layout_alignParentRight="true"
@@ -148,6 +179,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/italic"
                 android:layout_marginRight="12dp"
                 android:text="Sai Mess"
                 android:textColor="@color/details_name"
@@ -172,13 +204,15 @@
                 android:id="@+id/btnFavTapToRate"
                 android:layout_width="120dp"
                 android:layout_height="33dp"
+
                 android:layout_below="@+id/lblFavMessAddress"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/ripple_button"
+                android:background="@drawable/button_gredient"
                 android:gravity="center"
                 android:text="TAP TO RATE"
-                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textSize="13dp"
 
                 />
@@ -198,10 +232,12 @@
                     android:id="@+id/lblFavTypeTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:text="@string/title_type"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
                     android:textColor="@color/details_view_title"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -218,7 +254,7 @@
                 android:includeFontPadding="false"
                 android:text="@string/title_type"
                 android:textColor="@color/details_addr"
-                android:textSize="17dp" />
+                android:textSize="15dp" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutFavExperience"
@@ -237,8 +273,10 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:text="@string/title_experience"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
                     android:textColor="@color/details_view_title"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -255,7 +293,7 @@
                 android:includeFontPadding="false"
                 android:text="@string/title_experience"
                 android:textColor="@color/details_addr"
-                android:textSize="17dp" />
+                android:textSize="15dp" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutFavCategory"
@@ -274,9 +312,11 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:text="@string/title_category"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
                     android:textAllCaps="true"
                     android:textColor="@color/details_view_title"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -293,7 +333,7 @@
                 android:includeFontPadding="false"
                 android:text="@string/title_category"
                 android:textColor="@color/details_addr"
-                android:textSize="17dp" />
+                android:textSize="15dp" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutFavCuisineType"
@@ -312,9 +352,11 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:text="@string/title_cuisine_type"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
                     android:textAllCaps="true"
                     android:textColor="@color/details_view_title"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -331,7 +373,7 @@
                 android:includeFontPadding="false"
                 android:text="@string/title_cuisine_type"
                 android:textColor="@color/details_addr"
-                android:textSize="17dp" />
+                android:textSize="15dp" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutFavService"
@@ -350,9 +392,11 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:text="@string/title_service"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
                     android:textAllCaps="true"
                     android:textColor="@color/details_view_title"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -369,7 +413,7 @@
                 android:includeFontPadding="false"
                 android:text="@string/title_service"
                 android:textColor="@color/details_addr"
-                android:textSize="17dp" />
+                android:textSize="15dp" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutFavSpecialOrders"
@@ -388,8 +432,10 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:text="@string/title_special_orders"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
                     android:textColor="@color/details_view_title"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -406,7 +452,7 @@
                 android:includeFontPadding="false"
                 android:text="@string/title_special_orders"
                 android:textColor="@color/details_addr"
-                android:textSize="17dp" />
+                android:textSize="15dp" />
 
 
             <RelativeLayout
@@ -426,8 +472,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/title_special_orders_patient"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
                     android:textColor="@color/details_view_title"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -445,7 +493,7 @@
                 android:includeFontPadding="false"
                 android:text="@string/title_special_orders_patient"
                 android:textColor="@color/details_addr"
-                android:textSize="17dp" />
+                android:textSize="15dp" />
 
 
             <RelativeLayout
@@ -465,8 +513,10 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:text="@string/monthly_rate_details"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
                     android:textColor="@color/details_view_title"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -480,10 +530,11 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:gravity="center"
+
                 android:includeFontPadding="false"
                 android:text="@string/monthly_rate_details"
                 android:textColor="@color/details_addr"
-                android:textSize="17dp" />
+                android:textSize="15dp" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutFavDailyRate"
@@ -501,9 +552,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
+                    android:fontFamily="serif"
                     android:text="@string/title_daily_rate"
                     android:textColor="@color/details_view_title"
-                    android:textSize="18dp" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
@@ -520,7 +573,7 @@
                 android:includeFontPadding="false"
                 android:text="@string/title_daily_rate"
                 android:textColor="@color/details_addr"
-                android:textSize="17dp" />
+                android:textSize="15dp" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutFavTime"
@@ -539,6 +592,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:text="@string/time"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
                     android:textColor="@color/details_view_title"
                     android:textSize="18dp" />
 
@@ -557,7 +612,7 @@
                 android:includeFontPadding="false"
                 android:text="@string/time"
                 android:textColor="@color/details_addr"
-                android:textSize="17dp" />
+                android:textSize="15dp" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutFavNotes"
@@ -576,8 +631,10 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:text="@string/notes"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
                     android:textColor="@color/details_view_title"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -594,7 +651,7 @@
                 android:includeFontPadding="false"
                 android:text="@string/notes"
                 android:textColor="@color/details_addr"
-                android:textSize="17dp" />
+                android:textSize="15dp" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutFavAlert"
@@ -615,7 +672,7 @@
                     android:layout_margin="5dp"
                     android:text="@string/note"
                     android:textColor="@color/alert_title"
-                    android:textSize="17dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -707,7 +764,7 @@
                 android:layout_below="@+id/relativeLayoutFavContactDetails"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/view_contact_details_rounded_button"
+                android:background="@drawable/button_gredient"
                 android:padding="12dp"
                 android:text="@string/view_contact_details"
                 android:textColor="@color/white"

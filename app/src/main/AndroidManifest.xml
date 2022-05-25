@@ -29,9 +29,6 @@
         android:usesCleartextTraffic="true"
         tool:replace="android:allowBackup">
         <activity
-            android:name="com.example.mymealdabba.TearmAndConditionActivity"
-            android:exported="false" />
-        <activity
             android:name="com.example.mymealdabba.SlideViewerActivity"
             android:exported="false"
             tool:ignore="Instantiatable" />

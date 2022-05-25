@@ -15,7 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:titleCentered="true"
-            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
             app:title="Filter Mess"
             />
     </com.google.android.material.appbar.AppBarLayout>
@@ -95,6 +94,7 @@
                     android:id="@+id/rbRecentlyAdded"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/sourcesans"
                     android:text="Recently Added "
                     android:textSize="18sp" />
 
@@ -102,6 +102,7 @@
                     android:id="@+id/rbCostHighToLow"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/sourcesans"
                     android:text="Cost High to Low"
                     android:textSize="18sp" />
 
@@ -109,6 +110,7 @@
                     android:id="@+id/rbCostLowToHigh"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/sourcesans"
                     android:text="Cost Low to High"
                     android:textSize="18sp" />
             </RadioGroup>
@@ -165,6 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
+                    android:fontFamily="@font/sourcesans"
                     android:textSize="18sp"
                     android:text="Food Mess" />
 
@@ -173,11 +176,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
+                    android:fontFamily="@font/sourcesans"
                     android:textSize="18sp"
                     android:text="Hotel/Parcel Point" />
 
                 <CheckBox
                     android:id="@+id/chkMahila"
+                    android:fontFamily="@font/sourcesans"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
@@ -227,6 +232,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
+                    android:fontFamily="@font/sourcesans"
+
                     android:id="@+id/chkHomeDelivery"
                     android:textSize="18sp"
                     android:text="Home Delivery" />
@@ -236,6 +243,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
+                    android:fontFamily="@font/sourcesans"
                     android:textSize="18sp"
                     android:text="At Premises" />
 
@@ -250,6 +258,7 @@
                 <ImageView
                     android:id="@+id/imageCategory"
                     android:layout_width="15dp"
+                    android:fontFamily="@font/sourcesans"
                     android:layout_height="15dp"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
@@ -274,25 +283,50 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="@drawable/edittext_dark_gray_background"
                 android:layout_marginTop="15dp"
                 android:orientation="horizontal">
+<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
 
+    >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+
+        android:layout_marginStart="8dp"
+        android:src="@drawable/broccoli"/>
+
+
+
+</FrameLayout>
 
                     <CheckBox
                         android:id="@+id/chipVeg"
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:background="#18D65C"
+                        android:layout_height="30dp"
                         android:text="Veg    "/>
 
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/chicken_leg"/>
+
+                </FrameLayout>
                     <CheckBox
                         android:id="@+id/chipNonVeg"
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="30dp"
                         android:layout_marginStart="8dp"
-                        android:background="#A30415"
                         android:text="Non-Veg  "/>
             </LinearLayout>
 
@@ -317,11 +351,12 @@
                     android:id="@+id/btnResetAll"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:background="@color/mess_name"
+                    android:background="@drawable/button_gredient"
                     android:padding="10dp"
                     android:drawablePadding="8dp"
                     android:drawableStart="@drawable/ic_baseline_restore_24"
                     android:text="@string/reset_all"
+                    android:fontFamily="@font/merriwether"
                     android:textColor="@color/white"
                     android:textSize="15dp" />
 
@@ -332,9 +367,10 @@
                     android:layout_marginLeft="15dp"
                     android:drawablePadding="8dp"
                     android:drawableStart="@drawable/ic_baseline_touch_app_24"
-                    android:background="@color/mess_name"
+                    android:background="@drawable/button_gredient"
                     android:padding="10dp"
                     android:text="@string/apply_filter"
+                    android:fontFamily="@font/merriwether"
                     android:textColor="@color/white"
                     android:textSize="15dp" />
 

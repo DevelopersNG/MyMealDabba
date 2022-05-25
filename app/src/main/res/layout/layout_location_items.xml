@@ -13,6 +13,7 @@ android:layout_height="wrap_content">
         android:drawableStart="@drawable/ic_location_svgrepo_com"
         android:drawablePadding="20dp"
         android:padding="10dp"
+        android:fontFamily="@font/sourcesans"
       android:textAllCaps="true"
         android:drawableTintMode="screen"
         android:gravity="center_vertical"

@@ -57,6 +57,7 @@
         android:id="@+id/btnLocation"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
         android:text="Locality"
         app:icon="@drawable/ic_location_svgrepo_com" />
@@ -69,35 +70,47 @@
         android:visibility="gone"
         app:icon="@drawable/ic_meal_lunch_svgrepo_com" />
 </LinearLayout>
+
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fcvNavigation"
             android:name="com.example.mymealdabba.MessListFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
+
+            android:layout_weight="1" />
         <LinearLayout
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center"
+            android:padding="10dp"
             android:layout_width="wrap_content">
-            <com.google.android.material.button.MaterialButton
+
+            <TextView
                 android:id="@+id/btnFilter"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
-                android:textSize="10dp"
-                android:text=" Select Filter"
-                app:icon="@drawable/ic_baseline_filter_alt_24" />
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:drawableStart="@drawable/ic_baseline_restore_24"
+                android:background="@drawable/button_gredient"
+                android:fontFamily="@font/abbregular"
+                android:text=" Select Filter" />
 
-            <Button
+            <TextView
                 android:id="@+id/btnCuisine"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_gredient"
                 android:layout_weight="1"
-                android:textSize="10dp"
+                android:textSize="15dp"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/abbregular"
                 android:layout_marginStart="10dp"
                 android:text=" Select Cuisine "
-                app:icon="@drawable/ic_meal_lunch_svgrepo_com" />
+                android:drawableStart="@drawable/ic_meal_lunch_svgrepo_com" />
         </LinearLayout>
 
     </LinearLayout>
@@ -108,7 +121,9 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        app:itemTextAppearance="@style/Style_TextView"
         android:background="@color/white"
+        android:fontFamily="@font/source_sans_pro_light"
         app:headerLayout="@layout/nav_header_navigation"
         app:itemHorizontalPadding="30dp"
         app:menu="@menu/activity_navigation_drawer" />

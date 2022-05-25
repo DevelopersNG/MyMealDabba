@@ -69,4 +69,10 @@
         <item name="android:windowFullscreen">false</item>
         <item name="android:windowIsFloating">false</item>
     </style>
+
+
+    <style name="Style_TextView">
+        <item name="fontFamily">@font/pt_serif_bold</item>
+        <item name="android:textSize">17sp</item>
+    </style>
 </resources>

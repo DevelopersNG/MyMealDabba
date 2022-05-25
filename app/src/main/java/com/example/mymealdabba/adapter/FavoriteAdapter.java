@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.mymealdabba.BookmarkDetailActivity;
-import com.example.mymealdabba.MessDetailsActivity;
 import com.example.mymealdabba.R;
 import com.example.mymealdabba.Utils;
 import com.example.mymealdabba.model.ImageModel;
@@ -25,7 +24,7 @@ import com.google.gson.Gson;
 
 import java.util.List;
 
-public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHolder>{
+public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHolder> {
     Context context;
     List<Messdeatilslistmodel> list;
 
@@ -44,7 +43,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull FavoriteAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Messdeatilslistmodel model= list.get(position);
+        Messdeatilslistmodel model = list.get(position);
 
 //        Glide.with(holder.imageListViewMess)
 //                .load(model.Images)
@@ -57,7 +56,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
         holder.lblFavMessCategory.setText(model.Category);
         holder.lblFavMessService.setText(model.Service);
         holder.lblFavMessExperience.setText(model.ExpYears);
-
+        holder.lblFavMessType.setText(model.Type);
 
 
         for (ImageModel image : model.Images) {
@@ -98,7 +97,12 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
                 }
             }
         });
-
+        if (model.Promoted.equals("1")) {
+            //
+            holder.lblFavPromoted.setVisibility(View.VISIBLE);
+        } else {
+            holder.lblFavPromoted.setVisibility(View.GONE);
+        }
 
     }
 
@@ -110,20 +114,22 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageFavListViewMess;
         AppCompatToggleButton tbBookmarkFav;
-        TextView lblFavMessName,lblFavPromoted,lblFavMessAddress,lblFavMessMonthlyRate,lblFavTotalViews,lblFavMessCategory,lblFavMessService,lblFavMessExperience;
+        TextView lblFavMessName, lblFavPromoted, lblFavMessType, lblFavMessAddress, lblFavMessMonthlyRate, lblFavTotalViews, lblFavMessCategory, lblFavMessService, lblFavMessExperience;
+
         public ViewHolder(@NonNull View itemView) {
 
             super(itemView);
-            imageFavListViewMess=itemView.findViewById(R.id.imageFavListViewMess);
-            lblFavMessName=itemView.findViewById(R.id.lblFavMessName);
-            lblFavPromoted=itemView.findViewById(R.id.lblFavPromoted);
-            lblFavMessAddress=itemView.findViewById(R.id.lblFavMessAddress);
-            lblFavMessMonthlyRate=itemView.findViewById(R.id.lblFavMessMonthlyRate);
-            lblFavTotalViews=itemView.findViewById(R.id.lblFavTotalViews);
-            lblFavMessCategory=itemView.findViewById(R.id.lblFavMessCategory);
-            lblFavMessService=itemView.findViewById(R.id.lblFavMessService);
-            lblFavMessExperience=itemView.findViewById(R.id.lblFavMessExperience);
+            imageFavListViewMess = itemView.findViewById(R.id.imageFavListViewMess);
+            lblFavMessName = itemView.findViewById(R.id.lblFavMessName);
+            lblFavPromoted = itemView.findViewById(R.id.lblFavPromoted);
+            lblFavMessAddress = itemView.findViewById(R.id.lblFavMessAddress);
+            lblFavMessMonthlyRate = itemView.findViewById(R.id.lblFavMessMonthlyRate);
+            lblFavTotalViews = itemView.findViewById(R.id.lblFavTotalViews);
+            lblFavMessCategory = itemView.findViewById(R.id.lblFavMessCategory);
+            lblFavMessService = itemView.findViewById(R.id.lblFavMessService);
+            lblFavMessExperience = itemView.findViewById(R.id.lblFavMessExperience);
             tbBookmarkFav = itemView.findViewById(R.id.tbBookmarkFav);
+            lblFavMessType = itemView.findViewById(R.id.lblFavMessType);
         }
     }
 }

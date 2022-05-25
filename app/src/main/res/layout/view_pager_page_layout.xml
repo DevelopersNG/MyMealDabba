@@ -10,8 +10,7 @@
         android:layout_height="250dp"
         android:adjustViewBounds="true"
         android:paddingTop="0dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_launcher" />
+        android:scaleType="fitXY" />
 
 <!--    <RelativeLayout-->
 <!--        android:layout_width="fill_parent"-->

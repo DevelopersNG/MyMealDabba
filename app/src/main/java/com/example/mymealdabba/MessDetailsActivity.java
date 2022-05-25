@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -26,12 +27,13 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.bumptech.glide.Glide;
+import com.example.mymealdabba.adapter.SliderAdapter;
 import com.example.mymealdabba.databinding.ActivityMessDetailsBinding;
-import com.example.mymealdabba.model.ImageModel;
 import com.example.mymealdabba.model.Messdeatilslistmodel;
-import com.example.mymealdabba.model.ReviewsModel;
 import com.google.gson.Gson;
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,6 +49,8 @@ public class MessDetailsActivity extends AppCompatActivity {
     Messdeatilslistmodel model;
     String url = Utils.URL + "addReview";
     String rating;
+    SliderView sliderView;
+    SliderAdapter sliderAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +99,6 @@ public class MessDetailsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MessDetailsActivity.this);
                 View view1 = getLayoutInflater().inflate(R.layout.rating, null);
-
                 builder.setView(view1);
                 AlertDialog dialog = builder.create();
                 dialog.show();
@@ -121,6 +124,7 @@ public class MessDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showDialog();
+
             }
         });
 
@@ -131,7 +135,7 @@ public class MessDetailsActivity extends AppCompatActivity {
                 shareIntent.setType("text/plain");
                 String shareSubText = "\t\n" +
                         "MyMealDabba (Tiffin Service Listings)";
-                String shareBodyText = Utils.MESS + "36";
+                String shareBodyText = model.MessLink;
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, shareSubText);
                 shareIntent.putExtra(Intent.EXTRA_TEXT, shareBodyText);
                 startActivity(Intent.createChooser(shareIntent, "Share With"));
@@ -139,21 +143,39 @@ public class MessDetailsActivity extends AppCompatActivity {
             }
         });
 
+
+
+
+
+
+        sliderView = findViewById(R.id.slider);
+
+        sliderAdapter=new SliderAdapter(model.Images);
+        sliderView.setSliderAdapter(sliderAdapter);
+
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
+        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+        sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
+        sliderView.setIndicatorSelectedColor(Color.WHITE);
+        sliderView.setIndicatorUnselectedColor(Color.GRAY);
+        sliderView.setScrollTimeInSec(3);
+        sliderView.setAutoCycle(true);
+        sliderView.startAutoCycle();
+
     }
+
 
     private void showDialog() {
 
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.bottomsheet_layout_rating);
-
-        Button btnRateSubmit = dialog.findViewById(R.id.btnRateSubmit);
+        TextView btnRateSubmit = dialog.findViewById(R.id.btnRateSubmit);
         RatingBar ratingbar = dialog.findViewById(R.id.ratingBar);
-
+        ratingbar.setRating(Float.parseFloat(model.AvgReviews));
         btnRateSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 rating = String.valueOf(ratingbar.getRating());
 
                 getDataRate();
@@ -162,6 +184,9 @@ public class MessDetailsActivity extends AppCompatActivity {
 
             }
         });
+
+
+
 
         dialog.show();
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -248,25 +273,24 @@ public class MessDetailsActivity extends AppCompatActivity {
 
         ((MessDetailsActivity) context).b.mtbNavigationMess.setTitle(model.MemberName);
 
-        for (ImageModel image : model.Images) {
-            Log.e("image", Utils.IMAGEURL + image.ImagePath);
-            if (image.IsDefault.equalsIgnoreCase("1")) {
-                Glide.with(context)
-                        .load(Utils.IMAGEURL + image.ImagePath)
-                        .into(b.ivMess);
+//        for (ImageModel image : model.Images) {
+//            Log.e("image", Utils.IMAGEURL + image.ImagePath);
+//            if (image.IsDefault.equalsIgnoreCase("1")) {
+//                Glide.with(context)
+//                        .load(Utils.IMAGEURL + image.ImagePath)
+//                        .into(b.ivMess);
+//
+//                break;
+//            } else {
+//                Glide.with(context)
+//                        .load(Utils.IMAGEURL + image.ImagePath)
+//                        .into(b.ivMess);
+//            }
+//
+//        }
 
-                break;
-            } else {
-                Glide.with(context)
-                        .load(Utils.IMAGEURL + image.ImagePath)
-                        .into(b.ivMess);
-            }
 
-        }
-
-
-    b.txtAvgRating.setText(model.AvgReviews);
-
+        b.txtAvgRating.setText(model.AvgReviews);
 
         b.tbMessDetailFav.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -282,15 +306,13 @@ public class MessDetailsActivity extends AppCompatActivity {
         });
 
 
-
         b.tbMessDetailFav.setChecked(model.BookMarksStatus.equals("1"));
         b.lblMonthlyRate.setText(model.MonthlyRate);
-        b.lblDailyRate.setText(model.DailyRate);
+        b.lblDailyRate.setText(model.TiffinRate);
         b.lblTime.setText(model.StartTimeMorning + "A.M" + " TO " + model.CloseTimeMorning + "A.M" + " & " + model.StartTimeEvening + "P.M" + " TO " + model.CloseTimeEvening + "P.M");
         b.lblNotes.setText(model.Note);
         b.lblContactNo.setText(model.ContactNo1);
         b.lblContactAddress.setText(model.Location);
-
 
     }
 }
