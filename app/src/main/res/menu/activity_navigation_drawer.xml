@@ -28,7 +28,7 @@
         <item
             android:id="@+id/nav_Registration"
             android:icon="@drawable/ic_food_mess"
-            android:title="@string/menu_tiffin_mess_registration" />
+            android:title="Tiffin Mess Registration" />
 
 
 

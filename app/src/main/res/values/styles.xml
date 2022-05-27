@@ -73,6 +73,6 @@
 
     <style name="Style_TextView">
         <item name="fontFamily">serif</item>
-        <item name="android:textSize">17sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 </resources>

@@ -264,28 +264,30 @@
                 <TextView
                     android:id="@+id/btnResetCuisineAll"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:textSize="10dp"
-                    android:fontFamily="serif"
+                    android:textSize="15dp"
+                    android:padding="10dp"
                     android:textColor="@color/black"
-                    android:padding="8dp"
+                    android:fontFamily="serif"
+                    android:layout_marginStart="10dp"
+                    android:text=" Reset All"
                     android:drawableStart="@drawable/ic_baseline_restore_24"
                     android:background="@drawable/button_gredient"
-                    android:text=" Reset All" />
+                    />
 
                 <TextView
                     android:id="@+id/btnApplyCuisineFilter"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_weight="1"
-                    android:textSize="10dp"
-                    android:fontFamily="serif"
-                    android:textColor="@color/black"
-                    android:padding="8dp"
-                    android:layout_marginStart="8dp"
-                    android:drawableStart="@drawable/ic_baseline_touch_app_24"
+                    android:layout_height="40dp"
                     android:background="@drawable/button_gredient"
+                    android:layout_weight="1"
+                    android:textSize="15dp"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif"
+                    android:layout_marginStart="10dp"
+                    android:drawableStart="@drawable/ic_baseline_touch_app_24"
                     android:text=" Apply Filter"  />
 
             </LinearLayout>

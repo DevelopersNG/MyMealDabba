@@ -36,17 +36,17 @@ import com.smarteist.autoimageslider.SliderView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
 public class BookmarkDetailActivity extends AppCompatActivity {
 
-    String url = Utils.URL + "addReview";
     SessionManager sessionManager;
     Context context;
     ActivityBookmarkDetailBinding b;
     Messdeatilslistmodel model;
-    String rating;
     SliderView sliderView;
     SliderAdapter sliderAdapter;
 
@@ -60,7 +60,13 @@ public class BookmarkDetailActivity extends AppCompatActivity {
         model = new Gson().fromJson(data, Messdeatilslistmodel.class);
         context = this;
         getData();
+
+        //Data passing to activity....
+
+
         sessionManager = new SessionManager(context);
+        sessionManager.setMemberIdB(model.MemberID);
+        sessionManager.setAvgReviewB(model.AvgReviews);
 
         ///ViewContact Details Visiblecode///
         b.btnFavViewContactDetails.setOnClickListener(new View.OnClickListener() {
@@ -91,18 +97,21 @@ public class BookmarkDetailActivity extends AppCompatActivity {
 
             }
         });
-        b.btnFavTapToRate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showDialog();
-            }
-        });
-
 
         b.btnFavViewContactDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 b.relativeLayoutFavContactDetails.setVisibility(View.VISIBLE);
+            }
+        });
+
+        //rating.......
+        b.btnFavTapToRate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(BookmarkDetailActivity.this,BookMarkRatingActivity.class);
+                intent.putExtra("data", data);
+                startActivity(intent);
             }
         });
 
@@ -131,79 +140,9 @@ public class BookmarkDetailActivity extends AppCompatActivity {
     }
 
 
-    private void showDialog() {
 
-        final Dialog dialog = new Dialog(context);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.bottomsheet_layout_rating);
-        RatingBar ratingbar = dialog.findViewById(R.id.rb_ratingBar);
-        ratingbar.setRating(Float.parseFloat(model.AvgReviews));
-        TextView btnRateSubmit = dialog.findViewById(R.id.tvRateSubmit);
-        btnRateSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                rating = String.valueOf(ratingbar.getRating());
 
-                getDataRate();
-                dialog.dismiss();
-                Toast.makeText(BookmarkDetailActivity.this, rating, Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-        dialog.show();
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.getWindow().getAttributes().windowAnimations = R.style.dialig_animation;
-        dialog.getWindow().setGravity(Gravity.BOTTOM);
-    }
-
-    private void getDataRate() {
-        final ProgressDialog progressDialog = ProgressDialog.show(context, null, "processing...", false, false);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                progressDialog.dismiss();
-                Log.e("response", response);
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    String code = jsonObject.getString("result");
-                    if (code.equalsIgnoreCase("1")) {
-
-                        Toast.makeText(context, "Thanks for Rating", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(context, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(context, "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                progressDialog.dismiss();
-                error.printStackTrace();
-                Toast.makeText(context, "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
-            }
-        }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("apikey", Utils.API_KEY);
-                params.put("Rating", rating);
-                params.put("ReviewerName", sessionManager.getName());
-                params.put("ReviewerEmail", sessionManager.getEmail());
-                params.put("ReviewerNo", sessionManager.getPhone());
-                params.put("MemberID", model.MemberID);
-                Log.e("user", params.toString());
-                return params;
-            }
-        };
-        stringRequest.setRetryPolicy(new DefaultRetryPolicy(30000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        MySingleton.myGetMySingleton(context).myAddToRequest(stringRequest);
-    }
 
     private void getData() {
         Log.e("data", new Gson().toJson(model));
@@ -238,11 +177,13 @@ public class BookmarkDetailActivity extends AppCompatActivity {
 
         b.lblFavMonthlyRate.setText(model.MonthlyRate);
         b.lblFavDailyRate.setText(model.TiffinRate);
-        b.lblFavTime.setText(model.StartTimeMorning + " A.M " + " TO " + model.CloseTimeMorning + " A.M " + " & " + model.StartTimeEvening + " P.M " + " TO " + model.CloseTimeEvening + " P.M ");
+        b.lblFavTime.setText(Utils.getTimeInMonth(model.StartTimeMorning)  + " TO " +Utils.getTimeInMonth(model.CloseTimeMorning)  + " & " + Utils.getTimeInMonth(model.StartTimeEvening)  + " TO " +Utils.getTimeInMonth(model.CloseTimeEvening));
         b.lblFavNotes.setText(model.Note);
         b.lblFavContactNo.setText(model.ContactNo1);
         b.lblFavContactAddress.setText(model.Location);
         b.txtFavAvgRating.setText(model.AvgReviews);
+
+
 
 
         b.imageFavViewShare.setOnClickListener(new View.OnClickListener() {

@@ -3,6 +3,7 @@ package com.example.mymealdabba.adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.provider.SyncStateContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +25,8 @@ import com.example.mymealdabba.model.Messdeatilslistmodel;
 import com.example.mymealdabba.model.RatingModel;
 import com.google.gson.Gson;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class RatingAdapter extends RecyclerView.Adapter<RatingAdapter.ViewHolder>{
@@ -50,10 +53,25 @@ public class RatingAdapter extends RecyclerView.Adapter<RatingAdapter.ViewHolder
         RatingModel model = list.get(position);
 
 holder.lblReviewrName.setText(model.ReviewerName);
-  holder.lblReviewDate.setText(model.AddedOn);
   holder.rbAvgRating.setRating(Float.parseFloat(model.Rating));
 
 
+        if(model.AddedOn != null && !model.AddedOn.equals("null")){
+            String addedOn = model.AddedOn;
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            SimpleDateFormat outputDateFormat = new SimpleDateFormat("dd MMM, yyyy");
+
+//            Date convertedDate=null;
+            try {
+
+                String addedOnStr = outputDateFormat.format(dateFormat.parse(addedOn));
+                holder.lblReviewDate.setText(addedOnStr);
+            } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+        }
 
 
     }
@@ -73,6 +91,9 @@ holder.lblReviewrName.setText(model.ReviewerName);
             lblReviewrName = itemView.findViewById(R.id.lblReviewrName);
             lblReviewDate = itemView.findViewById(R.id.lblReviewDate);
             rbAvgRating = itemView.findViewById(R.id.rbAvgRating);
+
+
+
 
         }
     }

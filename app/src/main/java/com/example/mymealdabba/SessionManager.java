@@ -16,7 +16,7 @@ public class SessionManager {
 
 
     public  static  final String KEY_CITY_ID="city_id";
-
+// mess rating......
     public static final  String KEY_ID1= "ID";
     public static final String  KEY_RATING= "Rating";
     public  static final String  KEY_REVIEWERNAME="ReviewerName";
@@ -25,9 +25,19 @@ public class SessionManager {
     public static final String  KEY_DATE="AddedOn";
     public static final String  KEY_MEMBER_ID="MemberID";
 
+//bookmark detail
+    public static final  String KEY_IDB= "BID";
+    public static final String  KEY_RATINGB= "BRating";
+    public  static final String  KEY_REVIEWERNAMEB="BReviewerName";
+    public static final String KEY_REVIEWERNOB ="BReviewerNo";
+    public static final String KEY_ReMAILB="BReviewerEmail";
+    public static final String  KEY_DATEB="BAddedOn";
+    public static final String  KEY_MEMBER_IDB="BMemberID";
 
-public static final String KEY_MEMBER="memberId";
+
+
     public static final String KEY_AVGREVIEW="avgreview";
+    public static final String KEY_AVGREVIEWB="Bavgreview";
 
     public static final String KEY_ID = "id";
     public static final String KEY_RESULT = "result";
@@ -125,6 +135,8 @@ public static final String KEY_MEMBER="memberId";
         return pref.getString(KEY_MEMBER_ID, "");
     }
 
+
+
     public void setAvgReview(String avgReview) {
         editor.putString(KEY_AVGREVIEW, avgReview);
         editor.commit();
@@ -136,6 +148,39 @@ public static final String KEY_MEMBER="memberId";
 
     public String getId1() {
         return pref.getString(KEY_ID1, "");
+    }
+
+
+    public void BookmarkReviewerDetails(RatingModel response) {
+        editor.putString(KEY_IDB,response.ID);
+        editor.putString(KEY_REVIEWERNAMEB, response.ReviewerName);
+        editor.putString(KEY_RATINGB, response.Rating);
+        editor.putString(KEY_REVIEWERNOB, response.ReviewerNo);
+        editor.putString(KEY_DATEB, response.AddedOn);
+        editor.commit();
+    }
+
+
+
+
+    public void setMemberIdB(String BmemberId) {
+        editor.putString(KEY_MEMBER_IDB, BmemberId);
+        editor.commit();
+    }
+
+    public String getMemberIdB() {
+        return pref.getString(KEY_MEMBER_IDB, "");
+    }
+
+
+
+    public void setAvgReviewB(String BavgReview) {
+        editor.putString(KEY_AVGREVIEWB, BavgReview);
+        editor.commit();
+    }
+
+    public String getAvgReviewB() {
+        return pref.getString(KEY_AVGREVIEWB, "");
     }
 
 

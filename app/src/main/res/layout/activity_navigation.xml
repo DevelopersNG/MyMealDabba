@@ -125,7 +125,7 @@
         android:background="@color/white"
         android:fontFamily="@font/source_sans_pro_light"
         app:headerLayout="@layout/nav_header_navigation"
-        app:itemHorizontalPadding="30dp"
+        app:itemHorizontalPadding="20dp"
         app:menu="@menu/activity_navigation_drawer" />
 
 

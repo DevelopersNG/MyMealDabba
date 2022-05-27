@@ -46,22 +46,24 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.mess_listview_item, parent, false);
-        return new MessListAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Messdeatilslistmodel model = list.get(position);
+        Messdeatilslistmodel item = list.get(position);
+        Log.e("model", new Gson().toJson(item));
 
-        for (ImageModel image : model.Images) {
+        for (ImageModel image : item.Images) {
             Log.e("image", Utils.IMAGEURL + image.ImagePath);
-            if (image.IsDefault.equalsIgnoreCase("1") && image!=null) {
+            if (image.IsDefault.equalsIgnoreCase("1")) {
                 Glide.with(context)
                         .load(Utils.IMAGEURL + image.ImagePath)
                         .into(holder.imageListViewMess);
-
-
-            } else {
+                
+            }
+            else
+            {
                 Glide.with(context)
                         .load(Utils.IMAGEURL + image.ImagePath)
                         .into(holder.imageListViewMess);
@@ -69,15 +71,15 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
         }
 
 
-        holder.lblMessName.setText(model.MemberName);
-        holder.lblMessAddress.setText(model.BussinessAddress);
+        holder.lblMessName.setText(item.MemberName);
+        holder.lblMessAddress.setText(item.BussinessAddress);
         //  holder.lblMessMonthlyRate.setText(model.MonthlyRate);
-        holder.lblTotalViews.setText(model.Views);
-        holder.lblMessCategory.setText(model.Category);
-        holder.lblMessService.setText(model.Service);
-        holder.lblMessSingleRate.setText(model.TiffinRate);
-        holder.lblMessExperience.setText(model.ExpYears);
-        holder.lblMessType.setText(model.Type);
+        holder.lblTotalViews.setText(item.Views);
+        holder.lblMessCategory.setText(item.Category);
+        holder.lblMessService.setText(item.Service);
+        holder.lblMessSingleRate.setText(item.TiffinRate);
+        holder.lblMessExperience.setText(item.ExpYears);
+        holder.lblMessType.setText(item.Type);
 //        holder.imageViewFav.setChecked(model.BookMarksStatus.equals("1"));
 
 
@@ -85,13 +87,13 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, MessDetailsActivity.class);
-                intent.putExtra("data", new Gson().toJson(model));
+                intent.putExtra("data", new Gson().toJson(item));
                 context.startActivity(intent);
             }
         });
 
 
-        if (model.Promoted.equals("1")) {
+        if (item.Promoted.equals("1")) {
             //
             holder.lblPromoted.setVisibility(View.VISIBLE);
         } else {
@@ -118,7 +120,7 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageListViewMess;
         AppCompatToggleButton imageViewFav;
 

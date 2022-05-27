@@ -13,7 +13,7 @@
         >
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/mtbRateUs"
+            android:id="@+id/mtbRateUsBookmark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:titleCentered="true"
@@ -57,7 +57,7 @@
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textAlignment="center"
-                        android:textSize="14dp" />
+                        android:textSize="15dp" />
 
                     <RatingBar
                         android:id="@+id/rating_5"
@@ -71,18 +71,19 @@
                         android:rating="1" />
 
                     <ProgressBar
-                        android:id="@+id/progress_5"
+                        android:id="@+id/progressbar5"
                         style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
                         android:layout_width="150dp"
-
-                        android:progressDrawable="@drawable/custom_background"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
+                        android:progressDrawable="@drawable/custom_background"
                         android:indeterminate="false"
+                        android:indeterminateTint="@color/black"
                         android:layout_toRightOf="@+id/rating_5"
-                        android:progress="50" />
+                        />
 
                 </LinearLayout>
+
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -113,16 +114,15 @@
                         android:rating="1" />
 
                     <ProgressBar
-                        android:id="@+id/progress_4"
+                        android:id="@+id/progressbar4"
                         style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-
-                        android:progressDrawable="@drawable/custom_background"
                         android:layout_below="@+id/rating_5"
+                        android:progressDrawable="@drawable/custom_background"
                         android:layout_marginStart="5dp"
                         android:layout_toRightOf="@+id/rating_5"
-                        android:progress="50" />
+                        />
                 </LinearLayout>
 
 
@@ -154,16 +154,15 @@
                         android:rating="1" />
 
                     <ProgressBar
-                        android:id="@+id/progress_3"
+                        android:id="@+id/progressbar3"
                         style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
                         android:layout_width="150dp"
-
-                        android:progressDrawable="@drawable/custom_background"
                         android:layout_height="wrap_content"
+                        android:progressDrawable="@drawable/custom_background"
                         android:layout_below="@+id/rating_4"
                         android:layout_marginStart="5dp"
                         android:layout_toRightOf="@+id/rating_5"
-                        android:progress="30" />
+                        />
                 </LinearLayout>
 
                 <LinearLayout
@@ -193,16 +192,15 @@
                         android:rating="1" />
 
                     <ProgressBar
-                        android:id="@+id/progress_2"
+                        android:id="@+id/progressbar2"
                         style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-
                         android:progressDrawable="@drawable/custom_background"
                         android:layout_below="@+id/rating_3"
                         android:layout_marginLeft="5dp"
                         android:layout_toRightOf="@+id/rating_5"
-                        android:progress="20" />
+                        />
 
                 </LinearLayout>
 
@@ -233,7 +231,7 @@
                         android:rating="1" />
 
                     <ProgressBar
-                        android:id="@+id/progress_1"
+                        android:id="@+id/progressbar1"
                         style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
@@ -244,6 +242,8 @@
                         />
 
                 </LinearLayout>
+
+
             </LinearLayout>
 
 
@@ -255,14 +255,14 @@
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/AvgRating"
+                    android:id="@+id/B_AvgRating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-           android:layout_gravity="center"
                     android:drawableEnd="@drawable/ic_baseline_star_rate_24"
                     android:drawablePadding="8dp"
                     android:fontFamily="serif"
                     android:text="5.0"
+                    android:layout_gravity="center"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="20dp"
@@ -270,7 +270,7 @@
 
 
                 <TextView
-                    android:id="@+id/tvRatingCount"
+                    android:id="@+id/B_tvRatingCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2 rating(s)"
@@ -307,19 +307,18 @@
             >
 
             <RatingBar
-                android:id="@+id/rb_ratingBar"
+                android:id="@+id/rb_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp" />
 
 
             <TextView
-                android:id="@+id/tvRateSubmit"
+                android:id="@+id/tvB_RateSubmit"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Submit"
                 android:layout_weight="1"
-                android:visibility="gone"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:padding="5dp"
@@ -350,7 +349,7 @@
             android:orientation="vertical"
             >
             <TextView
-                android:id="@+id/tvShowRating"
+                android:id="@+id/tvB_ShowRating"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:text="View All ratings"
@@ -372,8 +371,9 @@
             android:padding="10dp"
             android:layout_marginTop="65dp"
             >
+
             <LinearLayout
-                android:id="@+id/llNoDataRating"
+                android:id="@+id/llNoMessDataRating"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -393,8 +393,9 @@
                     android:backgroundTint="@color/go_btn_color"
                     android:background="@drawable/ic_baseline_star_rate_24" />
             </LinearLayout>
+
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvRatingDetail"
+                android:id="@+id/rvB_RatingDetail"
                 android:layout_width="match_parent"
                 android:visibility="gone"
                 android:layout_height="match_parent" />

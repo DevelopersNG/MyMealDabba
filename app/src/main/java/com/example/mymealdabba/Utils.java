@@ -10,8 +10,12 @@ import com.android.volley.Request;
 import com.android.volley.toolbox.StringRequest;
 
 import java.nio.charset.StandardCharsets;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 
 public class Utils {
     public static String URL = "https://mymealdabba.com/stage/search/";
@@ -44,6 +48,19 @@ public  static  String IMAGEURL="http://mymealdabba.com/backend/web/uploads/";
             e.printStackTrace();
             return null;
         }
+    }
+
+    public static String getTimeInMonth(String time) {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss", Locale.US);
+        SimpleDateFormat myFormat = new SimpleDateFormat("hh:mm a", Locale.US);
+
+        String reformattedStr = "";
+        try {
+            reformattedStr = myFormat.format(Objects.requireNonNull(sdf.parse(time)));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return reformattedStr;
     }
 
     public static void favourite(Context context, String memberId) {
