@@ -7,7 +7,6 @@ public class Messdeatilslistmodel {
     public  List<ImageModel> Images;
 
     public String MemberID;
-    public String Member_ID;
     public  String BookMarksStatus;
     public String MemberName;
     public String Promoted;
@@ -34,7 +33,7 @@ public class Messdeatilslistmodel {
     public String Views;
     public String Note;
     public String CuisineType;
-    public  List<ReviewsModel> Reviews;
+//    public  List<RatingModel> Reviews;
     public String TotalReviews;
     public String AvgReviews;
     public String OneRating;

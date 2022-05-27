@@ -17,7 +17,7 @@
         app:iconifiedByDefault="false"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        app:queryHint="Search By Locality/ Mess Name " />
+        app:queryHint="Search by Locality/ Mess Name " />
 
     <LinearLayout
         android:id="@+id/llNoMessData"
@@ -45,7 +45,6 @@
         android:id="@+id/rvMessList"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 
 
 </LinearLayout>

@@ -80,6 +80,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
                 android:text="North Indian"
+                android:fontFamily="serif"
                 android:textColor="@color/text_color"
                 android:textSize="15dp" />
 
@@ -87,6 +88,7 @@
                 android:id="@+id/southindia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="serif"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
 
@@ -101,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
+                android:fontFamily="serif"
                 android:text="Maharashtrian"
                 android:textColor="@color/text_color"
                 android:textSize="15dp" />
@@ -113,6 +116,7 @@
                 android:layout_gravity="center_vertical"
                 android:text="Goan"
                 android:textColor="@color/text_color"
+                android:fontFamily="serif"
                 android:textSize="15dp" />
 
             <CheckBox
@@ -122,6 +126,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
                 android:text="Malwani"
+                android:fontFamily="serif"
                 android:textColor="@color/text_color"
                 android:textSize="15dp" />
 
@@ -132,7 +137,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
                 android:text="Gujarati"
-
+                android:fontFamily="serif"
                 android:textColor="@color/text_color"
                 android:textSize="15dp" />
 
@@ -143,6 +148,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
                 android:text="Punjabi"
+                android:fontFamily="serif"
                 android:textColor="@color/text_color"
                 android:textSize="15dp" />
 
@@ -153,6 +159,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
                 android:text="Rajasthani"
+                android:fontFamily="serif"
                 android:textColor="@color/text_color"
                 android:textSize="15dp" />
 
@@ -163,6 +170,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
                 android:text="Bengali"
+                android:fontFamily="serif"
                 android:textColor="@color/text_color"
                 android:textSize="15dp" />
 
@@ -173,6 +181,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
                 android:text="Mughlai"
+                android:fontFamily="serif"
                 android:textColor="@color/text_color"
                 android:textSize="15dp" />
 
@@ -183,6 +192,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
                 android:text="Mangal"
+                android:fontFamily="serif"
                 android:textColor="@color/text_color"
                 android:textSize="15dp" />
 
@@ -190,6 +200,7 @@
                 android:id="@+id/korean"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="serif"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
                 android:text="Korean"
@@ -200,6 +211,7 @@
                 android:id="@+id/awadhi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="serif"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
                 android:text="Awadhi"
@@ -213,6 +225,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
                 android:text="Continental"
+                android:fontFamily="serif"
                 android:textColor="@color/text_color"
                 android:textSize="15dp" />
 
@@ -223,6 +236,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
                 android:text="Chinese"
+                android:fontFamily="serif"
                 android:textColor="@color/text_color"
                 android:textSize="15dp" />
 
@@ -233,6 +247,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
                 android:text="Jain Food"
+                android:fontFamily="serif"
                 android:textColor="@color/text_color"
                 android:textSize="15dp" />
 
@@ -241,6 +256,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"
+                android:fontFamily="serif"
                 android:layout_marginBottom="30dp"
                 android:orientation="horizontal"
                 android:weightSum="1">
@@ -251,7 +267,8 @@
                     android:layout_height="30dp"
                     android:layout_weight="1"
                     android:textSize="10dp"
-                    android:textColor="@color/white"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
                     android:padding="8dp"
                     android:drawableStart="@drawable/ic_baseline_restore_24"
                     android:background="@drawable/button_gredient"
@@ -263,7 +280,8 @@
                     android:layout_height="30dp"
                     android:layout_weight="1"
                     android:textSize="10dp"
-                    android:textColor="@color/white"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
                     android:padding="8dp"
                     android:layout_marginStart="8dp"
                     android:drawableStart="@drawable/ic_baseline_touch_app_24"

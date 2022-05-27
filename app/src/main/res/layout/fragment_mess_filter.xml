@@ -94,7 +94,7 @@
                     android:id="@+id/rbRecentlyAdded"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/sourcesans"
+                    android:fontFamily="serif"
                     android:text="Recently Added "
                     android:textSize="18sp" />
 
@@ -102,7 +102,7 @@
                     android:id="@+id/rbCostHighToLow"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/sourcesans"
+                    android:fontFamily="serif"
                     android:text="Cost High to Low"
                     android:textSize="18sp" />
 
@@ -110,7 +110,7 @@
                     android:id="@+id/rbCostLowToHigh"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/sourcesans"
+                    android:fontFamily="serif"
                     android:text="Cost Low to High"
                     android:textSize="18sp" />
             </RadioGroup>
@@ -159,6 +159,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
+                    android:fontFamily="serif"
                     android:textSize="18sp"
                     android:text="Chef/cook" />
 
@@ -167,7 +168,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:fontFamily="@font/sourcesans"
+                    android:fontFamily="serif"
                     android:textSize="18sp"
                     android:text="Food Mess" />
 
@@ -176,16 +177,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:fontFamily="@font/sourcesans"
+                    android:fontFamily="serif"
                     android:textSize="18sp"
                     android:text="Hotel/Parcel Point" />
 
                 <CheckBox
                     android:id="@+id/chkMahila"
-                    android:fontFamily="@font/sourcesans"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
+                    android:fontFamily="serif"
                     android:textSize="18sp"
                     android:text="Mahila Gruh(Grih) Udhyog" />
             </LinearLayout>
@@ -232,7 +233,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:fontFamily="@font/sourcesans"
+                    android:fontFamily="serif"
 
                     android:id="@+id/chkHomeDelivery"
                     android:textSize="18sp"
@@ -243,7 +244,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:fontFamily="@font/sourcesans"
+                    android:fontFamily="serif"
                     android:textSize="18sp"
                     android:text="At Premises" />
 
@@ -308,6 +309,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
+                        android:fontFamily="serif"
                         android:text="Veg    "/>
 
                 <FrameLayout
@@ -326,6 +328,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
+                        android:fontFamily="serif"
                         android:layout_marginStart="8dp"
                         android:text="Non-Veg  "/>
             </LinearLayout>
@@ -356,8 +359,8 @@
                     android:drawablePadding="8dp"
                     android:drawableStart="@drawable/ic_baseline_restore_24"
                     android:text="@string/reset_all"
-                    android:fontFamily="@font/merriwether"
-                    android:textColor="@color/white"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
                     android:textSize="15dp" />
 
                 <TextView
@@ -370,8 +373,8 @@
                     android:background="@drawable/button_gredient"
                     android:padding="10dp"
                     android:text="@string/apply_filter"
-                    android:fontFamily="@font/merriwether"
-                    android:textColor="@color/white"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
                     android:textSize="15dp" />
 
             </LinearLayout>

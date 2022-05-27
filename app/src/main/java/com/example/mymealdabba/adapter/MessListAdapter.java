@@ -55,7 +55,7 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
 
         for (ImageModel image : model.Images) {
             Log.e("image", Utils.IMAGEURL + image.ImagePath);
-            if (image.IsDefault.equalsIgnoreCase("1")) {
+            if (image.IsDefault.equalsIgnoreCase("1") && image!=null) {
                 Glide.with(context)
                         .load(Utils.IMAGEURL + image.ImagePath)
                         .into(holder.imageListViewMess);

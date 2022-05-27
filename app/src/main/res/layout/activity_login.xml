@@ -77,18 +77,19 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="74dp"
-                android:fontFamily="@font/sourcesans"
                 android:translationZ="20dp"
                 android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
                 android:layout_marginRight="10dp"
                 android:padding="10dp"
+                android:fontFamily="serif"
+
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/button_gredient"
                 android:paddingLeft="30dp"
                 android:paddingRight="30dp"
                 android:textAlignment="center"
                 android:text="Login"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="21dp"
                 android:textStyle="normal" />
 <LinearLayout
@@ -102,6 +103,8 @@
         android:id="@+id/lblTermsAndConditions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="serif"
+
         android:text="By proceeding you agree to our"
         android:textColor="@color/white"
         android:textSize="15dp" />
@@ -112,6 +115,8 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:text=" T &amp; C"
+        android:fontFamily="serif"
+
         android:textColor="@color/blue"
         android:textSize="15dp" />
 
@@ -137,6 +142,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Register Now?..."
+                    android:fontFamily="serif"
+
                     android:layout_marginStart="5dp"
                     android:textColor="@color/colorOrange"
                     android:textSize="16dp"

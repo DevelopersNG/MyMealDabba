@@ -106,7 +106,7 @@ public class OtpVerificationActivity extends AppCompatActivity {
 
                         Gson gson = new Gson();
                         SessionModel sessionModel = gson.fromJson(String.valueOf((response)), SessionModel.class);
-                        sessionManager.createSUserDetals(sessionModel);
+                        sessionManager.createSUserDetails(sessionModel);
 
                         Intent intent = new Intent(context, HomeActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);

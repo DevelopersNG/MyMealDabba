@@ -30,12 +30,12 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="80dp"
                 android:ellipsize="end"
-                android:fontFamily="@font/italic"
+                android:fontFamily="serif"
                 android:paddingRight="20dp"
                 android:singleLine="true"
                 android:text="Shree Mess"
                 android:textColor="@color/mess_name"
-                android:textSize="22dp" />
+                android:textSize="18dp" />
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/imageFavListViewMess"
@@ -116,8 +116,9 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="95dp"
+                android:fontFamily="serif"
                 android:ellipsize="end"
-                android:fontFamily="@font/italic"
+
                 android:maxLines="1"
                 android:singleLine="true"
                 android:text="Nashik"
@@ -131,14 +132,14 @@
                 android:layout_below="@+id/lblFavMessAddress"
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="5dp"
+                android:fontFamily="serif"
                 android:layout_marginRight="3dp"
                 android:ellipsize="end"
                 android:singleLine="true"
 
                 android:text="@string/daily_rate"
                 android:textColor="@color/black"
-                android:textSize="15dp"
-                android:textStyle="bold" />
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/lblFavMessMonthlyRate"
@@ -149,9 +150,9 @@
                 android:layout_marginRight="30dp"
                 android:layout_toRightOf="@+id/lblMessMonthlyRateTitle"
                 android:ellipsize="end"
+                android:fontFamily="serif"
                 android:singleLine="true"
                 android:text="3000"
-                android:fontFamily="@font/italic"
                 android:textColor="@color/mess_add"
                 android:textSize="16dp" />
 
@@ -169,9 +170,9 @@
                     android:ellipsize="end"
                     android:singleLine="true"
                     android:text="@string/views"
+                    android:fontFamily="serif"
                     android:textColor="@color/details_view_title"
-                    android:textSize="16dp"
-                    android:textStyle="bold" />
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:id="@+id/lblFavTotalViews"
@@ -182,7 +183,7 @@
                     android:layout_marginRight="5dp"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:fontFamily="@font/italic"
+                    android:fontFamily="serif"
                     android:text="@string/views"
                     android:textColor="@color/contact_no"
                     android:textSize="16dp" />
@@ -233,7 +234,7 @@
                     android:ellipsize="end"
                     android:singleLine="true"
                     android:text="@string/type"
-                    android:textStyle="bold"
+                    android:fontFamily="serif"
                     android:textColor="@color/details_view_title"
                     android:textSize="16dp" />
 
@@ -246,7 +247,7 @@
                     android:layout_marginRight="10dp"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:fontFamily="@font/italic"
+                    android:fontFamily="serif"
                     android:text="@string/type"
                     android:textColor="@color/contact_no"
                     android:textSize="16dp" />
@@ -265,8 +266,8 @@
                     android:layout_marginTop="5dp"
                     android:ellipsize="end"
                     android:singleLine="true"
+                    android:fontFamily="serif"
                     android:text="@string/category"
-                    android:textStyle="bold"
                     android:textColor="@color/details_view_title"
                     android:textSize="16dp" />
 
@@ -280,7 +281,7 @@
                     android:ellipsize="end"
                     android:singleLine="true"
                     android:text="@string/category"
-                    android:fontFamily="@font/italic"
+                    android:fontFamily="serif"
                     android:textColor="@color/contact_no"
                     android:textSize="16dp" />
             </LinearLayout>
@@ -297,8 +298,8 @@
                     android:layout_marginTop="5dp"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:textStyle="bold"
                     android:text="@string/service"
+                    android:fontFamily="serif"
                     android:textColor="@color/details_view_title"
                     android:textSize="16dp" />
 
@@ -312,7 +313,7 @@
                     android:ellipsize="end"
                     android:singleLine="true"
                     android:text="@string/service"
-                    android:fontFamily="@font/italic"
+                    android:fontFamily="serif"
                     android:textColor="@color/contact_no"
                     android:textSize="16dp" />
 
@@ -331,7 +332,7 @@
                     android:ellipsize="end"
                     android:singleLine="true"
                     android:text="@string/experience"
-                    android:textStyle="bold"
+                    android:fontFamily="serif"
                     android:textColor="@color/details_view_title"
                     android:textSize="16dp" />
 
@@ -344,7 +345,7 @@
                     android:layout_marginRight="10dp"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:fontFamily="@font/italic"
+                    android:fontFamily="serif"
                     android:text="@string/experience"
                     android:textColor="@color/contact_no"
                     android:textSize="16dp" />

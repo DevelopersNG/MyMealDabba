@@ -20,6 +20,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -27,9 +29,16 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.example.mymealdabba.adapter.FavoriteAdapter;
+import com.example.mymealdabba.adapter.RatingAdapter;
 import com.example.mymealdabba.adapter.SliderAdapter;
 import com.example.mymealdabba.databinding.ActivityMessDetailsBinding;
+import com.example.mymealdabba.model.DataModelMessDetailsList;
+import com.example.mymealdabba.model.DataModelRating;
 import com.example.mymealdabba.model.Messdeatilslistmodel;
+import com.example.mymealdabba.model.RatingModel;
+import com.example.mymealdabba.model.ReviewsModel;
+import com.example.mymealdabba.model.SessionModel;
 import com.google.gson.Gson;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
@@ -47,8 +56,6 @@ public class MessDetailsActivity extends AppCompatActivity {
     Context context;
     ActivityMessDetailsBinding b;
     Messdeatilslistmodel model;
-    String url = Utils.URL + "addReview";
-    String rating;
     SliderView sliderView;
     SliderAdapter sliderAdapter;
 
@@ -61,8 +68,12 @@ public class MessDetailsActivity extends AppCompatActivity {
         String data = bundle.getString("data");
         model = new Gson().fromJson(data, Messdeatilslistmodel.class);
         context = this;
+//        rvRating=dialog.findViewById(R.id.rvRating);
         getData();
         sessionManager = new SessionManager(context);
+        sessionManager.setMemberId(model.MemberID);
+        sessionManager.setAvgReview(model.AvgReviews);
+
 
         ///ViewContact Details Visiblecode///
         b.btnViewContactDetails.setOnClickListener(new View.OnClickListener() {
@@ -94,17 +105,7 @@ public class MessDetailsActivity extends AppCompatActivity {
             }
         });
 
-        b.btnTapToRate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MessDetailsActivity.this);
-                View view1 = getLayoutInflater().inflate(R.layout.rating, null);
-                builder.setView(view1);
-                AlertDialog dialog = builder.create();
-                dialog.show();
 
-            }
-        });
 
         b.btnViewContactDetails.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,8 +124,10 @@ public class MessDetailsActivity extends AppCompatActivity {
         b.btnTapToRate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialog();
+//                showDialog();
 
+                Intent intent=new Intent(MessDetailsActivity.this,RatingActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -161,86 +164,87 @@ public class MessDetailsActivity extends AppCompatActivity {
         sliderView.setScrollTimeInSec(3);
         sliderView.setAutoCycle(true);
         sliderView.startAutoCycle();
-
     }
 
+//    private void showDialog() {
+//        Dialog  dialog = new Dialog(context);
+//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        dialog.setContentView(R.layout.bottomsheet_layout_rating);
+//        TextView btnRateSubmit = dialog.findViewById(R.id.tvRateSubmit);
+//        TextView tvViewAllData = dialog.findViewById(R.id.tvViewAllData);
+//        RatingBar ratingbar = dialog.findViewById(R.id.rb_ratingBar);
+//        ratingbar.setRating(Float.parseFloat(model.AvgReviews));
+//        btnRateSubmit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                rating = String.valueOf(ratingbar.getRating());
+//                getDataRate();
+//                dialog.dismiss();
+//                Toast.makeText(MessDetailsActivity.this, rating, Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
+//
+//        tvViewAllData.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getRatingData();
+//            }
+//        });
+//
+//        dialog.show();
+//        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+//        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+//        dialog.getWindow().getAttributes().windowAnimations = R.style.dialig_animation;
+//        dialog.getWindow().setGravity(Gravity.TOP);
+//    }
 
-    private void showDialog() {
-
-        final Dialog dialog = new Dialog(context);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.bottomsheet_layout_rating);
-        TextView btnRateSubmit = dialog.findViewById(R.id.btnRateSubmit);
-        RatingBar ratingbar = dialog.findViewById(R.id.ratingBar);
-        ratingbar.setRating(Float.parseFloat(model.AvgReviews));
-        btnRateSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rating = String.valueOf(ratingbar.getRating());
-
-                getDataRate();
-                dialog.dismiss();
-                Toast.makeText(MessDetailsActivity.this, rating, Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-
-
-
-        dialog.show();
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.getWindow().getAttributes().windowAnimations = R.style.dialig_animation;
-        dialog.getWindow().setGravity(Gravity.BOTTOM);
-
-    }
-
-    private void getDataRate() {
-        final ProgressDialog progressDialog = ProgressDialog.show(context, null, "processing...", false, false);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                progressDialog.dismiss();
-                Log.e("response", response);
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    String code = jsonObject.getString("result");
-                    if (code.equalsIgnoreCase("1")) {
-
-                        Toast.makeText(context, "Thanks for Rating", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(context, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(context, "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                progressDialog.dismiss();
-                error.printStackTrace();
-                Toast.makeText(context, "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
-            }
-        }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("apikey", Utils.API_KEY);
-                params.put("Rating", rating);
-                params.put("ReviewerName", sessionManager.getName());
-                params.put("ReviewerEmail", sessionManager.getEmail());
-                params.put("ReviewerNo", sessionManager.getPhone());
-                params.put("MemberID", model.MemberID);
-                Log.e("user", params.toString());
-                return params;
-            }
-        };
-        stringRequest.setRetryPolicy(new DefaultRetryPolicy(30000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        MySingleton.myGetMySingleton(context).myAddToRequest(stringRequest);
-    }
+//    private void getDataRate() {
+//        final ProgressDialog progressDialog = ProgressDialog.show(context, null, "processing...", false, false);
+//        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//                progressDialog.dismiss();
+//                Log.e("response", response);
+//                try {
+//                    JSONObject jsonObject = new JSONObject(response);
+//                    String code = jsonObject.getString("result");
+//                    if (code.equalsIgnoreCase("1")) {
+//
+//                        Toast.makeText(context, "Thanks for Rating", Toast.LENGTH_SHORT).show();
+//                    } else {
+//                        Toast.makeText(context, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+//                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                    Toast.makeText(context, "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                progressDialog.dismiss();
+//                error.printStackTrace();
+//                Toast.makeText(context, "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
+//            }
+//        }) {
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                Map<String, String> params = new HashMap<String, String>();
+//                params.put("apikey", Utils.API_KEY);
+//                params.put("Rating", rating);
+//                params.put("ReviewerName", sessionManager.getName());
+//                params.put("ReviewerEmail", sessionManager.getEmail());
+//                params.put("ReviewerNo", sessionManager.getPhone());
+//                params.put("MemberID", model.MemberID);
+//
+//                Log.e("Reviewer Detail", params.toString());
+//                return params;
+//            }
+//        };
+//        stringRequest.setRetryPolicy(new DefaultRetryPolicy(30000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+//        MySingleton.myGetMySingleton(context).myAddToRequest(stringRequest);
+//    }
 
 
     private void getData() {
@@ -305,7 +309,6 @@ public class MessDetailsActivity extends AppCompatActivity {
             }
         });
 
-
         b.tbMessDetailFav.setChecked(model.BookMarksStatus.equals("1"));
         b.lblMonthlyRate.setText(model.MonthlyRate);
         b.lblDailyRate.setText(model.TiffinRate);
@@ -315,4 +318,51 @@ public class MessDetailsActivity extends AppCompatActivity {
         b.lblContactAddress.setText(model.Location);
 
     }
+
+//    private void getRatingData() {
+//        StringRequest stringRequest = new StringRequest(Request.Method.POST, urlRating, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//                Log.e("Ratings response", response);
+//                Gson gson = new Gson();
+//                data = gson.fromJson(response, DataModelRating.class);
+//                if (data.result == 1) {
+//                    setRecyclerView();
+//
+//                    RatingModel ratingModel = gson.fromJson(String.valueOf((response)), RatingModel.class);
+//                    sessionManager.createReviewerDetails(ratingModel);
+//                }
+//            }
+//        },
+//                new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                        error.printStackTrace();
+//                        Toast.makeText(context, "Sorry, something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
+//                    }
+//                }) {
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                Map<String, String> params = new HashMap<String, String>();
+//                params.put("apikey", Utils.API_KEY);
+//                params.put("MemberID",model.MemberID);
+//                Log.e("Rating", params.toString());
+//                return params;
+//            }
+//        };
+//        stringRequest.setRetryPolicy(new DefaultRetryPolicy(30000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+//        MySingleton.myGetMySingleton(context).myAddToRequest(stringRequest);
+//    }
+
+
+//    private void setRecyclerView() {
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
+//        rvRating.setLayoutManager(layoutManager);
+//        rvRating.setHasFixedSize(true);
+//        rvRating.setNestedScrollingEnabled(true);
+//        RatingAdapter adapter = new RatingAdapter(context,data.reviews);
+//        rvRating.setAdapter(adapter);
+//    }
+
+
 }

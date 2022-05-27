@@ -179,11 +179,11 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/italic"
                 android:layout_marginRight="12dp"
+                android:fontFamily="serif"
                 android:text="Sai Mess"
                 android:textColor="@color/details_name"
-                android:textSize="25dp" />
+                android:textSize="20dp"/>
 
             <TextView
                 android:id="@+id/lblFavMessAddress"
@@ -192,6 +192,7 @@
                 android:layout_below="@+id/lblFavMessName"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="12dp"
+                android:fontFamily="serif"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="12dp"
                 android:gravity="center"
@@ -211,9 +212,10 @@
                 android:background="@drawable/button_gredient"
                 android:gravity="center"
                 android:text="TAP TO RATE"
-                android:textStyle="bold"
+                android:fontFamily="serif"
                 android:textColor="@color/black"
                 android:textSize="13dp"
+                android:textStyle="bold"
 
                 />
 
@@ -250,6 +252,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
+                android:fontFamily="serif"
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="@string/title_type"
@@ -272,11 +275,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/title_experience"
                     android:fontFamily="serif"
-                    android:textStyle="bold"
+                    android:text="@string/title_experience"
                     android:textColor="@color/details_view_title"
-                    android:textSize="16dp" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
@@ -289,6 +292,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
+                android:fontFamily="serif"
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="@string/title_experience"
@@ -330,6 +334,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:gravity="center"
+                android:fontFamily="serif"
                 android:includeFontPadding="false"
                 android:text="@string/title_category"
                 android:textColor="@color/details_addr"
@@ -369,6 +374,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
+                android:fontFamily="serif"
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="@string/title_cuisine_type"
@@ -410,6 +416,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:gravity="center"
+                android:fontFamily="serif"
                 android:includeFontPadding="false"
                 android:text="@string/title_service"
                 android:textColor="@color/details_addr"
@@ -448,6 +455,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
+                android:fontFamily="serif"
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="@string/title_special_orders"
@@ -606,6 +614,7 @@
                 android:layout_below="@+id/relativeLayoutFavTime"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
+                android:fontFamily="serif"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:gravity="center"
@@ -645,6 +654,7 @@
                 android:layout_below="@+id/relativeLayoutFavNotes"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
+                android:fontFamily="serif"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:gravity="center"
@@ -671,6 +681,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_margin="5dp"
                     android:text="@string/note"
+                    android:fontFamily="serif"
                     android:textColor="@color/alert_title"
                     android:textSize="15dp"
                     android:textStyle="bold" />
@@ -682,6 +693,7 @@
                     android:layout_below="@+id/lblAlert"
                     android:layout_centerHorizontal="true"
                     android:gravity="center"
+                    android:fontFamily="serif"
                     android:includeFontPadding="false"
                     android:text="@string/alert_message1"
                     android:textColor="@color/alert_message"
@@ -697,6 +709,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
+                android:fontFamily="serif"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/rectangle_box_contact_details"
                 android:padding="10dp"
@@ -708,6 +721,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="@string/contact_no"
+                    android:fontFamily="serif"
                     android:textColor="@color/contact_no_title"
                     android:textSize="16dp" />
 
@@ -719,6 +733,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_toRightOf="@+id/lblFavTitleContactNo"
                     android:text="@string/contact_no"
+                    android:fontFamily="serif"
                     android:textColor="@color/contact_no"
                     android:textSize="16dp" />
 
@@ -730,6 +745,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginRight="10dp"
+                    android:fontFamily="serif"
                     android:paddingBottom="10dp"
                     android:src="@drawable/ic_baseline_phone_24" />
 
@@ -740,6 +756,7 @@
                     android:layout_below="@+id/lblFavTitleContactNo"
                     android:layout_marginTop="8dp"
                     android:text="@string/address"
+                    android:fontFamily="serif"
                     android:textColor="@color/contact_no_title"
                     android:textSize="16dp" />
 
@@ -752,6 +769,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_toRightOf="@+id/lblTitleAddress"
                     android:text="@string/address"
+                    android:fontFamily="serif"
                     android:textColor="@color/contact_no"
                     android:textSize="16dp" />
 
@@ -766,8 +784,9 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_gredient"
                 android:padding="12dp"
+                android:fontFamily="serif"
                 android:text="@string/view_contact_details"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="17dp" />
 
         </RelativeLayout>

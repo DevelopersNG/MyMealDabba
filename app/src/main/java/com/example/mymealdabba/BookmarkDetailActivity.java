@@ -136,9 +136,9 @@ public class BookmarkDetailActivity extends AppCompatActivity {
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.bottomsheet_layout_rating);
-        RatingBar ratingbar = dialog.findViewById(R.id.ratingBar);
+        RatingBar ratingbar = dialog.findViewById(R.id.rb_ratingBar);
         ratingbar.setRating(Float.parseFloat(model.AvgReviews));
-        TextView btnRateSubmit = dialog.findViewById(R.id.btnRateSubmit);
+        TextView btnRateSubmit = dialog.findViewById(R.id.tvRateSubmit);
         btnRateSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

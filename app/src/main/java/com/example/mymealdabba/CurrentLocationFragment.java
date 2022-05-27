@@ -1,5 +1,6 @@
 package com.example.mymealdabba;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -10,6 +11,7 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -21,6 +23,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
 import android.provider.Settings;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,12 +90,12 @@ Context context;
 
 
         locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
-        locationEnabled();
+//        locationEnabled();
+      // isLocationServicesAvailable(context);
         getLocation();
+        checkGPSStatus();
         listener();
         return b.getRoot();
-
-
     }
 
     private void listener() {
@@ -105,41 +108,67 @@ Context context;
     }
 
 
-    private void locationEnabled() {
-        LocationManager lm = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
+    public static boolean isLocationServicesAvailable(Context context) {
+        int locationMode = 0;
+        String locationProviders;
+        boolean isAvailable = false;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+            try {
+                locationMode = Settings.Secure.getInt(context.getContentResolver(), Settings.Secure.LOCATION_MODE);
+            } catch (Settings.SettingNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            isAvailable = (locationMode != Settings.Secure.LOCATION_MODE_OFF);
+        } else {
+            locationProviders = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.LOCATION_PROVIDERS_ALLOWED);
+            isAvailable = !TextUtils.isEmpty(locationProviders);
+        }
+        boolean coarsePermissionCheck = (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED);
+        boolean finePermissionCheck = (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED);
+
+        return isAvailable && (coarsePermissionCheck || finePermissionCheck);
+    }
+
+    private void checkGPSStatus() {
+
+        LocationManager locationManager = null;
         boolean gps_enabled = false;
         boolean network_enabled = false;
-        try {
-            gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
-        } catch (Exception e) {
-            e.printStackTrace();
+        if ( locationManager == null ) {
+            locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
         }
         try {
-            network_enabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-        } catch (Exception e) {
-            e.printStackTrace();
+            gps_enabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        } catch (Exception ex){}
+        try {
+            network_enabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+        } catch (Exception ex){}
+        if ( !gps_enabled && !network_enabled ){
+            AlertDialog.Builder dialog = new AlertDialog.Builder(requireActivity());
+            dialog.setMessage("GPS not enabled");
+            dialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    //this will navigate user to the device location settings screen
+//                    Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+//                    startActivity(intent);
+                }
+            });
+
+            AlertDialog alert = dialog.create();
+            alert.show();
+
         }
-        if (!gps_enabled && !network_enabled) {
-            new AlertDialog.Builder(getContext())
-                    .setTitle("Enable GPS Service")
-                    .setMessage("We need your GPS location to show Near Places around you.")
-                    .setCancelable(false)
-                    .setPositiveButton("Enable", new
-                            DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface paramDialogInterface, int paramInt) {
-                                    startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-                                }
-                            })
-                    .setNegativeButton("Cancel", null)
-                    .show();
-        }
+       // dialog.dismiss();
     }
+
 
     void getLocation() {
         try {
             locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 500, 5, (LocationListener) this);
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 00, 5, (LocationListener) this);
         } catch (SecurityException e) {
             e.printStackTrace();
         }
@@ -149,12 +178,12 @@ Context context;
     public void onLocationChanged(Location location) {
         dialog.dismiss();
         try {
-            Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
+            Geocoder geocoder = new Geocoder(requireActivity(), Locale.getDefault());
             List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
 
             b.tvCity.setText(addresses.get(0).getLocality());
 //            b.tvState.setText(addresses.get(0).getAdminArea());
-//            b.  tvCountry.setText(addresses.get(0).getCountryName());
+//            b.tvCountry.setText(addresses.get(0).getCountryName());
             b.    tvPin.setText(addresses.get(0).getPostalCode());
             b. tvLocality.setText(addresses.get(0).getAddressLine(0));
         } catch (Exception e) {

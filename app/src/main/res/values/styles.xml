@@ -72,7 +72,7 @@
 
 
     <style name="Style_TextView">
-        <item name="fontFamily">@font/pt_serif_bold</item>
+        <item name="fontFamily">serif</item>
         <item name="android:textSize">17sp</item>
     </style>
 </resources>

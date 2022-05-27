@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import com.example.mymealdabba.model.RatingModel;
+import com.example.mymealdabba.model.ReviewsModel;
 import com.example.mymealdabba.model.SessionModel;
 
 import java.util.HashMap;
@@ -14,6 +16,18 @@ public class SessionManager {
 
 
     public  static  final String KEY_CITY_ID="city_id";
+
+    public static final  String KEY_ID1= "ID";
+    public static final String  KEY_RATING= "Rating";
+    public  static final String  KEY_REVIEWERNAME="ReviewerName";
+    public static final String KEY_REVIEWERNO ="ReviewerNo";
+    public static final String KEY_ReMAIL="ReviewerEmail";
+    public static final String  KEY_DATE="AddedOn";
+    public static final String  KEY_MEMBER_ID="MemberID";
+
+
+public static final String KEY_MEMBER="memberId";
+    public static final String KEY_AVGREVIEW="avgreview";
 
     public static final String KEY_ID = "id";
     public static final String KEY_RESULT = "result";
@@ -74,9 +88,7 @@ public class SessionManager {
 
     }
 
-    public void createSUserDetals(SessionModel response) {
-//        editor.putString(KEY_NAME, name);
-//        editor.putString(KEY_EMAIL, email);
+    public void createSUserDetails(SessionModel response) {
         editor.putString(KEY_NAME, response.Name);
         editor.putString(KEY_EMAIL, response.Email);
         editor.putString(KEY_PHONE, response.contact_no);
@@ -94,6 +106,39 @@ public class SessionManager {
     public String getPhone() {
         return pref.getString(KEY_PHONE, "");
     }
+
+    public void createReviewerDetails(RatingModel response) {
+        editor.putString(KEY_ID1,response.ID);
+        editor.putString(KEY_REVIEWERNAME, response.ReviewerName);
+        editor.putString(KEY_RATING, response.Rating);
+        editor.putString(KEY_REVIEWERNO, response.ReviewerNo);
+        editor.putString(KEY_DATE, response.AddedOn);
+        editor.commit();
+    }
+
+    public void setMemberId(String memberId) {
+        editor.putString(KEY_MEMBER_ID, memberId);
+        editor.commit();
+    }
+
+    public String getMemberId() {
+        return pref.getString(KEY_MEMBER_ID, "");
+    }
+
+    public void setAvgReview(String avgReview) {
+        editor.putString(KEY_AVGREVIEW, avgReview);
+        editor.commit();
+    }
+
+    public String getAvgReview() {
+        return pref.getString(KEY_AVGREVIEW, "");
+    }
+
+    public String getId1() {
+        return pref.getString(KEY_ID1, "");
+    }
+
+
 }
 
 

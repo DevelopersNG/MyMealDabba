@@ -159,14 +159,14 @@
                 android:layout_marginTop="75dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-
+                android:fontFamily="serif"
                 android:background="@drawable/button_gredient"
                 android:padding="10dp"
                 android:paddingLeft="30dp"
                 android:paddingRight="30dp"
                 android:text="Register"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="21dp"
                 android:textStyle="normal" />
 
@@ -304,6 +304,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="115dp"
                 android:gravity="center"
+                android:fontFamily="serif"
                 android:text="Already have an account?"
                 android:textColor="@color/white"
                 android:textSize="17sp"
@@ -320,6 +321,7 @@
                 android:layout_marginBottom="-2dp"
                 android:gravity="center"
                 android:text="Login"
+                android:fontFamily="serif"
                 android:textColor="@color/yellow_color"
                 android:textSize="19sp"
                 android:textStyle="bold" />
