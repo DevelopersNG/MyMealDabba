@@ -17,6 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:titleCentered="true"
+            android:background="@drawable/toolbar_gradient"
+            app:titleTextColor="@color/white"
             app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
             app:title=" Your BookMark Items"
             />
@@ -34,6 +36,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textStyle="bold"
+            android:fontFamily="@font/italic"
             android:textColor="@color/black"
             android:text="No Bookmarks Available !" />
 

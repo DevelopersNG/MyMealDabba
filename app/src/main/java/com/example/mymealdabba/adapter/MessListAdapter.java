@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -81,7 +83,8 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
         holder.lblMessExperience.setText(item.ExpYears);
         holder.lblMessType.setText(item.Type);
 //        holder.imageViewFav.setChecked(model.BookMarksStatus.equals("1"));
-
+        holder.tvRatingMess.setText(item.AvgReviews);
+        holder.rbAvgRatingMess.setRating(Float.parseFloat(item.AvgReviews));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,10 +97,19 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
 
 
         if (item.Promoted.equals("1")) {
-            //
             holder.lblPromoted.setVisibility(View.VISIBLE);
-        } else {
+        }
+        else
+        {
             holder.lblPromoted.setVisibility(View.GONE);
+        }
+
+
+        if (item.Promoted.equals("1")) {
+            holder.llMess.setVisibility(View.GONE);
+        }else
+        {
+            holder.llMess.setVisibility(View.VISIBLE);
         }
 
 //        holder.imageViewFav.setOnClickListener(new View.OnClickListener() {
@@ -123,9 +135,9 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageListViewMess;
         AppCompatToggleButton imageViewFav;
-
-        TextView lblMessName, lblPromoted, lblMessAddress, lblMessType, lblMessMonthlyRate, lblMessSingleRate, lblTotalViews, lblMessCategory, lblMessService, lblMessExperience;
-
+RatingBar rbAvgRatingMess;
+        TextView lblMessName,tvRatingMess, lblPromoted, lblMessAddress, lblMessType, lblMessMonthlyRate, lblMessSingleRate, lblTotalViews, lblMessCategory, lblMessService, lblMessExperience;
+LinearLayout llMess;
         public ViewHolder(@NonNull View itemView) {
 
             super(itemView);
@@ -141,6 +153,9 @@ public class MessListAdapter extends RecyclerView.Adapter<MessListAdapter.ViewHo
             lblMessService = itemView.findViewById(R.id.lblMessService);
             lblMessExperience = itemView.findViewById(R.id.lblMessExperience);
             lblMessSingleRate = itemView.findViewById(R.id.lblMessSingleRateTitle);
+            tvRatingMess = itemView.findViewById(R.id.tvRatingMess);
+            rbAvgRatingMess = itemView.findViewById(R.id.rbAvgRatingMess);
+            llMess = itemView.findViewById(R.id.llMess);
         }
     }
 }

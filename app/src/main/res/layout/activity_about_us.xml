@@ -9,7 +9,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="565dp"
+        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -39,6 +39,7 @@
                     android:src="@drawable/about_us_logo" />
 
             </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/relativeLayoutTop"
                 android:layout_width="match_parent"
@@ -56,7 +57,7 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="4dp"
-                    android:fontFamily="serif"
+                    android:fontFamily="@font/italic"
                     android:text="Welcome to My Meal Dabba"
                     android:textColor="@color/dark_title_color"
                     android:textSize="24sp"
@@ -84,7 +85,7 @@
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="40dp"
-                    android:fontFamily="serif"
+                    android:fontFamily="@font/italic"
                     android:text="Your SEARCH for \'Meal Dabba\' ends here!"
                     android:textAlignment="center"
                     android:textColor="@color/dark_title_color"
@@ -100,7 +101,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="30dp"
-                    android:fontFamily="serif"
+                    android:fontFamily="@font/italic"
                     android:text="My Meal Dabba is a perfect solution for everyone who\'s looking for Tiffin Service...   So, why hassle anywhere go through our dedicated listing of \'Tiffin Mess Service Providers\' in your nearby locality..."
                     android:textAlignment="center"
                     android:textColor="@color/light_text_color"
@@ -116,7 +117,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="30dp"
-                    android:fontFamily="serif"
+                    android:fontFamily="@font/italic"
                     android:text="Our Aim is to bring all Tiffin Mess Service Providers &amp; Empowering the individual, especially Women Gruh Udhyog by listing them online &amp; creating an ultimate Tiffin Meal Experience to end users!\"
                     android:textAlignment="center"
                     android:textColor="@color/light_text_color"
@@ -132,9 +133,9 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="30dp"
+                    android:fontFamily="@font/italic"
                     android:text="If you have Business enquiries, please mail us on "
                     android:textAlignment="center"
-
                     android:textColor="@color/light_text_color"
                     android:textSize="15sp"
                     android:textStyle="normal" />
@@ -145,16 +146,19 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/lblBusinessEnquiriesText"
                     android:layout_centerHorizontal="true"
-
                     android:layout_marginRight="10dp"
                     android:clickable="true"
+                    android:fontFamily="@font/italic"
                     android:text="info@mymealdabba.com"
                     android:textAlignment="center"
                     android:textColor="@color/blue"
                     android:textSize="15sp"
                     android:textStyle="normal" />
-            </RelativeLayout>
 
+
+
+
+            </RelativeLayout>
 
         </RelativeLayout>
     </ScrollView>

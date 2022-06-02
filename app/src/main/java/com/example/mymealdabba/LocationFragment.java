@@ -87,7 +87,6 @@ public class LocationFragment extends DialogFragment {
     }
 
     private void listener() {
-
         b.svLocation.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -152,8 +151,15 @@ public class LocationFragment extends DialogFragment {
         b.rvLocation.setNestedScrollingEnabled(true);
         locationAdapter = new LocationAdapter(context, data1.Locations, viewModel, this);
         b.rvLocation.setAdapter(locationAdapter);
-    }
 
+        if(locationAdapter.getItemCount()!=0)
+        {
+               // b.llNoLocationData.setVisibility(View.GONE);
+                b.rvLocation.setAdapter(locationAdapter);
+            } else {
+                b.llNoLocationData.setVisibility(View.VISIBLE);
+            }
+    }
 
     private void filterLocation(String text) {
         ArrayList<LocationModel> filteredList = new ArrayList<>();

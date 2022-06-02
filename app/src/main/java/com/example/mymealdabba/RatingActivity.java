@@ -64,8 +64,8 @@ public class RatingActivity extends AppCompatActivity {
         }
         else
         {
-            int progress1 = (((Integer.parseInt(model.AvgReviews) * Integer.parseInt(model.OneRating)) + 1 ) / (Integer.parseInt(model.TotalReviews) + 1));
-            b.progress1.setProgress(progress1*20);
+            float progress1 = (((Float.parseFloat(model.AvgReviews) * Float.parseFloat(model.OneRating)) + 1 ) / (Float.parseFloat(model.TotalReviews) + 1));
+            b.progress1.setProgress((int)((progress1*20)));
             Log.e("progress1", String.valueOf(progress1));
         }
 
@@ -75,8 +75,8 @@ public class RatingActivity extends AppCompatActivity {
             b.progress2.setProgress(0);
         }
         else {
-            int progress2 = (((Integer.parseInt(model.AvgReviews) * Integer.parseInt(model.TwoRating)) + 2) / (Integer.parseInt(model.TotalReviews) + 1));
-            b.progress2.setProgress(progress2 * 20);
+            float progress2 = (((Float.parseFloat(model.AvgReviews) * Float.parseFloat(model.TwoRating)) + 2) / (Float.parseFloat(model.TotalReviews) + 1));
+            b.progress2.setProgress((int) (progress2 * 20));
             Log.e("progress2", String.valueOf(progress2));
         }
         if(model.ThreeRating.equals("0"))
@@ -85,8 +85,8 @@ public class RatingActivity extends AppCompatActivity {
         }
         else
         {
-            int progress3 = (((Integer.parseInt(model.AvgReviews) * Integer.parseInt(model.ThreeRating)) + 3 )/ (Integer.parseInt(model.TotalReviews) + 1));
-            b.progress3.setProgress(progress3*20);
+            float progress3 = (((Float.parseFloat(model.AvgReviews) * Float.parseFloat(model.ThreeRating)) + 3 )/ (Float.parseFloat(model.TotalReviews) + 1));
+            b.progress3.setProgress((int)((progress3 * 20)));
             Log.e("progress3", String.valueOf(progress3));
 
         }
@@ -97,8 +97,8 @@ public class RatingActivity extends AppCompatActivity {
         }
         else
         {
-            int progress4 = (((Integer.parseInt(model.AvgReviews) * Integer.parseInt(model.FourRating)) + 4 )/ (Integer.parseInt(model.TotalReviews) + 1));
-            b.progress4.setProgress(progress4*20);
+            float progress4 = (((Float.parseFloat(model.AvgReviews) * Float.parseFloat(model.FourRating)) + 4 )/ (Float.parseFloat(model.TotalReviews) + 1));
+            b.progress4.setProgress((int)((progress4 * 20)));
             Log.e("progress4", String.valueOf(progress4));
 
         }
@@ -109,13 +109,21 @@ public class RatingActivity extends AppCompatActivity {
         }
         else
         {
-            int progress5 = (((Integer.parseInt(model.AvgReviews) * Integer.parseInt(model.FiveRating)) + 5 )/ (Integer.parseInt(model.TotalReviews) + 1));
-            b.progress5.setProgress(progress5*20);
+            float progress5 = (((Float.parseFloat(model.AvgReviews) * Float.parseFloat(model.FiveRating)) + 5 )/ (Float.parseFloat(model.TotalReviews) + 1));
+            b.progress5.setProgress((int)((progress5 * 20)));
             Log.e("progress5", String.valueOf(progress5));
         }
+        if(model.AvgReviews.equals("") && model.AvgReviews.equals("0"))
+        {
+            b.rbRatingBar.setRating(1);
+        }else
+        {
+            b.rbRatingBar.setRating(Float.parseFloat(model.AvgReviews));
 
+        }
 
     }
+
 
     private void listener() {
        b.tvRateSubmit.setOnClickListener(new View.OnClickListener() {

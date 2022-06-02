@@ -35,9 +35,9 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="80dp"
-                    android:fontFamily="serif"
-
                     android:background="@color/green_color"
+
+                    android:fontFamily="@font/italic"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
 
@@ -129,7 +129,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:fontFamily="serif"
+                    android:fontFamily="@font/italic"
 
                     android:text="We would love to hear from you!"
                     android:textColor="@color/dark_title_color"
@@ -143,7 +143,7 @@
                     android:gravity="center"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:fontFamily="serif"
+                    android:fontFamily="@font/italic"
                     android:justificationMode="inter_word"
                     android:layout_marginRight="10dp"
                     android:text="Any questions or comments you would like to share with us then please email us on "
@@ -187,7 +187,7 @@
                     android:text="For More Details Visit"
                     android:textColor="@color/light_title_text_color"
                     android:textSize="15sp"
-                    android:fontFamily="serif"
+                    android:fontFamily="@font/italic"
 
                     android:textAlignment="center"
                     android:textStyle="normal" />

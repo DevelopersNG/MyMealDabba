@@ -45,7 +45,6 @@ public class NavigationActivity extends AppCompatActivity {
     String MessName;
     DataModelLocation data1;
     DataModelMessNameList data2;
-    String urlLocation = Utils.URL + "getLocationsByCityID";
     LocationAdapter locationAdapter;
     MessNameAdapter messNameAdapter;
     MessListAdapter messListAdapter;

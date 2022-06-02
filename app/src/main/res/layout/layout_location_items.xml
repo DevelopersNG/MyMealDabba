@@ -13,7 +13,7 @@ android:layout_height="wrap_content">
         android:drawableStart="@drawable/ic_location_svgrepo_com"
         android:drawablePadding="20dp"
         android:padding="10dp"
-        android:fontFamily="@font/sourcesans"
+        android:fontFamily="@font/italic"
       android:textAllCaps="true"
         android:drawableTintMode="screen"
         android:gravity="center_vertical"
@@ -21,7 +21,6 @@ android:layout_height="wrap_content">
         android:textColor="#000"
         android:textSize="14sp"
         android:textStyle="bold"
-
         />
 
 <!--    <View-->

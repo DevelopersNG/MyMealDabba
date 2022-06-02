@@ -47,6 +47,7 @@
                     android:drawableLeft="@drawable/ic_person_24"
                     android:drawablePadding="10dp"
                     android:hint="Name"
+                    android:fontFamily="@font/italic"
                     android:inputType="text"
                     android:maxLength="40"
                     android:paddingLeft="25dp"
@@ -87,6 +88,7 @@
                     android:drawableLeft="@drawable/ic_baseline_email_24"
                     android:drawablePadding="10dp"
                     android:hint="Email"
+                    android:fontFamily="@font/italic"
                     android:inputType="textEmailAddress"
                     android:maxLength="100"
                     android:paddingLeft="25dp"
@@ -128,6 +130,7 @@
                     android:drawablePadding="10dp"
                     android:hint="Mobile Number"
                     android:inputType="phone"
+                    android:fontFamily="@font/italic"
                     android:maxLength="10"
                     android:paddingLeft="25dp"
                     android:paddingTop="10dp"
@@ -160,15 +163,14 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/button_gredient"
-                android:fontFamily="serif"
-                android:padding="10dp"
+                android:fontFamily="@font/italic"
+                android:padding="14dp"
                 android:paddingLeft="30dp"
                 android:paddingRight="30dp"
                 android:text="Register"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="16dp"
-                android:textStyle="normal" />
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/lblTerms"
@@ -179,6 +181,7 @@
                 android:layout_toRightOf="@+id/lblTermsAndConditions"
                 android:clickable="true"
                 android:text=" T &amp; C"
+                android:fontFamily="@font/italic"
                 android:textColor="@color/blue"
                 android:textSize="15dp" />
 
@@ -190,6 +193,7 @@
                 android:layout_alignEnd="@+id/imgLogo"
                 android:layout_alignRight="@+id/imgLogo"
                 android:layout_marginTop="15dp"
+                android:fontFamily="@font/italic"
                 android:text="By proceeding you agree to our"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
@@ -303,8 +307,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="115dp"
+                android:fontFamily="@font/italic"
                 android:gravity="center"
-                android:fontFamily="serif"
                 android:text="Already have an account?"
                 android:textColor="@color/white"
                 android:textSize="17sp"
@@ -319,7 +323,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="60dp"
                 android:layout_marginBottom="0dp"
-                android:fontFamily="serif"
+                android:fontFamily="@font/italic"
                 android:gravity="center"
                 android:text="Login"
                 android:textColor="@color/yellow_color"

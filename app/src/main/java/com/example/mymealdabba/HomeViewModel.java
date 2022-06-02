@@ -59,6 +59,7 @@ public class HomeViewModel extends AndroidViewModel {
             messFilterModel.Location = _selectedLocation.getValue().Location;
         }
 
+
         final MessFilterModel filter = messFilterModel;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
 

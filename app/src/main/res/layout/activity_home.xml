@@ -31,18 +31,19 @@
                     android:tooltipText="@string/app_name"
                     app:title="@string/app_name"
                     app:titleCentered="true"
+                    android:background="@drawable/toolbar_gradient"
                     app:titleMarginStart="5dp"
                     app:titleTextColor="@color/white"/>
 
-                <ImageButton
-                    android:id="@+id/ibLocation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="150dp"
-                    android:background="@color/action_bar_color"
-                    android:src="@drawable/ic_location_svgrepo_com"/>
+<!--                <ImageButton-->
+<!--                    android:id="@+id/ibLocation"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_marginStart="150dp"-->
+<!--                    android:background="@color/action_bar_color"-->
+<!--                    android:src="@drawable/ic_location_svgrepo_com"/>-->
             </FrameLayout>
 
         </com.google.android.material.appbar.AppBarLayout>  <ImageView

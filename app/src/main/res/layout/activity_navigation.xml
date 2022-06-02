@@ -36,9 +36,9 @@
                 android:minHeight="?attr/actionBarSize"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 android:tooltipText="@string/app_name"
-                app:menu="@menu/menu_location"
                 app:title="@string/app_name"
                 app:titleCentered="true"
+                android:background="@drawable/toolbar_gradient"
                 app:titleMarginStart="5dp"
                 app:titleTextColor="@color/white"
                 tools:ignore="MissingConstraints" />
@@ -57,9 +57,10 @@
         android:id="@+id/btnLocation"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="wrap_content"
-
+        android:fontFamily="@font/italic"
         android:layout_height="wrap_content"
         android:text="Locality"
+        android:textStyle="bold"
         app:icon="@drawable/ic_location_svgrepo_com" />
     <Button
         android:id="@+id/btnMess"
@@ -95,7 +96,7 @@
                 android:padding="10dp"
                 android:drawableStart="@drawable/ic_baseline_filter_alt_24"
                 android:background="@drawable/button_gredient"
-                android:fontFamily="serif"
+                android:fontFamily="@font/italic"
                 android:text=" Select Filter" />
 
             <TextView
@@ -107,7 +108,7 @@
                 android:textSize="15dp"
                 android:padding="10dp"
                 android:textColor="@color/black"
-                android:fontFamily="serif"
+                android:fontFamily="@font/italic"
                 android:layout_marginStart="10dp"
                 android:text=" Select Cuisine "
                 android:drawableStart="@drawable/ic_meal_lunch_svgrepo_com" />

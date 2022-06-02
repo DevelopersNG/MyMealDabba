@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -66,63 +67,69 @@ public class BookMarkRatingActivity extends AppCompatActivity {
 
         if(model.OneRating.equals("0"))
         {
-            b.rbRating.setRating(0);
+            b.progressbar1.setProgress(0);
         }
         else
         {
-            int progress1 = (((Integer.parseInt(model.AvgReviews) * Integer.parseInt(model.OneRating)) + 1 ) / Integer.parseInt(model.TotalReviews) + 1);
-            b.progressbar1.setProgress(progress1*20);
+            float progress1 = (((Float.parseFloat(model.AvgReviews) * Float.parseFloat(model.OneRating)) + 1 ) / (Float.parseFloat(model.TotalReviews) + 1));
+            b.progressbar1.setProgress((int)((progress1*20)));
             Log.e("progress1", String.valueOf(progress1));
-
         }
 
         if(model.TwoRating.equals("0"))
         {
-            b.rbRating.setRating(0);
+            b.progressbar2.setProgress(0);
         }
         else
         {
-            int progress2 = (((Integer.parseInt(model.AvgReviews) * Integer.parseInt(model.TwoRating)) + 2 )/ Integer.parseInt(model.TotalReviews) + 1);
-            b.progressbar2.setProgress(progress2*20);
+            float progress2 = (((Float.parseFloat(model.AvgReviews) * Float.parseFloat(model.OneRating)) + 2 ) / (Float.parseFloat(model.TotalReviews) + 1));
+            b.progressbar2.setProgress((int)((progress2*20)));
             Log.e("progress2", String.valueOf(progress2));
-
         }
 
         if(model.ThreeRating.equals("0"))
         {
-            b.rbRating.setRating(0);
+            b.progressbar3.setProgress(0);
         }
         else
         {
-            int progress3 = (((Integer.parseInt(model.AvgReviews) * Integer.parseInt(model.ThreeRating)) + 3 )/ Integer.parseInt(model.TotalReviews) + 1);
-            b.progressbar3.setProgress(progress3*20);
+            float progress3 = (((Float.parseFloat(model.AvgReviews) * Float.parseFloat(model.OneRating)) + 3 ) / (Float.parseFloat(model.TotalReviews) + 1));
+            b.progressbar3.setProgress((int)((progress3*20)));
             Log.e("progress3", String.valueOf(progress3));
-
         }
 
         if(model.FourRating.equals("0"))
         {
-            b.rbRating.setRating(0);
+            b.progressbar4.setProgress(0);
         }
         else
         {
-            int progress4 = (((Integer.parseInt(model.AvgReviews) * Integer.parseInt(model.FourRating)) + 4 )/ Integer.parseInt(model.TotalReviews) + 1);
-            b.progressbar4.setProgress(progress4*20);
+            float progress4 = (((Float.parseFloat(model.AvgReviews) * Float.parseFloat(model.OneRating)) + 4 ) / (Float.parseFloat(model.TotalReviews) + 1));
+            b.progressbar4.setProgress((int)((progress4*20)));
             Log.e("progress4", String.valueOf(progress4));
-
         }
 
         if(model.FiveRating.equals("0"))
         {
-            b.rbRating.setRating(0);
+            b.progressbar5.setProgress(0);
         }
         else
         {
-            int progress5 = (((Integer.parseInt(model.AvgReviews) * Integer.parseInt(model.FiveRating)) + 5 )/ Integer.parseInt(model.TotalReviews) + 1);
-            b.progressbar5.setProgress(progress5*20);
+            float progress5 = (((Float.parseFloat(model.AvgReviews) * Float.parseFloat(model.OneRating)) + 5 ) / (Float.parseFloat(model.TotalReviews) + 1));
+            b.progressbar5.setProgress((int)((progress5*20)));
             Log.e("progress5", String.valueOf(progress5));
         }
 
+
+
+        if(model.AvgReviews.equals("") && model.AvgReviews.equals("0"))
+        {
+            b.rbRating.setRating(1);
+        }else
+        {
+            b.rbRating.setRating(Float.parseFloat(model.AvgReviews));
+
+        }
 
     }
 
@@ -151,7 +158,20 @@ public class BookMarkRatingActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        b.rbRating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                if(b.rbRating.getRating() >0) {
+                    b.tvBRateSubmit.setVisibility(View.VISIBLE);
+                }
+                else {
+                    b.tvBRateSubmit.setVisibility(View.GONE);
+                }
+            }
+        });
     }
+
+
 
     private void getDataRate() {
         final ProgressDialog progressDialog = ProgressDialog.show(context, null, "processing...", false, false);

@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -57,6 +59,8 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
         holder.lblFavMessService.setText(model.Service);
         holder.lblFavMessExperience.setText(model.ExpYears);
         holder.lblFavMessType.setText(model.Type);
+        holder.tvRatingBookmark1.setText(model.AvgReviews);
+        holder.rbAvgRatingBookmark.setRating(Float.parseFloat(model.AvgReviews));
 
 
         for (ImageModel image : model.Images) {
@@ -97,11 +101,22 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
                 }
             }
         });
+
+
         if (model.Promoted.equals("1")) {
-            //
             holder.lblFavPromoted.setVisibility(View.VISIBLE);
-        } else {
+        }
+        else
+        {
             holder.lblFavPromoted.setVisibility(View.GONE);
+        }
+
+
+        if (model.Promoted.equals("1")) {
+            holder.llBookmark.setVisibility(View.GONE);
+        }else
+        {
+            holder.llBookmark.setVisibility(View.VISIBLE);
         }
 
     }
@@ -114,8 +129,9 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageFavListViewMess;
         AppCompatToggleButton tbBookmarkFav;
-        TextView lblFavMessName, lblFavPromoted, lblFavMessType, lblFavMessAddress, lblFavMessMonthlyRate, lblFavTotalViews, lblFavMessCategory, lblFavMessService, lblFavMessExperience;
-
+        TextView lblFavMessName, tvRatingBookmark1,lblFavPromoted, lblFavMessType, lblFavMessAddress, lblFavMessMonthlyRate, lblFavTotalViews, lblFavMessCategory, lblFavMessService, lblFavMessExperience;
+RatingBar rbAvgRatingBookmark;
+LinearLayout llBookmark;
         public ViewHolder(@NonNull View itemView) {
 
             super(itemView);
@@ -130,6 +146,9 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
             lblFavMessExperience = itemView.findViewById(R.id.lblFavMessExperience);
             tbBookmarkFav = itemView.findViewById(R.id.tbBookmarkFav);
             lblFavMessType = itemView.findViewById(R.id.lblFavMessType);
+            tvRatingBookmark1 = itemView.findViewById(R.id.tvRatingBookmark1);
+            rbAvgRatingBookmark = itemView.findViewById(R.id.rbAvgRatingBookmark);
+            llBookmark = itemView.findViewById(R.id.llBookmark);
         }
     }
 }

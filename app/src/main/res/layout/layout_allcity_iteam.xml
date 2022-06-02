@@ -14,7 +14,7 @@
         android:gravity="center_vertical"
         android:background="@color/white"
         android:textColor="#000"
-android:fontFamily="serif"
+android:fontFamily="@font/italic"
         android:textSize="20sp"
         android:textStyle="bold" />
 
