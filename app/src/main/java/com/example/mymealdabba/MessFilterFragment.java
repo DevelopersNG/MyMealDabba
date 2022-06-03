@@ -1,8 +1,8 @@
 package com.example.mymealdabba;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,11 +63,18 @@ public class MessFilterFragment extends DialogFragment {
         viewModel = new ViewModelProvider(requireActivity()).get(HomeViewModel.class);
         model = viewModel._filterMess.getValue();
         listener();
+
+
         return b.getRoot();
     }
 
     private void listener() {
         viewModel._filterMess.postValue(model);
+        viewModel._filterMess.observe(getViewLifecycleOwner(), model -> {
+            if (model != null) {
+                setData(model);
+            }
+        });
         b.btnApplyFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,6 +109,56 @@ public class MessFilterFragment extends DialogFragment {
             }
         });
     }
+
+    private void setData(MessFilterModel model) {
+        b.rbCostLowToHigh.setChecked(b.rbCostLowToHigh.getText().toString().equalsIgnoreCase(model.SortBy));
+        b.rbCostHighToLow.setChecked(b.rbCostHighToLow.getText().toString().equalsIgnoreCase(model.SortBy));
+        b.rbRecentlyAdded.setChecked(("Recently Added").equalsIgnoreCase(model.SortBy));
+
+//checked checkbox mess type
+        String messType = (model.MessType);
+        Log.e("mess type", model.MessType);
+        String[] mess = messType.split(",");
+
+        for (int i = 0; i < (mess.length); i++) {
+            if (mess[i].equalsIgnoreCase(b.chkFoodMess.getText().toString().trim())) {
+                b.chkFoodMess.setChecked(true);
+            } else if (mess[i].equalsIgnoreCase(b.chkChef.getText().toString().trim())) {
+                b.chkChef.setChecked(true);
+            } else if (mess[i].equalsIgnoreCase(("Hotel/Parcel").trim())) {
+                b.chkHotel.setChecked(true);
+            } else if (mess[i].equalsIgnoreCase(("mahila").trim())) {
+                b.chkMahila.setChecked(true);
+            }
+        }
+
+        //checked service.....
+            String service = (model.Service);
+            Log.e("service", model.Service);
+            String[] serv = service.split(",");
+
+            for (int j = 0; j < (serv.length); j++) {
+                if (serv[j].equalsIgnoreCase(b.chkHomeDelivery.getText().toString().trim())) {
+                    b.chkHomeDelivery.setChecked(true);
+                } else if (serv[j].equalsIgnoreCase(b.chkPremises.getText().toString().trim())) {
+                    b.chkPremises.setChecked(true);
+                }
+            }
+// checked category
+                String category = (model.Category);
+                Log.e("category", model.Category);
+                String[] cat = category.split(",");
+
+                for (int k = 0; k < (cat.length); k++) {
+                    if (cat[k].equalsIgnoreCase(b.chipVeg.getText().toString().trim())) {
+                        b.chipVeg.setChecked(true);
+                    } else if (cat[k].equalsIgnoreCase(b.chipNonVeg.getText().toString().trim())) {
+                        b.chipNonVeg.setChecked(true);
+                    }
+                }
+            }
+
+
 
     void submit() {
         StringBuilder sbMessType = new StringBuilder("");
