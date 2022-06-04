@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -42,7 +43,8 @@ public class SignUpActivity extends AppCompatActivity {
     String email = "";
     String otp;
     String userId;
-
+    String AppVersion ="";
+    String OSVersion ="";
     SessionManager sessionManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,12 @@ public class SignUpActivity extends AppCompatActivity {
         context = this;
         sessionManager = new SessionManager(context);
         listener();
+
+        AppVersion = ("Version "+BuildConfig.VERSION_NAME);
+        Log.e("version code",AppVersion);
+        OSVersion = (Build.VERSION.RELEASE).toString().trim();
+        Log.e("Os",OSVersion);
+
         b.btnNameClear.setEnabled(false);
         b.btnEmailClear.setEnabled(false);
         b.btnMobileClear.setEnabled(false);
@@ -320,7 +328,9 @@ public class SignUpActivity extends AppCompatActivity {
                 params.put("Name", name);
                 params.put("ContactNo", phone);
                 params.put("Email", email);
-
+                params.put("AppVersion", AppVersion);
+                params.put("OSVersion", OSVersion);
+                Log.e("Reg. params", params.toString());
                 return params;
             }
         };
@@ -368,7 +378,7 @@ public class SignUpActivity extends AppCompatActivity {
                 params.put("apikey", Utils.API_KEY);
                 params.put("UserID", userId);
                 params.put("OTP", otp);
-                Log.e("params", params.toString());
+                Log.e("OTP params", params.toString());
                 return params;
             }
         };

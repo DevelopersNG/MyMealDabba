@@ -11,6 +11,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.mymealdabba.databinding.FragmentMessFilterBinding;
+import com.example.mymealdabba.model.CuisineModel;
 import com.example.mymealdabba.model.MessFilterModel;
 
 
@@ -164,6 +165,7 @@ public class MessFilterFragment extends DialogFragment {
         StringBuilder sbMessType = new StringBuilder("");
         StringBuilder sbService = new StringBuilder("");
         StringBuilder sbCategory = new StringBuilder("");
+
         if (b.rbRecentlyAdded.isChecked()) {
             model.SortBy = b.rbRecentlyAdded.getText().toString().trim();
         }
@@ -227,3 +229,4 @@ public class MessFilterFragment extends DialogFragment {
     }
 
 }
+
