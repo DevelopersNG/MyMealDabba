@@ -77,8 +77,7 @@ public class BookMarkActivity extends AppCompatActivity {
                     setRecyclerView();
                 }
             }
-        },
-                new Response.ErrorListener() {
+        }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         progressDialog.dismiss();
