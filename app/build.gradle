@@ -10,8 +10,8 @@ android {
         applicationId "com.example.mymealdabba"
         minSdk 24
         targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        versionCode 22
+        versionName "3.8.5"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
       //  useLibrary 'org.apache.http.legacy'
